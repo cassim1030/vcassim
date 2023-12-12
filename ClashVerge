@@ -1,0 +1,2933 @@
+port: 7930
+socks-port: 7931
+redir-port: 7932
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9190
+#API授权验证
+secret: 761030
+
+#SOCKS/HTTP代理验证
+authentication:
+- cassim1030:1qazxsw2
+dns:
+  enable: false
+  listen: 0.0.0.0:53
+  ipv6: true
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - localhost.ptlogin2.qq.com
+    - "*.*.*.*.srv.nintendo.net"
+    - "*.*.*.stun.playstation.net"
+    - xbox.*.microsoft.com
+    - "*.*.*.xboxlive.com"
+  nameserver:
+    - 114.114.114.11
+    - 8.8.8.8
+    - tls://dns.rubyfish.cn:853
+    - https://1.1.1.1/dns-query
+    - dhcp://en0
+  fallback:
+    - tcp://1.1.1.1
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+  domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
+    - +.github.com
+  ipcidr:
+    - 220.0.0.0/4
+    - 240.0.0.0/4
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/3
+    - ::1/128
+    - fc00::/7
+    - fe80::/10
+proxies:
+  - name: 🇫🇷 FR-X-001
+    type: ss
+    server: 135.125.172.153
+    port: 443
+    cipher: aes-256-cfb
+    password: asdKkaskJKfnsa
+  - name: 🇭🇰 HK-X-003
+    type: ss
+    server: 8.210.85.62
+    port: 80
+    cipher: aes-128-gcm
+    password: a-wym4ovY4Yw
+    plugin: obfs
+    plugin-opts:
+      mode: http
+  - name: 🇭🇰 HK-X-004
+    type: ss
+    server: traffic-in-lite.811920.xyz
+    port: 51013
+    cipher: aes-128-gcm
+    password: be96b3b1-d009-4bf1-9a65-a025def92afd
+  - name: 🇯🇵 JP-X-03 (V2/Clash)
+    type: vmess
+    server: fullaccesstointernet.eu.org
+    port: 2053
+    cipher: auto
+    uuid: 5a4cbe4e-dcab-49f9-825e-08bedb396729
+    alterId: 0
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: freedom
+      grpc-mode: gun
+  - name: "🇯🇵 JP-X-007"
+    type: ss
+    server: aca-cm-js-4g.cfprefer1.xyz
+    port: 28436
+    cipher: aes-256-gcm
+    password: 206677df-940f-4204-a67a-016c6b12f1cd
+  - name: 🇺🇸 US-X-003
+    type: hysteria2
+    server: ushy2.sharecentre.online
+    port: 4434
+    #  up和down均不写或为0则使用BBR流控
+    # up: "30 Mbps" # 若不写单位，默认为 Mbps
+    # down: "200 Mbps" # 若不写单位，默认为 Mbps
+    password: sharecentrepro
+    # obfs: salamander
+    # obfs-password: NTA2OTQ4ZjE3NDQ4ZWMxNQ==
+    sni: ushy2.sharecentre.online
+    skip-cert-verify: true
+    # fingerprint: xxxx
+    # alpn:
+    #   - h3
+    # ca: "./my.ca"
+    # ca-str: "xyz"
+  - name: 🇺🇸 US-X-004
+    server: nangua.lwjyj.com
+    port: 32101
+    client-fingerprint: chrome
+    type: vmess
+    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
+    alterId: 0
+    cipher: auto
+    tls: false
+    tfo: false
+    skip-cert-verify: false
+  - name: 🇺🇸 US-X-006
+    type: ss
+    server: 54.201.23.39
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇺🇸 US-X-007
+    type: ss
+    server: 54.68.65.193
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇺🇸 US-X-008
+    type: ss
+    server: 54.189.133.33
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇹🇼 TW-O-SSR-01
+    type: ssr
+    server: aiatw2.conectinnode.info
+    port: 1202
+    password: mtbv8n
+    cipher: chacha20-ietf
+    obfs: plain
+    protocol: auth_aes128_md5
+    obfs-param: 28f8799610.wns.windows.com
+    protocol-param: 99610:Ss5tcJuseWa
+    group: DY
+  -
+    name: DaBai-Downlaods
+    type: vmess
+    server: 185.214.103.50
+    port: 443
+    uuid: 26726b2c-a280-356a-a452-4be0bd46ec1e
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: b.cn-db.top
+    network: ws
+    ws-path: /dabai.in
+    ws-headers:
+      Host: b.cn-db.top
+    ws-opts:
+      path: /dabai.in
+      headers: { Host: b.cn-db.top }
+    tls: true
+    skip-cert-verify: true
+
+  - name: PORTX-Downloads
+    type: vmess
+    server: 104.19.194.65
+    port: 443
+    uuid: ea948a30-70eb-3dad-ae11-38a9fe2024c9
+    alterId: 0
+    cipher: auto
+    tls: true
+    servername: ytytitihu.bxshcd.shop
+    network: ws
+    ws-opts:
+      path: /3c6f8b53-008a-4223-a5ee-4f5f079c592f
+      headers:
+        Host: ytytitihu.bxshcd.shop
+
+  - name: FREE-Downloads
+    type: vmess
+    server: yhaa.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: auto
+    network: ws
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: yha.5489265.xyz }
+
+  - name: KEJIBEAR-Downloads
+    type: trojan
+    server: lu1-midpoint.techbear.cyou
+    port: 10081
+    password: 2e526c01-5add-3498-bbe4-7f092fde7162
+    sni: bensll.top
+    
+  -
+    name: REIMU-Downloads
+    type: vmess
+    server: usaarm1.zl.node.redreimu.xyz
+    port: 50000
+    uuid: 00b302f4-6c4d-3f93-9b09-ce674142282a
+    alterId: 0
+    cipher: auto
+    udp: true
+  - { name: DingJi-Downlaods, type: trojan, server: 167.68.11.228, port: 443, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, network: ws, ws-opts: { path: /djjc/jp1, headers: { Host: k2jp1.djjc.sbs } }, sni: k2jp1.djjc.sbs }
+  - { name: BaiPao-Downlaods, type: vmess, server: 162.159.142.211, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.889611.com } }, ws-path: /, ws-headers: { Host: ca3.889611.com } }
+  - { name: Helium Network-Downloads, type: vmess, server: free-relay.themars.top, port: 32201, uuid: af7eeac0-7d41-4794-95de-1496febd47bb, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /cctv1.m3u8, headers: { Host: www.cctv.com } }, ws-path: /cctv1.m3u8, ws-headers: { Host: www.cctv.com } }
+  -
+    name: 6YHY-Downlaods
+    type: vmess
+    server: sg9.6yhy.top
+    port: 443
+    uuid: 612d958a-bc4a-328b-9f91-342116457183
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: sg4.6yhy.top
+    network: ws
+    ws-opts:
+      path: /6yhy
+      headers: { Host: sg9.6yhy.top }
+    ws-path: /6yhy
+    ws-headers:
+      Host: sg9.6yhy.top
+    tls: true
+
+  - name: SANXI-Downloads
+    type: vmess
+    server: br-01sanxi-br-v2boardsanxijichang.sanxi.cyou
+    port: 8080
+    uuid: 3f863586-a258-41fc-8364-b02ff50646fa
+    alterId: 0
+    cipher: auto
+    network: ws
+    # udp: true
+    # tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+
+  - { name: Mars-Download, type: ss, server: free-relay.m.themars.top, port: 32103, cipher: chacha20-ietf-poly1305, password: 148ec602-62db-49be-943f-11738a926dfa, udp: true }
+  - name: AC900_Clash
+    type: socks5
+    server: 192.168.2.70
+    port: "7910"
+  - name: AC900_Nekoray
+    type: socks5
+    server: 192.168.2.70
+    port: "2080"
+  - name: Windows_V2rayN
+    type: socks5
+    server: 127.0.0.1
+    port: "10808"
+  - name: Windows_V2rayN_SingBox
+    type: socks5
+    server: 127.0.0.1
+    port: "11808"
+    udp: true
+  - name: Windows_Nekoray
+    type: socks5
+    server: 127.0.0.1
+    port: "2080"
+  - name: Windows_Nekoray2
+    type: socks5
+    server: 127.0.0.1
+    port: "3080"
+  - name: Windows_Nekoray3
+    type: socks5
+    server: 127.0.0.1
+    port: "4080"
+  - name: Windows_ClashN
+    type: socks5
+    server: 127.0.0.1
+    port: "7891"
+    udp: true
+  - name: Office_V2rayN
+    type: socks5
+    server: 192.168.3.40
+    port: "10808"
+  - name: Office_V2rayN_SingBox
+    type: socks5
+    server: 192.168.3.40
+    port: "11808"
+  - name: Office_Nekoray
+    type: socks5
+    server: 192.168.3.40
+    port: "2080"
+  - name: Office_ClashN
+    type: socks5
+    server: 192.168.3.40
+    port: "7891"
+  - name: Netgear_V2rayN
+    type: socks5
+    server: 10.0.0.3
+    port: "10808"
+  - name: Netgear_ClashN
+    type: socks5
+    server: 10.0.0.3
+    port: "7888"
+  - name: Netgear_ClashForWindows
+    type: socks5
+    server: 10.0.0.3
+    port: "7910"
+  - name: Netgear_Nekoray
+    type: socks5
+    server: 10.0.0.3
+    port: "2080"
+  - name: Netgear_Nekoray2
+    type: socks5
+    server: 10.0.0.3
+    port: "3080"
+  - name: 🇨🇦 CA-O-01
+    type: hysteria2
+    server: us4837.wusiba.xyz
+    port: 4433
+    #  up和down均不写或为0则使用BBR流控
+    # up: "30 Mbps" # 若不写单位，默认为 Mbps
+    # down: "200 Mbps" # 若不写单位，默认为 Mbps
+    password: 免费节点@WSBVPN
+    # obfs: salamander # 默认为空，如果填写则开启obfs，目前仅支持salamander
+    #obfs-password: NTA2OTQ4ZjE3NDQ4ZWMxNQ==
+    sni: us4837.wusiba.xyz
+    # skip-cert-verify: false
+    # fingerprint: xxxx
+    # alpn:
+    #   - h3
+    # ca: "./my.ca"
+    # ca-str: "xyz"
+  - name: 🇬🇧 GB-O-01-sdgf
+    type: vless
+    server: 104.21.57.240
+    port: 443
+    uuid: e28bb3f8-e64a-4419-9496-33c46220354b
+    network: ws
+    ws-opts:
+     path: /?ed=2048
+     headers:
+      Host: sdgf.bdfstt.sbs
+    tls: true
+    servername: sdgf.bdfstt.sbs
+    # skip-cert-verify: true
+  - name: 🇰🇷 KR-O-01
+    type: ss
+    server: 43.201.253.32
+    port: 443
+    cipher: aes-256-cfb
+    password: "amazonskr05"
+  - name: 🇸🇬 SG-X-001
+    server: nangua.lwjyj.com
+    port: 32651
+    client-fingerprint: chrome
+    type: vmess
+    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
+    alterId: 0
+    cipher: auto
+    tls: false
+    tfo: false
+    skip-cert-verify: false
+  - name: 🇸🇬 SG-X-002
+    server: nangua.lwjyj.com
+    port: 32652
+    client-fingerprint: chrome
+    type: vmess
+    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
+    alterId: 0
+    cipher: auto
+    tls: false
+    tfo: false
+    skip-cert-verify: false
+  - name: 🇸🇬 SG-X-003
+    type: ss
+    server: 3.1.81.236
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇸🇬 SG-X-004
+    type: ss
+    server: 18.142.250.63
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇸🇬 SG-X-007
+    type: ss
+    server: 18.141.204.149
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+  - name: 🇹🇼 TW-X-001
+    server: nbq11.ntbq.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /b11
+      headers:
+        Host: nbq11.ntbq.dynu.net
+  - name: 🇹🇼 TW-X-002
+    server: b21.ntbq.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /b21
+      headers:
+        Host: b21.ntbq.dynu.net
+  - name: 🇹🇼 TW-X-003
+    server: b22.ntbq.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /b22
+      headers:
+        Host: b22.ntbq.dynu.net
+  - name: 🇹🇼 TW-X-004
+    server: b23.ntbq.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /b23
+      headers:
+        Host: b23.ntbq.dynu.net
+  - name: 🇹🇼 TW-X-005
+    server: b24.ntbq.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /b24
+      headers:
+        Host: b24.ntbq.dynu.net
+  - name: 🇹🇼 TW-O-01
+    server: tc11.kq1.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /vbub1
+      headers:
+        Host: tc11.kq1.dynu.net
+  - name: 🇹🇼 TW-O-02
+    server: tc12.kq1.dynu.net
+    port: 443
+    client-fingerprint: chrome
+    type: vmess
+    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    alterId: 0
+    cipher: auto
+    tls: true
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /vbub2
+      headers:
+        Host: tc12.kq1.dynu.net
+  - name: 🇺🇸 US-O-03
+    type: vless
+    server: dns.ton.org
+    port: 443
+    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
+    network: ws
+    ws-opts:
+     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
+     headers:
+      Host: edge.020770.xyz
+    tls: true
+    servername: edge.020770.xyz
+    # skip-cert-verify: true
+  - name: 🇺🇸 US-O-05
+    type: vless
+    server: 172.67.56.144
+    port: 443
+    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
+    network: ws
+    ws-opts:
+     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
+     headers:
+      Host: edge.020770.xyz
+    tls: true
+    servername: edge.020770.xyz
+    # skip-cert-verify: true
+  - name: 🇺🇸 US-O-06
+    type: vless
+    server: 172.67.96.59
+    port: 443
+    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
+    network: ws
+    ws-opts:
+     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
+     headers:
+      Host: edge.020770.xyz
+    tls: true
+    servername: edge.020770.xyz
+    # skip-cert-verify: true
+  - name: 🇺🇸 US-O-07-sdgf
+    type: vless
+    server: 104.31.16.144
+    port: 443
+    uuid: e28bb3f8-e64a-4419-9496-33c46220354b
+    network: ws
+    ws-opts:
+     path: /?ed=2048
+     headers:
+      Host: sdgf.bdfstt.sbs
+    tls: true
+    servername: sdgf.bdfstt.sbs
+    # skip-cert-verify: true
+  - name: 🇺🇸 US-O-09-xn
+    type: vless
+    server: cf.yx.alue.link
+    port: 80
+    uuid: ca8692b7-8f6f-4346-a916-c1e9798ab91b
+    network: ws
+    ws-opts:
+     path: /?ed=2048
+     headers:
+      Host: xn--vjqt50blsfzoo1f8a.repe.gay
+    # tls: true
+    # servername: edge.020770.xyz
+    # skip-cert-verify: true
+    
+  - name: 🇺🇸 US-O-10-edtu
+    type: vless
+    server: edtunnel-b6t.pages.dev
+    port: 443
+    uuid: c688395a-b36b-4071-974b-bc91ac2ad2c4
+    network: ws
+    ws-opts:
+     path: /
+     headers:
+      Host: edtunnel-b6t.pages.dev
+    tls: true
+    servername: edtunnel-b6t.pages.dev
+    # skip-cert-verify: true
+  - name: 🇺🇸 US-O-11
+    server: us-01.jikuai.xyz
+    port: 2082
+    client-fingerprint: chrome
+    type: vmess
+    uuid: c65f5e6c-54df-4bf1-af8e-56141403f94b
+    alterId: 0
+    cipher: auto
+    tls: false
+    tfo: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: us-01.jikuai.xyz
+  - name: 🇺🇸 US-O-12
+    type: vmess
+    server: us.jsy.gay
+    port: 34175
+    uuid: a597a63d-e427-4e49-b0a9-1e796fed5a8a
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /usa
+      headers:
+        Host: us1.luodi.xyz
+    ws-path: /usa
+    ws-headers:
+      Host: us1.luodi.xyz
+  -
+    name: '香港 | 0x'
+    type: vmess
+    server: hkgsdz.66666654.xyz
+    port: 8880
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: hkg.66666654.xyz
+    network: ws
+    ws-path: /hgcefomn
+    ws-headers:
+      Host: hkg.66666654.xyz
+    ws-opts:
+      path: /hgcefomn
+      headers: { Host: hkg.66666654.xyz }
+  -
+    name: '荷兰PT/BT端口4500 | 0.1x'
+    type: vmess
+    server: nlsdwsz.66666654.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: nlsd.66666654.xyz
+    network: ws
+    ws-path: /hgcefomn
+    ws-headers:
+      Host: nlsd.66666654.xyz
+    ws-opts:
+      path: /hgcefomn
+      headers: { Host: nlsd.66666654.xyz }
+  -
+    name: '韩国1-春川 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: cuna.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: cuna.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: cuna.5489265.xyz }
+  -
+    name: '韩国2-春川 | 1x'
+    type: vmess
+    server: krawycaa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: krawyca.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: krawyca.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: krawyca.76898102.xyz }
+  -
+    name: '韩国3-春川 | 1x'
+    type: vmess
+    server: skopzaa.76898102.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: skopza.76898102.xyz
+    network: ws
+    ws-path: /ubacidb
+    ws-headers:
+      Host: skopza.76898102.xyz
+    ws-opts:
+      path: /ubacidb
+      headers: { Host: skopza.76898102.xyz }
+  -
+    name: '韩国4-春川 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: cund.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: cund.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: cund.5489265.xyz }
+  -
+    name: '韩国1-首尔 | 1x'
+    type: vmess
+    server: shoueraa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: shouera.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: shouera.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: shouera.76898102.xyz }
+  -
+    name: '韩国2-首尔 | 1x'
+    type: vmess
+    server: shouerbb.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: shouerb.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: shouerb.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: shouerb.76898102.xyz }
+  -
+    name: '韩国3-首尔 | 1x'
+    type: vmess
+    server: shouercc.66666654.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: shouerc.66666654.xyz
+    network: ws
+    ws-path: /aiufbwuge
+    ws-headers:
+      Host: shouerc.66666654.xyz
+    ws-opts:
+      path: /aiufbwuge
+      headers: { Host: shouerc.66666654.xyz }
+  -
+    name: '韩国4-首尔 | 1x'
+    type: vmess
+    server: krsctcac.66666654.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: krsctca.66666654.xyz
+    network: ws
+    ws-path: /bxpty
+    ws-headers:
+      Host: krsctca.66666654.xyz
+    ws-opts:
+      path: /bxpty
+      headers: { Host: krsctca.66666654.xyz }
+  -
+    name: '新加坡1 | 0x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: sgpa.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: sgpa.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: sgpa.5489265.xyz }
+  -
+    name: '日本1 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: pana.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: pana.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: pana.5489265.xyz }
+  -
+    name: '日本2 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: panb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: panb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: panb.5489265.xyz }
+  -
+    name: '日本3 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: panc.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: panc.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: panc.5489265.xyz }
+  -
+    name: '日本A | 1x'
+    type: vmess
+    server: jpaa.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: jpa.76898102.xyz
+    network: ws
+    ws-path: /vuesshtgk
+    ws-headers:
+      Host: jpa.76898102.xyz
+    ws-opts:
+      path: /vuesshtgk
+      headers: { Host: jpa.76898102.xyz }
+  -
+    name: '日本B | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: pane.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: pane.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: pane.5489265.xyz }
+  -
+    name: '印度-孟买1 | 0.8x'
+    type: vmess
+    server: menmaza.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: menmaz.76898102.xyz
+    network: ws
+    ws-path: /eduifbiefg
+    ws-headers:
+      Host: menmaz.76898102.xyz
+    ws-opts:
+      path: /eduifbiefg
+      headers: { Host: menmaz.76898102.xyz }
+  -
+    name: '印度-孟买2 | 0.8x'
+    type: vmess
+    server: menmazbb.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: menmazb.76898102.xyz
+    network: ws
+    ws-path: /eduifbiefg
+    ws-headers:
+      Host: menmazb.76898102.xyz
+    ws-opts:
+      path: /eduifbiefg
+      headers: { Host: menmazb.76898102.xyz }
+  -
+    name: '印度1-海得拉巴 | 0.8x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: inhia.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: inhia.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: inhia.5489265.xyz }
+  -
+    name: '印度2-海得拉巴 | 0.8x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: inhib.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: inhib.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: inhib.5489265.xyz }
+  -
+    name: '印度3-海得拉巴 | 0.8x'
+    type: vmess
+    server: ydbb.76898102.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: ydb.76898102.xyz
+    network: ws
+    ws-path: /buiaebd
+    ws-headers:
+      Host: ydb.76898102.xyz
+    ws-opts:
+      path: /buiaebd
+      headers: { Host: ydb.76898102.xyz }
+  -
+    name: '印度4-海得拉巴 | 0.8x'
+    type: vmess
+    server: meeaa.555556789.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: meea.555556789.xyz
+    network: ws
+    ws-path: /buiaebd
+    ws-headers:
+      Host: meea.555556789.xyz
+    ws-opts:
+      path: /buiaebd
+      headers: { Host: meea.555556789.xyz }
+  -
+    name: '印度5-海得拉巴 | 0.8x'
+    type: vmess
+    server: meebb.555556789.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: meeb.555556789.xyz
+    network: ws
+    ws-path: /buiaebd
+    ws-headers:
+      Host: meeb.555556789.xyz
+    ws-opts:
+      path: /buiaebd
+      headers: { Host: meeb.555556789.xyz }
+  -
+    name: '印度6-海得拉巴 | 0.8x'
+    type: vmess
+    server: meecc.555556789.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: meec.555556789.xyz
+    network: ws
+    ws-path: /buiaebd
+    ws-headers:
+      Host: meec.555556789.xyz
+    ws-opts:
+      path: /buiaebd
+      headers: { Host: meec.555556789.xyz }
+  -
+    name: '印度7-海得拉巴 | 0.8x'
+    type: vmess
+    server: meedd.555556789.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: meed.555556789.xyz
+    network: ws
+    ws-path: /buiaebd
+    ws-headers:
+      Host: meed.555556789.xyz
+    ws-opts:
+      path: /buiaebd
+      headers: { Host: meed.555556789.xyz }
+  -
+    name: '澳大利亚-墨尔本1 | 0.8x'
+    type: vmess
+    server: muoaeraa.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: muoaera.76898102.xyz
+    network: ws
+    ws-path: /aiufbwuge
+    ws-headers:
+      Host: muoaera.76898102.xyz
+    ws-opts:
+      path: /aiufbwuge
+      headers: { Host: muoaera.76898102.xyz }
+  -
+    name: '澳大利亚-墨尔本2 | 0.8x'
+    type: vmess
+    server: muoaerbb.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: muoaerb.76898102.xyz
+    network: ws
+    ws-path: /aiufbwuge
+    ws-headers:
+      Host: muoaerb.76898102.xyz
+    ws-opts:
+      path: /aiufbwuge
+      headers: { Host: muoaerb.76898102.xyz }
+  -
+    name: '澳大利亚-悉尼1 | 0.8x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: ausya.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: ausya.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: ausya.5489265.xyz }
+  -
+    name: '澳大利亚-悉尼2 | 0.8x'
+    type: vmess
+    server: xnsybb.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: xnsyb.76898102.xyz
+    network: ws
+    ws-path: /nfdguiw
+    ws-headers:
+      Host: xnsyb.76898102.xyz
+    ws-opts:
+      path: /nfdguiw
+      headers: { Host: xnsyb.76898102.xyz }
+  -
+    name: '南非1-约翰内斯堡 | 0.1x'
+    type: vmess
+    server: jhpcza.66666654.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: jhpcz.66666654.xyz
+    network: ws
+    ws-path: /bxpty
+    ws-headers:
+      Host: jhpcz.66666654.xyz
+    ws-opts:
+      path: /bxpty
+      headers: { Host: jhpcz.66666654.xyz }
+  -
+    name: '南非2-约翰内斯堡 | 0.1x'
+    type: vmess
+    server: nfbb.66666654.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: nfb.66666654.xyz
+    network: ws
+    ws-path: /aiufbwuge
+    ws-headers:
+      Host: nfb.66666654.xyz
+    ws-opts:
+      path: /aiufbwuge
+      headers: { Host: nfb.66666654.xyz }
+  -
+    name: '土耳其 | 1x'
+    type: vmess
+    server: trorc.66666654.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: tror.66666654.xyz
+    network: ws
+    ws-path: /aoigbneioueb
+    ws-headers:
+      Host: tror.66666654.xyz
+    ws-opts:
+      path: /aoigbneioueb
+      headers: { Host: tror.66666654.xyz }
+  -
+    name: '智利圣地亚哥1-广播阿根廷(白天默认UTC+8) | 0.1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: gena.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: gena.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: gena.5489265.xyz }
+  -
+    name: '智利圣地亚哥2-广播阿根廷(白天默认UTC+8)  | 0.1x'
+    type: vmess
+    server: iaudhcui.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: asfgdvf.76898102.xyz
+    network: ws
+    ws-path: /nfdguiw
+    ws-headers:
+      Host: asfgdvf.76898102.xyz
+    ws-opts:
+      path: /nfdguiw
+      headers: { Host: asfgdvf.76898102.xyz }
+  -
+    name: '美国东部阿什本1 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: auba.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: auba.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: auba.5489265.xyz }
+  -
+    name: '美国东部阿什本2 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: aubb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: aubb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: aubb.5489265.xyz }
+  -
+    name: '美国东部阿什本3 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: aubc.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: aubc.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: aubc.5489265.xyz }
+  -
+    name: '美国西部凤凰城1 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: pha.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: pha.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: pha.5489265.xyz }
+  -
+    name: '美国西部凤凰城2 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: phb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: phb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: phb.5489265.xyz }
+  -
+    name: '美国西部圣何塞1 | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: sjca.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: sjca.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: sjca.5489265.xyz }
+  -
+    name: '美国西部圣何塞2 | 1x'
+    type: vmess
+    server: shsawcaa.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: shsawca.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: shsawca.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: shsawca.76898102.xyz }
+  -
+    name: '美国西部洛杉矶1 | 1x'
+    type: vmess
+    server: laxdscaa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: laxdsca.76898102.xyz
+    network: ws
+    ws-path: /bvdfyueusf
+    ws-headers:
+      Host: laxdsca.76898102.xyz
+    ws-opts:
+      path: /bvdfyueusf
+      headers: { Host: laxdsca.76898102.xyz }
+  -
+    name: '美国西部洛杉矶2 | 1x'
+    type: vmess
+    server: iudbvcxa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: laxdscb.76898102.xyz
+    network: ws
+    ws-path: /bvdfyueusf
+    ws-headers:
+      Host: laxdscb.76898102.xyz
+    ws-opts:
+      path: /bvdfyueusf
+      headers: { Host: laxdscb.76898102.xyz }
+  -
+    name: '巴西1 | 0.1x'
+    type: vmess
+    server: bxaa.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: bxa.76898102.xyz
+    network: ws
+    ws-path: /bxqmiao
+    ws-headers:
+      Host: bxa.76898102.xyz
+    ws-opts:
+      path: /bxqmiao
+      headers: { Host: bxa.76898102.xyz }
+  -
+    name: '巴西2 | 0.1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: baxb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: baxb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: baxb.5489265.xyz }
+  -
+    name: '巴西4 | 0.1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: baxd.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: baxd.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: baxd.5489265.xyz }
+  -
+    name: '巴西5 | 0.1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: baxe.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: baxe.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: baxe.5489265.xyz }
+  -
+    name: '巴西7 | 0.1x'
+    type: vmess
+    server: baxtc.66666654.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: baxt.66666654.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: baxt.66666654.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: baxt.66666654.xyz }
+  -
+    name: '加拿大-蒙特利尔1 | 0.5x'
+    type: vmess
+    server: camtleaa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: camtlea.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: camtlea.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: camtlea.76898102.xyz }
+  -
+    name: '加拿大-蒙特利尔2 | 0.5x'
+    type: vmess
+    server: camtlebb.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: camtleb.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: camtleb.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: camtleb.76898102.xyz }
+  -
+    name: '法国1 | 0.5x'
+    type: vmess
+    server: frsadubiaa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: frsadubia.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: frsadubia.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: frsadubia.76898102.xyz }
+  -
+    name: '法国2 | 0.5x'
+    type: vmess
+    server: frsadubibb.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: frsadubib.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: frsadubib.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: frsadubib.76898102.xyz }
+  -
+    name: '法国3 | 0.5x'
+    type: vmess
+    server: frsadubicc.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: frsadubic.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: frsadubic.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: frsadubic.76898102.xyz }
+  -
+    name: '法国4 | 0.5x'
+    type: vmess
+    server: frsadubidd.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: frsadubid.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: frsadubid.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: frsadubid.76898102.xyz }
+  -
+    name: '俄罗斯-BT/PT端口:4500-DMCA | 1x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: rus.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: rus.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: rus.5489265.xyz }
+  -
+    name: '德国1 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: dea.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: dea.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: dea.5489265.xyz }
+  -
+    name: '德国2 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: deb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: deb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: deb.5489265.xyz }
+  -
+    name: '德国3 | 0.5x'
+    type: vmess
+    server: decc.66666654.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: dec.66666654.xyz
+    network: ws
+    ws-path: /aoigbneioueb
+    ws-headers:
+      Host: dec.66666654.xyz
+    ws-opts:
+      path: /aoigbneioueb
+      headers: { Host: dec.66666654.xyz }
+  -
+    name: '德国4 | 0.5x'
+    type: vmess
+    server: dedd.66666654.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: ded.66666654.xyz
+    network: ws
+    ws-path: /aoigbneioueb
+    ws-headers:
+      Host: ded.66666654.xyz
+    ws-opts:
+      path: /aoigbneioueb
+      headers: { Host: ded.66666654.xyz }
+  -
+    name: '英国1 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: gba.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: gba.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: gba.5489265.xyz }
+  -
+    name: '英国2 | 0.5x'
+    type: vmess
+    server: gbbb.76898102.xyz
+    port: 2052
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: gbb.76898102.xyz
+    network: ws
+    ws-path: /miao
+    ws-headers:
+      Host: gbb.76898102.xyz
+    ws-opts:
+      path: /miao
+      headers: { Host: gbb.76898102.xyz }
+  -
+    name: '英国3 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2086
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: gbc.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: gbc.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: gbc.5489265.xyz }
+  -
+    name: '荷兰1 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2082
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: nla.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: nla.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: nla.5489265.xyz }
+  -
+    name: '荷兰2 | 0.5x'
+    type: vmess
+    server: speedcl.5489265.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: nlb.5489265.xyz
+    network: ws
+    ws-path: /uasfbbc
+    ws-headers:
+      Host: nlb.5489265.xyz
+    ws-opts:
+      path: /uasfbbc
+      headers: { Host: nlb.5489265.xyz }
+  -
+    name: '荷兰3 | 0.5x'
+    type: vmess
+    server: amstdheaa.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: amstdhea.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: amstdhea.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: amstdhea.76898102.xyz }
+  -
+    name: '荷兰4 | 0.5x'
+    type: vmess
+    server: amstdhebb.76898102.xyz
+    port: 2095
+    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
+    alterId: 0
+    cipher: aes-128-gcm
+    udp: true
+    servername: amstdheb.76898102.xyz
+    network: ws
+    ws-path: /funsdfrh
+    ws-headers:
+      Host: amstdheb.76898102.xyz
+    ws-opts:
+      path: /funsdfrh
+      headers: { Host: amstdheb.76898102.xyz }
+  - name: JP sg5 日本
+    type: vmess
+    server: sg5.6yhy.top
+    port: 443
+    uuid: 612d958a-bc4a-328b-9f91-342116457183
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: sg5.6yhy.top
+    network: ws
+    ws-opts:
+      path: /6yhy
+      headers:
+        Host: sg5.6yhy.top
+    ws-path: /6yhy
+    ws-headers:
+      Host: sg5.6yhy.top
+    tls: true
+  - name: JP 日本 sg4
+    type: vmess
+    server: zf.sh.cu.edu.kg
+    port: 16565
+    uuid: 612d958a-bc4a-328b-9f91-342116457183
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: sg4.6yhy.top
+    network: ws
+    ws-opts:
+      path: /6yhy
+      headers:
+        Host: sg4.6yhy.top
+    ws-path: /6yhy
+    ws-headers:
+      Host: sg4.6yhy.top
+    tls: true
+    skip-cert-verify: true
+  - name: US sg7 dedipath圣何赛
+    type: vmess
+    server: zf.hn.cu.edu.kg
+    port: 17837
+    uuid: 612d958a-bc4a-328b-9f91-342116457183
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: sg7.6yhy.top
+    network: ws
+    ws-opts:
+      path: /6yhy
+      headers:
+        Host: sg7.6yhy.top
+    ws-path: /6yhy
+    ws-headers:
+      Host: sg7.6yhy.top
+    tls: true
+    skip-cert-verify: true
+  - name: US sg9 digitalvirt洛杉矶
+    type: vmess
+    server: sg9.6yhy.top
+    port: 443
+    uuid: 612d958a-bc4a-328b-9f91-342116457183
+    alterId: 0
+    cipher: auto
+    udp: true
+    servername: sg9.6yhy.top
+    network: ws
+    ws-opts:
+      path: /6yhy
+      headers:
+        Host: sg9.6yhy.top
+    ws-path: /6yhy
+    ws-headers:
+      Host: sg9.6yhy.top
+    tls: true
+  - {name: 🇺🇸 美国 圣何塞 V2 -1, server: 108.165.211.158, port: 40056, client-fingerprint: chrome, type: vmess, uuid: b23ec8d4-666d-3497-a69b-48a8129a1177, alterId: 4, cipher: auto, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: microsoft.com}}, udp: true}
+proxy-groups:
+  - name: 🔰国外流量
+    type: select
+    proxies:
+      - 通道專區
+      - Chain proxy-Dabai
+      - Chain proxy-PORTX
+      - PORTX-Downloads
+      - Chain proxy-FREE
+      - Chain proxy-KEJIBEAR
+      - Chain proxy-REIMU
+      - Chain proxy-DripCloud
+      - DingJi-Downlaods
+      - Chain proxy-DingJI
+      - Chain proxy-BaiPao
+      - BaiPao-Downlaods
+      - Chain proxy-Helium Network
+      - Chain proxy-6yhy
+      - 6YHY-Downlaods
+      - Chain proxy-SANXI
+      - Chain proxy-Mars
+      - Chain proxy-USES
+      - Downloads
+      - SSR專區
+      - USES
+  - name: 通道專區
+    proxies:
+      - AC900_Clash
+      - AC900_Nekoray
+      - Windows_V2rayN
+      - Windows_V2rayN_SingBox
+      - Windows_Nekoray
+      - Windows_Nekoray2
+      - Windows_Nekoray3
+      - Windows_ClashN
+      - Office_V2rayN
+      - Office_V2rayN_SingBox
+      - Office_Nekoray
+      - Office_ClashN
+      - Netgear_V2rayN
+      - Netgear_ClashN
+      - Netgear_ClashForWindows
+      - Netgear_Nekoray
+      - Netgear_Nekoray2
+    type: select
+    _index: 2
+  - name: SSR專區
+    proxies:
+      - 🇹🇼 TW-O-SSR-01
+    type: select
+  - name: Chain proxy-Dabai
+    proxies:
+      - DaBai-Downlaods
+      - Downloads
+    type: relay
+  - name: Chain proxy-PORTX
+    proxies:
+      - PORTX-Downloads
+      - Downloads
+    type: relay
+  - name: Chain proxy-FREE
+    proxies:
+      - FREE-Downloads
+      - Downloads
+    type: relay
+  - name: Chain proxy-KEJIBEAR
+    proxies:
+      - KEJIBEAR-Downloads
+      - Downloads
+    type: relay
+  - name: Chain proxy-REIMU
+    proxies:
+      - REIMU-Downloads
+      - Downloads
+    type: relay
+    
+  - name: Chain proxy-DripCloud
+    proxies:
+      - DripCloud Group
+      - Downloads
+    type: relay
+  - name: Chain proxy-DingJI
+    proxies:
+      - DingJi-Downlaods
+      - Downloads
+    type: relay 
+  - name: Chain proxy-BaiPao
+    proxies:
+      - BaiPao-Downlaods
+      - Downloads
+    type: relay
+  - name: Chain proxy-Helium Network
+    proxies:
+      - Helium Network-Downloads
+      - Downloads
+    type: relay
+  - name: Chain proxy-6yhy
+    proxies:
+      - 6YHY-Downlaods
+      - Downloads
+    type: relay
+  - name: Chain proxy-SANXI
+    proxies:
+      - SANXI-Downloads
+      - Downloads
+    type: relay
+  - name: Chain proxy-Mars
+    proxies:
+      - Mars-Download
+      - Downloads
+    type: relay
+    
+  - name: Chain proxy-USES
+    proxies:
+      - USES
+      - 🇯🇵 JP-X-03 (V2/Clash)
+    type: relay
+  - name: Downloads
+    proxies:
+      - 🇨🇦 CA-O-01
+      - 🇬🇧 GB-O-01-sdgf
+      - 🇰🇷 KR-O-01
+      - 🇹🇼 TW-O-01
+      - 🇹🇼 TW-O-02
+      - 🇺🇸 US-O-03
+      - 🇺🇸 US-O-05
+      - 🇺🇸 US-O-06
+      - 🇺🇸 US-O-07-sdgf
+      - 🇺🇸 US-O-09-xn
+      - 🇺🇸 US-O-10-edtu
+      - 🇺🇸 US-O-11
+      - 🇺🇸 US-O-12
+    type: select
+  - name: USES
+    proxies:
+      - 🇫🇷 FR-X-001
+      - 🇯🇵 JP-X-03 (V2/Clash)
+      - 🇯🇵 JP-X-007
+      - 🇸🇬 SG-X-001
+      - 🇸🇬 SG-X-002
+      - 🇸🇬 SG-X-003
+      - 🇸🇬 SG-X-004
+      - 🇸🇬 SG-X-007
+      - 🇹🇼 TW-X-001
+      - 🇹🇼 TW-X-002
+      - 🇹🇼 TW-X-003
+      - 🇹🇼 TW-X-004
+      - 🇹🇼 TW-X-005
+      - 🇺🇸 US-X-003
+      - 🇺🇸 US-X-004
+      - 🇺🇸 US-X-006
+      - 🇺🇸 US-X-007
+      - 🇺🇸 US-X-008
+    type: select
+  - name: DripCloud Group
+    proxies:
+      - 🇺🇸 美国 圣何塞 V2 -1
+    type: select
+rules:
+  - DOMAIN-SUFFIX,leech.ninja,🔰国外流量
+  - DOMAIN-SUFFIX,jpavz.net,🔰国外流量
+  - DOMAIN-SUFFIX,zimg.jp,🔰国外流量
+  - DOMAIN-SUFFIX,dmmgames.com,🔰国外流量
+  - DOMAIN-SUFFIX,ancl.jp,🔰国外流量
+  - DOMAIN-SUFFIX,google.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,criteo.com,🔰国外流量
+  - DOMAIN-SUFFIX,adnxs.com,🔰国外流量
+  - DOMAIN-SUFFIX,shinobi.jp,🔰国外流量
+  - DOMAIN-SUFFIX,gsspat.jp,🔰国外流量
+  - DOMAIN-SUFFIX,azureedge.net,🔰国外流量
+  - DOMAIN-SUFFIX,chat.openai.com,🔰国外流量
+  - DOMAIN-SUFFIX,ip.sb,🔰国外流量
+  - DOMAIN-SUFFIX,playstation.com,🔰国外流量
+  - DOMAIN-SUFFIX,javarchive.com,🔰国外流量
+  - DOMAIN-SUFFIX,japvs.net,🔰国外流量
+  - DOMAIN,nx-botz-nx-botz.koyeb.app,🔰国外流量
+  - DOMAIN,tg-bots.fra.s3.noyes.in,🔰国外流量
+  - DOMAIN-SUFFIX,google.com.hk,🔰国外流量
+  - DOMAIN-SUFFIX,bahamut.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,cloudflare.com,🔰国外流量
+  - DOMAIN-SUFFIX,googleusercontent.com,🔰国外流量
+  - DOMAIN-SUFFIX,playstation.net,🔰国外流量
+  - DOMAIN-SUFFIX,v2rayse.com,🔰国外流量
+  - DOMAIN-SUFFIX,zero.marisalnc.com,🔰国外流量
+  - DOMAIN-SUFFIX,googletagmanager.com,🔰国外流量
+  - DOMAIN-SUFFIX,nflxvideo.net,🔰国外流量
+  - DOMAIN-SUFFIX,speedtest.hk.chinamobile.com,🔰国外流量
+  - DOMAIN-SUFFIX,shenron.smartone.com.prod.hosts.ooklaserver.net,🔰国外流量
+  - DOMAIN-SUFFIX,secure-us.imrworldwide.com,🔰国外流量
+  - DOMAIN-SUFFIX,speedtestbb.hk.chinamobile.com,🔰国外流量
+  - DOMAIN-SUFFIX,ookla-speedtest.hgconair.hgc.com.hk,🔰国外流量
+  - DOMAIN-SUFFIX,jdbstatic.com,🔰国外流量
+  - DOMAIN-SUFFIX,ip125.com,🔰国外流量
+  - DOMAIN-SUFFIX,jpavs.net,🔰国外流量
+  - DOMAIN-SUFFIX,sukebei.nyaa.si,🔰国外流量
+  - DOMAIN-SUFFIX,nyaa.si,🔰国外流量
+  - DOMAIN-SUFFIX,wnacg.org,🔰国外流量
+  - DOMAIN-SUFFIX,javstore.net,🔰国外流量
+  - DOMAIN-SUFFIX,googleapis.com,🔰国外流量
+  - DOMAIN-SUFFIX,bahamut.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,github.com,🔰国外流量
+  - DOMAIN-SUFFIX,legend-clover.net,🔰国外流量
+  - DOMAIN-SUFFIX,game.ayarabu.com,🔰国外流量
+  - DOMAIN-SUFFIX,pixhost.to,🔰国外流量
+  - DOMAIN-SUFFIX,real-debrid.com,🔰国外流量
+  - DOMAIN-SUFFIX,youtubekids.com,🔰国外流量
+  - DOMAIN-SUFFIX,happymh.com,🔰国外流量
+  - DOMAIN-SUFFIX,herokuapp.com,🔰国外流量
+  - DOMAIN-SUFFIX,google.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,googlevideo.com,🔰国外流量
+  - DOMAIN-SUFFIX,google.com,🔰国外流量
+  - DOMAIN-SUFFIX,youtube.com,🔰国外流量
+  - DOMAIN-SUFFIX,1.1.1.1,🔰国外流量
+  - DOMAIN-SUFFIX,bulianglin.com,🔰国外流量
+  - DOMAIN-SUFFIX,gitlab.com,🔰国外流量
+  - DOMAIN-SUFFIX,gamer.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,fast.com,🔰国外流量
+  - DOMAIN-SUFFIX,smtp,DIRECT
+  - DOMAIN-KEYWORD,aria2,DIRECT
+  - DOMAIN-SUFFIX,ampproject.org,🔰国外流量
+  - DOMAIN-SUFFIX,appspot.com,🔰国外流量
+  - DOMAIN-SUFFIX,blogger.com,🔰国外流量
+  - DOMAIN-SUFFIX,getoutline.org,🔰国外流量
+  - DOMAIN-SUFFIX,gvt0.com,🔰国外流量
+  - DOMAIN-SUFFIX,gvt1.com,🔰国外流量
+  - DOMAIN-SUFFIX,gvt3.com,🔰国外流量
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🔰国外流量
+  - DOMAIN-KEYWORD,blogspot,🔰国外流量
+  - DOMAIN-SUFFIX,onedrive.live.com,🔰国外流量
+  - DOMAIN-SUFFIX,xboxlive.com,🔰国外流量
+  - DOMAIN-SUFFIX,cdninstagram.com,🔰国外流量
+  - DOMAIN-SUFFIX,fb.com,🔰国外流量
+  - DOMAIN-SUFFIX,fb.me,🔰国外流量
+  - DOMAIN-SUFFIX,fbaddins.com,🔰国外流量
+  - DOMAIN-SUFFIX,fbcdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,fbsbx.com,🔰国外流量
+  - DOMAIN-SUFFIX,fbworkmail.com,🔰国外流量
+  - DOMAIN-SUFFIX,instagram.com,🔰国外流量
+  - DOMAIN-SUFFIX,m.me,🔰国外流量
+  - DOMAIN-SUFFIX,messenger.com,🔰国外流量
+  - DOMAIN-SUFFIX,oculus.com,🔰国外流量
+  - DOMAIN-SUFFIX,oculuscdn.com,🔰国外流量
+  - DOMAIN-SUFFIX,rocksdb.org,🔰国外流量
+  - DOMAIN-SUFFIX,whatsapp.com,🔰国外流量
+  - DOMAIN-SUFFIX,whatsapp.net,🔰国外流量
+  - DOMAIN-KEYWORD,facebook,🔰国外流量
+  - IP-CIDR,3.123.36.126/32,🔰国外流量,no-resolve
+  - IP-CIDR,35.157.215.84/32,🔰国外流量,no-resolve
+  - IP-CIDR,35.157.217.255/32,🔰国外流量,no-resolve
+  - IP-CIDR,52.58.209.134/32,🔰国外流量,no-resolve
+  - IP-CIDR,54.93.124.31/32,🔰国外流量,no-resolve
+  - IP-CIDR,54.162.243.80/32,🔰国外流量,no-resolve
+  - IP-CIDR,54.173.34.141/32,🔰国外流量,no-resolve
+  - IP-CIDR,54.235.23.242/32,🔰国外流量,no-resolve
+  - IP-CIDR,169.45.248.118/32,🔰国外流量,no-resolve
+  - DOMAIN-SUFFIX,pscp.tv,🔰国外流量
+  - DOMAIN-SUFFIX,periscope.tv,🔰国外流量
+  - DOMAIN-SUFFIX,t.co,🔰国外流量
+  - DOMAIN-SUFFIX,twimg.co,🔰国外流量
+  - DOMAIN-SUFFIX,twimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,twitpic.com,🔰国外流量
+  - DOMAIN-SUFFIX,vine.co,🔰国外流量
+  - DOMAIN-KEYWORD,twitter,🔰国外流量
+  - DOMAIN-SUFFIX,t.me,🔰国外流量
+  - DOMAIN-SUFFIX,tdesktop.com,🔰国外流量
+  - DOMAIN-SUFFIX,telegra.ph,🔰国外流量
+  - DOMAIN-SUFFIX,telegram.me,🔰国外流量
+  - DOMAIN-SUFFIX,telegram.org,🔰国外流量
+  - IP-CIDR,91.108.4.0/22,🔰国外流量,no-resolve
+  - IP-CIDR,91.108.8.0/22,🔰国外流量,no-resolve
+  - IP-CIDR,91.108.12.0/22,🔰国外流量,no-resolve
+  - IP-CIDR,91.108.16.0/22,🔰国外流量,no-resolve
+  - IP-CIDR,91.108.56.0/22,🔰国外流量,no-resolve
+  - IP-CIDR,149.154.160.0/20,🔰国外流量,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,🔰国外流量,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,🔰国外流量,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,🔰国外流量,no-resolve
+  - DOMAIN-SUFFIX,line.me,🔰国外流量
+  - DOMAIN-SUFFIX,line-apps.com,🔰国外流量
+  - DOMAIN-SUFFIX,line-scdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,naver.jp,🔰国外流量
+  - IP-CIDR,103.2.30.0/23,🔰国外流量,no-resolve
+  - IP-CIDR,125.209.208.0/20,🔰国外流量,no-resolve
+  - IP-CIDR,147.92.128.0/17,🔰国外流量,no-resolve
+  - IP-CIDR,203.104.144.0/21,🔰国外流量,no-resolve
+  - DOMAIN-SUFFIX,4shared.com,🔰国外流量
+  - DOMAIN-SUFFIX,520cc.cc,🔰国外流量
+  - DOMAIN-SUFFIX,881903.com,🔰国外流量
+  - DOMAIN-SUFFIX,9cache.com,🔰国外流量
+  - DOMAIN-SUFFIX,9gag.com,🔰国外流量
+  - DOMAIN-SUFFIX,abc.com,🔰国外流量
+  - DOMAIN-SUFFIX,abc.net.au,🔰国外流量
+  - DOMAIN-SUFFIX,abebooks.com,🔰国外流量
+  - DOMAIN-SUFFIX,amazon.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,apigee.com,🔰国外流量
+  - DOMAIN-SUFFIX,apk-dl.com,🔰国外流量
+  - DOMAIN-SUFFIX,apkfind.com,🔰国外流量
+  - DOMAIN-SUFFIX,apkmirror.com,🔰国外流量
+  - DOMAIN-SUFFIX,apkmonk.com,🔰国外流量
+  - DOMAIN-SUFFIX,apkpure.com,🔰国外流量
+  - DOMAIN-SUFFIX,aptoide.com,🔰国外流量
+  - DOMAIN-SUFFIX,archive.is,🔰国外流量
+  - DOMAIN-SUFFIX,archive.org,🔰国外流量
+  - DOMAIN-SUFFIX,arte.tv,🔰国外流量
+  - DOMAIN-SUFFIX,artstation.com,🔰国外流量
+  - DOMAIN-SUFFIX,arukas.io,🔰国外流量
+  - DOMAIN-SUFFIX,ask.com,🔰国外流量
+  - DOMAIN-SUFFIX,avg.com,🔰国外流量
+  - DOMAIN-SUFFIX,avgle.com,🔰国外流量
+  - DOMAIN-SUFFIX,badoo.com,🔰国外流量
+  - DOMAIN-SUFFIX,bandwagonhost.com,🔰国外流量
+  - DOMAIN-SUFFIX,bbc.com,🔰国外流量
+  - DOMAIN-SUFFIX,behance.net,🔰国外流量
+  - DOMAIN-SUFFIX,bibox.com,🔰国外流量
+  - DOMAIN-SUFFIX,biggo.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,binance.com,🔰国外流量
+  - DOMAIN-SUFFIX,bitcointalk.org,🔰国外流量
+  - DOMAIN-SUFFIX,bitfinex.com,🔰国外流量
+  - DOMAIN-SUFFIX,bitmex.com,🔰国外流量
+  - DOMAIN-SUFFIX,bit-z.com,🔰国外流量
+  - DOMAIN-SUFFIX,bloglovin.com,🔰国外流量
+  - DOMAIN-SUFFIX,bloomberg.cn,🔰国外流量
+  - DOMAIN-SUFFIX,bloomberg.com,🔰国外流量
+  - DOMAIN-SUFFIX,blubrry.com,🔰国外流量
+  - DOMAIN-SUFFIX,book.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,booklive.jp,🔰国外流量
+  - DOMAIN-SUFFIX,books.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,boslife.net,🔰国外流量
+  - DOMAIN-SUFFIX,box.com,🔰国外流量
+  - DOMAIN-SUFFIX,businessinsider.com,🔰国外流量
+  - DOMAIN-SUFFIX,bwh1.net,🔰国外流量
+  - DOMAIN-SUFFIX,castbox.fm,🔰国外流量
+  - DOMAIN-SUFFIX,cbc.ca,🔰国外流量
+  - DOMAIN-SUFFIX,cdw.com,🔰国外流量
+  - DOMAIN-SUFFIX,change.org,🔰国外流量
+  - DOMAIN-SUFFIX,channelnewsasia.com,🔰国外流量
+  - DOMAIN-SUFFIX,ck101.com,🔰国外流量
+  - DOMAIN-SUFFIX,clarionproject.org,🔰国外流量
+  - DOMAIN-SUFFIX,clyp.it,🔰国外流量
+  - DOMAIN-SUFFIX,cna.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,comparitech.com,🔰国外流量
+  - DOMAIN-SUFFIX,conoha.jp,🔰国外流量
+  - DOMAIN-SUFFIX,crucial.com,🔰国外流量
+  - DOMAIN-SUFFIX,cts.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,cw.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,cyberctm.com,🔰国外流量
+  - DOMAIN-SUFFIX,dailymotion.com,🔰国外流量
+  - DOMAIN-SUFFIX,dailyview.tw,🔰国外流量
+  - DOMAIN-SUFFIX,daum.net,🔰国外流量
+  - DOMAIN-SUFFIX,daumcdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,dcard.tw,🔰国外流量
+  - DOMAIN-SUFFIX,deepdiscount.com,🔰国外流量
+  - DOMAIN-SUFFIX,depositphotos.com,🔰国外流量
+  - DOMAIN-SUFFIX,deviantart.com,🔰国外流量
+  - DOMAIN-SUFFIX,disconnect.me,🔰国外流量
+  - DOMAIN-SUFFIX,discordapp.com,🔰国外流量
+  - DOMAIN-SUFFIX,discordapp.net,🔰国外流量
+  - DOMAIN-SUFFIX,disqus.com,🔰国外流量
+  - DOMAIN-SUFFIX,dlercloud.com,🔰国外流量
+  - DOMAIN-SUFFIX,dns2go.com,🔰国外流量
+  - DOMAIN-SUFFIX,dowjones.com,🔰国外流量
+  - DOMAIN-SUFFIX,dropbox.com,🔰国外流量
+  - DOMAIN-SUFFIX,dropboxusercontent.com,🔰国外流量
+  - DOMAIN-SUFFIX,duckduckgo.com,🔰国外流量
+  - DOMAIN-SUFFIX,dw.com,🔰国外流量
+  - DOMAIN-SUFFIX,dynu.com,🔰国外流量
+  - DOMAIN-SUFFIX,earthcam.com,🔰国外流量
+  - DOMAIN-SUFFIX,ebookservice.tw,🔰国外流量
+  - DOMAIN-SUFFIX,economist.com,🔰国外流量
+  - DOMAIN-SUFFIX,edgecastcdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,edu,🔰国外流量
+  - DOMAIN-SUFFIX,elpais.com,🔰国外流量
+  - DOMAIN-SUFFIX,enanyang.my,🔰国外流量
+  - DOMAIN-SUFFIX,encyclopedia.com,🔰国外流量
+  - DOMAIN-SUFFIX,esoir.be,🔰国外流量
+  - DOMAIN-SUFFIX,etherscan.io,🔰国外流量
+  - DOMAIN-SUFFIX,euronews.com,🔰国外流量
+  - DOMAIN-SUFFIX,evozi.com,🔰国外流量
+  - DOMAIN-SUFFIX,feedly.com,🔰国外流量
+  - DOMAIN-SUFFIX,firech.at,🔰国外流量
+  - DOMAIN-SUFFIX,flickr.com,🔰国外流量
+  - DOMAIN-SUFFIX,flitto.com,🔰国外流量
+  - DOMAIN-SUFFIX,foreignpolicy.com,🔰国外流量
+  - DOMAIN-SUFFIX,freebrowser.org,🔰国外流量
+  - DOMAIN-SUFFIX,freewechat.com,🔰国外流量
+  - DOMAIN-SUFFIX,freeweibo.com,🔰国外流量
+  - DOMAIN-SUFFIX,friday.tw,🔰国外流量
+  - DOMAIN-SUFFIX,ftchinese.com,🔰国外流量
+  - DOMAIN-SUFFIX,ftimg.net,🔰国外流量
+  - DOMAIN-SUFFIX,gate.io,🔰国外流量
+  - DOMAIN-SUFFIX,getlantern.org,🔰国外流量
+  - DOMAIN-SUFFIX,getsync.com,🔰国外流量
+  - DOMAIN-SUFFIX,globalvoices.org,🔰国外流量
+  - DOMAIN-SUFFIX,goo.ne.jp,🔰国外流量
+  - DOMAIN-SUFFIX,goodreads.com,🔰国外流量
+  - DOMAIN-SUFFIX,gov,🔰国外流量
+  - DOMAIN-SUFFIX,gov.tw,🔰国外流量
+  - DOMAIN-SUFFIX,greatfire.org,🔰国外流量
+  - DOMAIN-SUFFIX,gumroad.com,🔰国外流量
+  - DOMAIN-SUFFIX,hbg.com,🔰国外流量
+  - DOMAIN-SUFFIX,heroku.com,🔰国外流量
+  - DOMAIN-SUFFIX,hightail.com,🔰国外流量
+  - DOMAIN-SUFFIX,hk01.com,🔰国外流量
+  - DOMAIN-SUFFIX,hkbf.org,🔰国外流量
+  - DOMAIN-SUFFIX,hkbookcity.com,🔰国外流量
+  - DOMAIN-SUFFIX,hkej.com,🔰国外流量
+  - DOMAIN-SUFFIX,hket.com,🔰国外流量
+  - DOMAIN-SUFFIX,hkgolden.com,🔰国外流量
+  - DOMAIN-SUFFIX,hootsuite.com,🔰国外流量
+  - DOMAIN-SUFFIX,hudson.org,🔰国外流量
+  - DOMAIN-SUFFIX,hyread.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,ibtimes.com,🔰国外流量
+  - DOMAIN-SUFFIX,i-cable.com,🔰国外流量
+  - DOMAIN-SUFFIX,icij.org,🔰国外流量
+  - DOMAIN-SUFFIX,icoco.com,🔰国外流量
+  - DOMAIN-SUFFIX,imgur.com,🔰国外流量
+  - DOMAIN-SUFFIX,initiummall.com,🔰国外流量
+  - DOMAIN-SUFFIX,insecam.org,🔰国外流量
+  - DOMAIN-SUFFIX,ipfs.io,🔰国外流量
+  - DOMAIN-SUFFIX,issuu.com,🔰国外流量
+  - DOMAIN-SUFFIX,istockphoto.com,🔰国外流量
+  - DOMAIN-SUFFIX,japantimes.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,jiji.com,🔰国外流量
+  - DOMAIN-SUFFIX,jinx.com,🔰国外流量
+  - DOMAIN-SUFFIX,jkforum.net,🔰国外流量
+  - DOMAIN-SUFFIX,joinmastodon.org,🔰国外流量
+  - DOMAIN-SUFFIX,justmysocks.net,🔰国外流量
+  - DOMAIN-SUFFIX,justpaste.it,🔰国外流量
+  - DOMAIN-SUFFIX,kakao.com,🔰国外流量
+  - DOMAIN-SUFFIX,kakaocorp.com,🔰国外流量
+  - DOMAIN-SUFFIX,kik.com,🔰国外流量
+  - DOMAIN-SUFFIX,kobo.com,🔰国外流量
+  - DOMAIN-SUFFIX,kobobooks.com,🔰国外流量
+  - DOMAIN-SUFFIX,kodingen.com,🔰国外流量
+  - DOMAIN-SUFFIX,lemonde.fr,🔰国外流量
+  - DOMAIN-SUFFIX,lepoint.fr,🔰国外流量
+  - DOMAIN-SUFFIX,lihkg.com,🔰国外流量
+  - DOMAIN-SUFFIX,listennotes.com,🔰国外流量
+  - DOMAIN-SUFFIX,livestream.com,🔰国外流量
+  - DOMAIN-SUFFIX,logmein.com,🔰国外流量
+  - DOMAIN-SUFFIX,mail.ru,🔰国外流量
+  - DOMAIN-SUFFIX,mailchimp.com,🔰国外流量
+  - DOMAIN-SUFFIX,marc.info,🔰国外流量
+  - DOMAIN-SUFFIX,matters.news,🔰国外流量
+  - DOMAIN-SUFFIX,maying.co,🔰国外流量
+  - DOMAIN-SUFFIX,medium.com,🔰国外流量
+  - DOMAIN-SUFFIX,mega.nz,🔰国外流量
+  - DOMAIN-SUFFIX,mil,🔰国外流量
+  - DOMAIN-SUFFIX,mingpao.com,🔰国外流量
+  - DOMAIN-SUFFIX,mobile01.com,🔰国外流量
+  - DOMAIN-SUFFIX,myspace.com,🔰国外流量
+  - DOMAIN-SUFFIX,myspacecdn.com,🔰国外流量
+  - DOMAIN-SUFFIX,nanyang.com,🔰国外流量
+  - DOMAIN-SUFFIX,naver.com,🔰国外流量
+  - DOMAIN-SUFFIX,neowin.net,🔰国外流量
+  - DOMAIN-SUFFIX,newstapa.org,🔰国外流量
+  - DOMAIN-SUFFIX,nexitally.com,🔰国外流量
+  - DOMAIN-SUFFIX,nhk.or.jp,🔰国外流量
+  - DOMAIN-SUFFIX,nicovideo.jp,🔰国外流量
+  - DOMAIN-SUFFIX,nii.ac.jp,🔰国外流量
+  - DOMAIN-SUFFIX,nikkei.com,🔰国外流量
+  - DOMAIN-SUFFIX,nofile.io,🔰国外流量
+  - DOMAIN-SUFFIX,now.com,🔰国外流量
+  - DOMAIN-SUFFIX,nrk.no,🔰国外流量
+  - DOMAIN-SUFFIX,nyt.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytchina.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytcn.me,🔰国外流量
+  - DOMAIN-SUFFIX,nytco.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytimes.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytlog.com,🔰国外流量
+  - DOMAIN-SUFFIX,nytstyle.com,🔰国外流量
+  - DOMAIN-SUFFIX,ok.ru,🔰国外流量
+  - DOMAIN-SUFFIX,okex.com,🔰国外流量
+  - DOMAIN-SUFFIX,on.cc,🔰国外流量
+  - DOMAIN-SUFFIX,orientaldaily.com.my,🔰国外流量
+  - DOMAIN-SUFFIX,overcast.fm,🔰国外流量
+  - DOMAIN-SUFFIX,paltalk.com,🔰国外流量
+  - DOMAIN-SUFFIX,pao-pao.net,🔰国外流量
+  - DOMAIN-SUFFIX,parsevideo.com,🔰国外流量
+  - DOMAIN-SUFFIX,pbxes.com,🔰国外流量
+  - DOMAIN-SUFFIX,pcdvd.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,pchome.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,pcloud.com,🔰国外流量
+  - DOMAIN-SUFFIX,picacomic.com,🔰国外流量
+  - DOMAIN-SUFFIX,pinimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,pixiv.net,🔰国外流量
+  - DOMAIN-SUFFIX,player.fm,🔰国外流量
+  - DOMAIN-SUFFIX,plurk.com,🔰国外流量
+  - DOMAIN-SUFFIX,po18.tw,🔰国外流量
+  - DOMAIN-SUFFIX,potato.im,🔰国外流量
+  - DOMAIN-SUFFIX,potatso.com,🔰国外流量
+  - DOMAIN-SUFFIX,prism-break.org,🔰国外流量
+  - DOMAIN-SUFFIX,proxifier.com,🔰国外流量
+  - DOMAIN-SUFFIX,pt.im,🔰国外流量
+  - DOMAIN-SUFFIX,pts.org.tw,🔰国外流量
+  - DOMAIN-SUFFIX,pubu.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,pubu.tw,🔰国外流量
+  - DOMAIN-SUFFIX,pureapk.com,🔰国外流量
+  - DOMAIN-SUFFIX,quora.com,🔰国外流量
+  - DOMAIN-SUFFIX,quoracdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,rakuten.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,readingtimes.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,readmoo.com,🔰国外流量
+  - DOMAIN-SUFFIX,redbubble.com,🔰国外流量
+  - DOMAIN-SUFFIX,reddit.com,🔰国外流量
+  - DOMAIN-SUFFIX,redditmedia.com,🔰国外流量
+  - DOMAIN-SUFFIX,resilio.com,🔰国外流量
+  - DOMAIN-SUFFIX,reuters.com,🔰国外流量
+  - DOMAIN-SUFFIX,reutersmedia.net,🔰国外流量
+  - DOMAIN-SUFFIX,rfi.fr,🔰国外流量
+  - DOMAIN-SUFFIX,rixcloud.com,🔰国外流量
+  - DOMAIN-SUFFIX,roadshow.hk,🔰国外流量
+  - DOMAIN-SUFFIX,scmp.com,🔰国外流量
+  - DOMAIN-SUFFIX,scribd.com,🔰国外流量
+  - DOMAIN-SUFFIX,seatguru.com,🔰国外流量
+  - DOMAIN-SUFFIX,shadowsocks.org,🔰国外流量
+  - DOMAIN-SUFFIX,shopee.tw,🔰国外流量
+  - DOMAIN-SUFFIX,slideshare.net,🔰国外流量
+  - DOMAIN-SUFFIX,softfamous.com,🔰国外流量
+  - DOMAIN-SUFFIX,soundcloud.com,🔰国外流量
+  - DOMAIN-SUFFIX,ssrcloud.org,🔰国外流量
+  - DOMAIN-SUFFIX,startpage.com,🔰国外流量
+  - DOMAIN-SUFFIX,steemit.com,🔰国外流量
+  - DOMAIN-SUFFIX,steemitwallet.com,🔰国外流量
+  - DOMAIN-SUFFIX,t66y.com,🔰国外流量
+  - DOMAIN-SUFFIX,tapatalk.com,🔰国外流量
+  - DOMAIN-SUFFIX,teco-hk.org,🔰国外流量
+  - DOMAIN-SUFFIX,teco-mo.org,🔰国外流量
+  - DOMAIN-SUFFIX,teddysun.com,🔰国外流量
+  - DOMAIN-SUFFIX,textnow.me,🔰国外流量
+  - DOMAIN-SUFFIX,theguardian.com,🔰国外流量
+  - DOMAIN-SUFFIX,theinitium.com,🔰国外流量
+  - DOMAIN-SUFFIX,thetvdb.com,🔰国外流量
+  - DOMAIN-SUFFIX,tineye.com,🔰国外流量
+  - DOMAIN-SUFFIX,torproject.org,🔰国外流量
+  - DOMAIN-SUFFIX,tumblr.com,🔰国外流量
+  - DOMAIN-SUFFIX,turbobit.net,🔰国外流量
+  - DOMAIN-SUFFIX,tutanota.com,🔰国外流量
+  - DOMAIN-SUFFIX,tvboxnow.com,🔰国外流量
+  - DOMAIN-SUFFIX,udn.com,🔰国外流量
+  - DOMAIN-SUFFIX,unseen.is,🔰国外流量
+  - DOMAIN-SUFFIX,upmedia.mg,🔰国外流量
+  - DOMAIN-SUFFIX,uptodown.com,🔰国外流量
+  - DOMAIN-SUFFIX,urbandictionary.com,🔰国外流量
+  - DOMAIN-SUFFIX,ustream.tv,🔰国外流量
+  - DOMAIN-SUFFIX,uwants.com,🔰国外流量
+  - DOMAIN-SUFFIX,v2ray.com,🔰国外流量
+  - DOMAIN-SUFFIX,viber.com,🔰国外流量
+  - DOMAIN-SUFFIX,videopress.com,🔰国外流量
+  - DOMAIN-SUFFIX,vimeo.com,🔰国外流量
+  - DOMAIN-SUFFIX,voachinese.com,🔰国外流量
+  - DOMAIN-SUFFIX,voanews.com,🔰国外流量
+  - DOMAIN-SUFFIX,voxer.com,🔰国外流量
+  - DOMAIN-SUFFIX,vzw.com,🔰国外流量
+  - DOMAIN-SUFFIX,w3schools.com,🔰国外流量
+  - DOMAIN-SUFFIX,washingtonpost.com,🔰国外流量
+  - DOMAIN-SUFFIX,wattpad.com,🔰国外流量
+  - DOMAIN-SUFFIX,whoer.net,🔰国外流量
+  - DOMAIN-SUFFIX,wikimapia.org,🔰国外流量
+  - DOMAIN-SUFFIX,wikipedia.org,🔰国外流量
+  - DOMAIN-SUFFIX,wikiquote.org,🔰国外流量
+  - DOMAIN-SUFFIX,wikiwand.com,🔰国外流量
+  - DOMAIN-SUFFIX,winudf.com,🔰国外流量
+  - DOMAIN-SUFFIX,wire.com,🔰国外流量
+  - DOMAIN-SUFFIX,wordpress.com,🔰国外流量
+  - DOMAIN-SUFFIX,workflow.is,🔰国外流量
+  - DOMAIN-SUFFIX,worldcat.org,🔰国外流量
+  - DOMAIN-SUFFIX,wsj.com,🔰国外流量
+  - DOMAIN-SUFFIX,wsj.net,🔰国外流量
+  - DOMAIN-SUFFIX,xhamster.com,🔰国外流量
+  - DOMAIN-SUFFIX,xn--90wwvt03e.com,🔰国外流量
+  - DOMAIN-SUFFIX,xn--i2ru8q2qg.com,🔰国外流量
+  - DOMAIN-SUFFIX,xnxx.com,🔰国外流量
+  - DOMAIN-SUFFIX,xvideos.com,🔰国外流量
+  - DOMAIN-SUFFIX,yahoo.com,🔰国外流量
+  - DOMAIN-SUFFIX,yandex.ru,🔰国外流量
+  - DOMAIN-SUFFIX,ycombinator.com,🔰国外流量
+  - DOMAIN-SUFFIX,yesasia.com,🔰国外流量
+  - DOMAIN-SUFFIX,yes-news.com,🔰国外流量
+  - DOMAIN-SUFFIX,yomiuri.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,you-get.org,🔰国外流量
+  - DOMAIN-SUFFIX,zaobao.com,🔰国外流量
+  - DOMAIN-SUFFIX,zb.com,🔰国外流量
+  - DOMAIN-SUFFIX,zello.com,🔰国外流量
+  - DOMAIN-SUFFIX,zeronet.io,🔰国外流量
+  - DOMAIN-SUFFIX,zoom.us,🔰国外流量
+  - DOMAIN-KEYWORD,github,🔰国外流量
+  - DOMAIN-KEYWORD,jav,🔰国外流量
+  - DOMAIN-KEYWORD,pinterest,🔰国外流量
+  - DOMAIN-KEYWORD,porn,🔰国外流量
+  - DOMAIN-KEYWORD,wikileaks,🔰国外流量
+  - DOMAIN-SUFFIX,apartmentratings.com,🔰国外流量
+  - DOMAIN-SUFFIX,apartments.com,🔰国外流量
+  - DOMAIN-SUFFIX,bankmobilevibe.com,🔰国外流量
+  - DOMAIN-SUFFIX,bing.com,🔰国外流量
+  - DOMAIN-SUFFIX,booktopia.com.au,🔰国外流量
+  - DOMAIN-SUFFIX,cccat.io,🔰国外流量
+  - DOMAIN-SUFFIX,centauro.com.br,🔰国外流量
+  - DOMAIN-SUFFIX,clearsurance.com,🔰国外流量
+  - DOMAIN-SUFFIX,costco.com,🔰国外流量
+  - DOMAIN-SUFFIX,crackle.com,🔰国外流量
+  - DOMAIN-SUFFIX,depositphotos.cn,🔰国外流量
+  - DOMAIN-SUFFIX,dish.com,🔰国外流量
+  - DOMAIN-SUFFIX,dmm.co.jp,🔰国外流量
+  - DOMAIN-SUFFIX,dmm.com,🔰国外流量
+  - DOMAIN-SUFFIX,dnvod.tv,🔰国外流量
+  - DOMAIN-SUFFIX,esurance.com,🔰国外流量
+  - DOMAIN-SUFFIX,extmatrix.com,🔰国外流量
+  - DOMAIN-SUFFIX,fastpic.ru,🔰国外流量
+  - DOMAIN-SUFFIX,flipboard.com,🔰国外流量
+  - DOMAIN-SUFFIX,fnac.be,🔰国外流量
+  - DOMAIN-SUFFIX,fnac.com,🔰国外流量
+  - DOMAIN-SUFFIX,funkyimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,fxnetworks.com,🔰国外流量
+  - DOMAIN-SUFFIX,gettyimages.com,🔰国外流量
+  - DOMAIN-SUFFIX,go.com,🔰国外流量
+  - DOMAIN-SUFFIX,here.com,🔰国外流量
+  - DOMAIN-SUFFIX,jcpenney.com,🔰国外流量
+  - DOMAIN-SUFFIX,jiehua.tv,🔰国外流量
+  - DOMAIN-SUFFIX,mailfence.com,🔰国外流量
+  - DOMAIN-SUFFIX,nationwide.com,🔰国外流量
+  - DOMAIN-SUFFIX,nbc.com,🔰国外流量
+  - DOMAIN-SUFFIX,nexon.com,🔰国外流量
+  - DOMAIN-SUFFIX,nordstrom.com,🔰国外流量
+  - DOMAIN-SUFFIX,nordstromimage.com,🔰国外流量
+  - DOMAIN-SUFFIX,nordstromrack.com,🔰国外流量
+  - DOMAIN-SUFFIX,superpages.com,🔰国外流量
+  - DOMAIN-SUFFIX,target.com,🔰国外流量
+  - DOMAIN-SUFFIX,thinkgeek.com,🔰国外流量
+  - DOMAIN-SUFFIX,tracfone.com,🔰国外流量
+  - DOMAIN-SUFFIX,unity3d.com,🔰国外流量
+  - DOMAIN-SUFFIX,uploader.jp,🔰国外流量
+  - DOMAIN-SUFFIX,vevo.com,🔰国外流量
+  - DOMAIN-SUFFIX,viu.tv,🔰国外流量
+  - DOMAIN-SUFFIX,vk.com,🔰国外流量
+  - DOMAIN-SUFFIX,vsco.co,🔰国外流量
+  - DOMAIN-SUFFIX,xfinity.com,🔰国外流量
+  - DOMAIN-SUFFIX,zattoo.com,🔰国外流量
+  - DOMAIN,testflight.apple.com,🔰国外流量
+  - DOMAIN-SUFFIX,appsto.re,🔰国外流量
+  - DOMAIN,books.itunes.apple.com,🔰国外流量
+  - DOMAIN,hls.itunes.apple.com,🔰国外流量
+  - DOMAIN,apps.apple.com,🔰国外流量
+  - DOMAIN,itunes.apple.com,🔰国外流量
+  - DOMAIN,api-glb-sea.smoot.apple.com,🔰国外流量
+  - DOMAIN,lookup-api.apple.com,🔰国外流量
+  - DOMAIN-SUFFIX,abc.xyz,🔰国外流量
+  - DOMAIN-SUFFIX,android.com,🔰国外流量
+  - DOMAIN-SUFFIX,androidify.com,🔰国外流量
+  - DOMAIN-SUFFIX,dialogflow.com,🔰国外流量
+  - DOMAIN-SUFFIX,autodraw.com,🔰国外流量
+  - DOMAIN-SUFFIX,capitalg.com,🔰国外流量
+  - DOMAIN-SUFFIX,certificate-transparency.org,🔰国外流量
+  - DOMAIN-SUFFIX,chrome.com,🔰国外流量
+  - DOMAIN-SUFFIX,chromeexperiments.com,🔰国外流量
+  - DOMAIN-SUFFIX,chromestatus.com,🔰国外流量
+  - DOMAIN-SUFFIX,chromium.org,🔰国外流量
+  - DOMAIN-SUFFIX,creativelab5.com,🔰国外流量
+  - DOMAIN-SUFFIX,debug.com,🔰国外流量
+  - DOMAIN-SUFFIX,deepmind.com,🔰国外流量
+  - DOMAIN-SUFFIX,firebaseio.com,🔰国外流量
+  - DOMAIN-SUFFIX,getmdl.io,🔰国外流量
+  - DOMAIN-SUFFIX,ggpht.com,🔰国外流量
+  - DOMAIN-SUFFIX,gmail.com,🔰国外流量
+  - DOMAIN-SUFFIX,gmodules.com,🔰国外流量
+  - DOMAIN-SUFFIX,godoc.org,🔰国外流量
+  - DOMAIN-SUFFIX,golang.org,🔰国外流量
+  - DOMAIN-SUFFIX,gstatic.com,🔰国外流量
+  - DOMAIN-SUFFIX,gv.com,🔰国外流量
+  - DOMAIN-SUFFIX,gwtproject.org,🔰国外流量
+  - DOMAIN-SUFFIX,itasoftware.com,🔰国外流量
+  - DOMAIN-SUFFIX,madewithcode.com,🔰国外流量
+  - DOMAIN-SUFFIX,material.io,🔰国外流量
+  - DOMAIN-SUFFIX,polymer-project.org,🔰国外流量
+  - DOMAIN-SUFFIX,admin.recaptcha.net,🔰国外流量
+  - DOMAIN-SUFFIX,recaptcha.net,🔰国外流量
+  - DOMAIN-SUFFIX,shattered.io,🔰国外流量
+  - DOMAIN-SUFFIX,synergyse.com,🔰国外流量
+  - DOMAIN-SUFFIX,tensorflow.org,🔰国外流量
+  - DOMAIN-SUFFIX,tfhub.dev,🔰国外流量
+  - DOMAIN-SUFFIX,tiltbrush.com,🔰国外流量
+  - DOMAIN-SUFFIX,waveprotocol.org,🔰国外流量
+  - DOMAIN-SUFFIX,waymo.com,🔰国外流量
+  - DOMAIN-SUFFIX,webmproject.org,🔰国外流量
+  - DOMAIN-SUFFIX,webrtc.org,🔰国外流量
+  - DOMAIN-SUFFIX,whatbrowser.org,🔰国外流量
+  - DOMAIN-SUFFIX,widevine.com,🔰国外流量
+  - DOMAIN-SUFFIX,x.company,🔰国外流量
+  - DOMAIN-SUFFIX,youtu.be,🔰国外流量
+  - DOMAIN-SUFFIX,yt.be,🔰国外流量
+  - DOMAIN-SUFFIX,ytimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,1drv.com,🔰国外流量
+  - DOMAIN-SUFFIX,1drv.ms,🔰国外流量
+  - DOMAIN-SUFFIX,blob.core.windows.net,🔰国外流量
+  - DOMAIN-SUFFIX,livefilestore.com,🔰国外流量
+  - DOMAIN-SUFFIX,onedrive.com,🔰国外流量
+  - DOMAIN-SUFFIX,storage.live.com,🔰国外流量
+  - DOMAIN-SUFFIX,storage.msn.com,🔰国外流量
+  - DOMAIN,oneclient.sfx.ms,🔰国外流量
+  - DOMAIN-SUFFIX,0rz.tw,🔰国外流量
+  - DOMAIN-SUFFIX,4bluestones.biz,🔰国外流量
+  - DOMAIN-SUFFIX,9bis.net,🔰国外流量
+  - DOMAIN-SUFFIX,allconnected.co,🔰国外流量
+  - DOMAIN-SUFFIX,aol.com,🔰国外流量
+  - DOMAIN-SUFFIX,bcc.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,bit.ly,🔰国外流量
+  - DOMAIN-SUFFIX,bitshare.com,🔰国外流量
+  - DOMAIN-SUFFIX,blog.jp,🔰国外流量
+  - DOMAIN-SUFFIX,blogimg.jp,🔰国外流量
+  - DOMAIN-SUFFIX,blogtd.org,🔰国外流量
+  - DOMAIN-SUFFIX,broadcast.co.nz,🔰国外流量
+  - DOMAIN-SUFFIX,camfrog.com,🔰国外流量
+  - DOMAIN-SUFFIX,cfos.de,🔰国外流量
+  - DOMAIN-SUFFIX,citypopulation.de,🔰国外流量
+  - DOMAIN-SUFFIX,cloudfront.net,🔰国外流量
+  - DOMAIN-SUFFIX,ctitv.com.tw,🔰国外流量
+  - DOMAIN-SUFFIX,cuhk.edu.hk,🔰国外流量
+  - DOMAIN-SUFFIX,cusu.hk,🔰国外流量
+  - DOMAIN-SUFFIX,discord.gg,🔰国外流量
+  - DOMAIN-SUFFIX,discuss.com.hk,🔰国外流量
+  - DOMAIN-SUFFIX,dropboxapi.com,🔰国外流量
+  - DOMAIN-SUFFIX,duolingo.cn,🔰国外流量
+  - DOMAIN-SUFFIX,edditstatic.com,🔰国外流量
+  - DOMAIN-SUFFIX,flickriver.com,🔰国外流量
+  - DOMAIN-SUFFIX,focustaiwan.tw,🔰国外流量
+  - DOMAIN-SUFFIX,free.fr,🔰国外流量
+  - DOMAIN-SUFFIX,gigacircle.com,🔰国外流量
+  - DOMAIN-SUFFIX,hk-pub.com,🔰国外流量
+  - DOMAIN-SUFFIX,hosting.co.uk,🔰国外流量
+  - DOMAIN-SUFFIX,hwcdn.net,🔰国外流量
+  - DOMAIN-SUFFIX,ifixit.com,🔰国外流量
+  - DOMAIN-SUFFIX,iphone4hongkong.com,🔰国外流量
+  - DOMAIN-SUFFIX,iphonetaiwan.org,🔰国外流量
+  - DOMAIN-SUFFIX,iptvbin.com,🔰国外流量
+  - DOMAIN-SUFFIX,linksalpha.com,🔰国外流量
+  - DOMAIN-SUFFIX,manyvids.com,🔰国外流量
+  - DOMAIN-SUFFIX,myactimes.com,🔰国外流量
+  - DOMAIN-SUFFIX,newsblur.com,🔰国外流量
+  - DOMAIN-SUFFIX,now.im,🔰国外流量
+  - DOMAIN-SUFFIX,nowe.com,🔰国外流量
+  - DOMAIN-SUFFIX,redditlist.com,🔰国外流量
+  - DOMAIN-SUFFIX,s3.amazonaws.com,🔰国外流量
+  - DOMAIN-SUFFIX,signal.org,🔰国外流量
+  - DOMAIN-SUFFIX,smartmailcloud.com,🔰国外流量
+  - DOMAIN-SUFFIX,sparknotes.com,🔰国外流量
+  - DOMAIN-SUFFIX,streetvoice.com,🔰国外流量
+  - DOMAIN-SUFFIX,supertop.co,🔰国外流量
+  - DOMAIN-SUFFIX,tv.com,🔰国外流量
+  - DOMAIN-SUFFIX,typepad.com,🔰国外流量
+  - DOMAIN-SUFFIX,udnbkk.com,🔰国外流量
+  - DOMAIN-SUFFIX,urbanairship.com,🔰国外流量
+  - DOMAIN-SUFFIX,whispersystems.org,🔰国外流量
+  - DOMAIN-SUFFIX,wikia.com,🔰国外流量
+  - DOMAIN-SUFFIX,wn.com,🔰国外流量
+  - DOMAIN-SUFFIX,wolframalpha.com,🔰国外流量
+  - DOMAIN-SUFFIX,x-art.com,🔰国外流量
+  - DOMAIN-SUFFIX,yimg.com,🔰国外流量
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - DOMAIN,app.adjust.com,DIRECT
+  - DOMAIN,livew.l.qq.com,DIRECT
+  - DOMAIN,vd.l.qq.com,DIRECT
+  - DOMAIN,analytics.strava.com,DIRECT
+  - DOMAIN,msg.umeng.com,DIRECT
+  - DOMAIN,msg.umengcloud.com,DIRECT
+  - DOMAIN-SUFFIX,qhres.com,DIRECT
+  - DOMAIN-SUFFIX,qhimg.com,DIRECT
+  - DOMAIN-SUFFIX,akadns.net,DIRECT
+  - DOMAIN-SUFFIX,alibaba.com,DIRECT
+  - DOMAIN-SUFFIX,alicdn.com,DIRECT
+  - DOMAIN-SUFFIX,alikunlun.com,DIRECT
+  - DOMAIN-SUFFIX,alipay.com,DIRECT
+  - DOMAIN-SUFFIX,amap.com,DIRECT
+  - DOMAIN-SUFFIX,autonavi.com,DIRECT
+  - DOMAIN-SUFFIX,dingtalk.com,DIRECT
+  - DOMAIN-SUFFIX,mxhichina.com,DIRECT
+  - DOMAIN-SUFFIX,soku.com,DIRECT
+  - DOMAIN-SUFFIX,taobao.com,DIRECT
+  - DOMAIN-SUFFIX,tmall.com,DIRECT
+  - DOMAIN-SUFFIX,tmall.hk,DIRECT
+  - DOMAIN-SUFFIX,ykimg.com,DIRECT
+  - DOMAIN-SUFFIX,youku.com,DIRECT
+  - DOMAIN-SUFFIX,xiami.com,DIRECT
+  - DOMAIN-SUFFIX,xiami.net,DIRECT
+  - DOMAIN-SUFFIX,aaplimg.com,DIRECT
+  - DOMAIN-SUFFIX,apple.co,DIRECT
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+  - DOMAIN-SUFFIX,appstore.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,crashlytics.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,me.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN,www-cdn.icloud.com.akadns.net,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+  - DOMAIN-SUFFIX,baidubcr.com,DIRECT
+  - DOMAIN-SUFFIX,bdstatic.com,DIRECT
+  - DOMAIN-SUFFIX,yunjiasu-cdn.net,DIRECT
+  - DOMAIN-SUFFIX,acgvideo.com,DIRECT
+  - DOMAIN-SUFFIX,hdslb.com,DIRECT
+  - DOMAIN-SUFFIX,blizzard.com,DIRECT
+  - DOMAIN-SUFFIX,battle.net,DIRECT
+  - DOMAIN,blzddist1-a.akamaihd.net,DIRECT
+  - DOMAIN-SUFFIX,feiliao.com,DIRECT
+  - DOMAIN-SUFFIX,pstatp.com,DIRECT
+  - DOMAIN-SUFFIX,snssdk.com,DIRECT
+  - DOMAIN-SUFFIX,iesdouyin.com,DIRECT
+  - DOMAIN-SUFFIX,toutiao.com,DIRECT
+  - DOMAIN-SUFFIX,cctv.com,DIRECT
+  - DOMAIN-SUFFIX,cctvpic.com,DIRECT
+  - DOMAIN-SUFFIX,livechina.com,DIRECT
+  - DOMAIN-SUFFIX,didialift.com,DIRECT
+  - DOMAIN-SUFFIX,didiglobal.com,DIRECT
+  - DOMAIN-SUFFIX,udache.com,DIRECT
+  - DOMAIN-SUFFIX,343480.com,DIRECT
+  - DOMAIN-SUFFIX,baduziyuan.com,DIRECT
+  - DOMAIN-SUFFIX,com-hs-hkdy.com,DIRECT
+  - DOMAIN-SUFFIX,czybjz.com,DIRECT
+  - DOMAIN-SUFFIX,dandanzan.com,DIRECT
+  - DOMAIN-SUFFIX,fjhps.com,DIRECT
+  - DOMAIN-SUFFIX,kuyunbo.club,DIRECT
+  - DOMAIN-SUFFIX,21cn.com,DIRECT
+  - DOMAIN-SUFFIX,hitv.com,DIRECT
+  - DOMAIN-SUFFIX,mgtv.com,DIRECT
+  - DOMAIN-SUFFIX,iqiyi.com,DIRECT
+  - DOMAIN-SUFFIX,iqiyipic.com,DIRECT
+  - DOMAIN-SUFFIX,71.am.com,DIRECT
+  - DOMAIN-SUFFIX,jd.com,DIRECT
+  - DOMAIN-SUFFIX,jd.hk,DIRECT
+  - DOMAIN-SUFFIX,jdpay.com,DIRECT
+  - DOMAIN-SUFFIX,360buyimg.com,DIRECT
+  - DOMAIN-SUFFIX,iciba.com,DIRECT
+  - DOMAIN-SUFFIX,ksosoft.com,DIRECT
+  - DOMAIN-SUFFIX,meitu.com,DIRECT
+  - DOMAIN-SUFFIX,meitudata.com,DIRECT
+  - DOMAIN-SUFFIX,meitustat.com,DIRECT
+  - DOMAIN-SUFFIX,meipai.com,DIRECT
+  - DOMAIN-SUFFIX,duokan.com,DIRECT
+  - DOMAIN-SUFFIX,mi-img.com,DIRECT
+  - DOMAIN-SUFFIX,miui.com,DIRECT
+  - DOMAIN-SUFFIX,miwifi.com,DIRECT
+  - DOMAIN-SUFFIX,xiaomi.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,msecnd.net,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-SUFFIX,outlook.com,DIRECT
+  - DOMAIN-SUFFIX,s-microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,visualstudio.com,DIRECT
+  - DOMAIN-SUFFIX,windows.com,DIRECT
+  - DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+  - DOMAIN,officecdn-microsoft-com.akamaized.net,DIRECT
+  - DOMAIN-SUFFIX,163.com,DIRECT
+  - DOMAIN-SUFFIX,126.net,DIRECT
+  - DOMAIN-SUFFIX,127.net,DIRECT
+  - DOMAIN-SUFFIX,163yun.com,DIRECT
+  - DOMAIN-SUFFIX,lofter.com,DIRECT
+  - DOMAIN-SUFFIX,netease.com,DIRECT
+  - DOMAIN-SUFFIX,ydstatic.com,DIRECT
+  - DOMAIN-SUFFIX,sina.com,DIRECT
+  - DOMAIN-SUFFIX,weibo.com,DIRECT
+  - DOMAIN-SUFFIX,weibocdn.com,DIRECT
+  - DOMAIN-SUFFIX,sohu.com,DIRECT
+  - DOMAIN-SUFFIX,sohucs.com,DIRECT
+  - DOMAIN-SUFFIX,sohu-inc.com,DIRECT
+  - DOMAIN-SUFFIX,v-56.com,DIRECT
+  - DOMAIN-SUFFIX,sogo.com,DIRECT
+  - DOMAIN-SUFFIX,sogou.com,DIRECT
+  - DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+  - DOMAIN-SUFFIX,gtimg.com,DIRECT
+  - DOMAIN-SUFFIX,idqqimg.com,DIRECT
+  - DOMAIN-SUFFIX,igamecj.com,DIRECT
+  - DOMAIN-SUFFIX,myapp.com,DIRECT
+  - DOMAIN-SUFFIX,myqcloud.com,DIRECT
+  - DOMAIN-SUFFIX,qq.com,DIRECT
+  - DOMAIN-SUFFIX,tencent.com,DIRECT
+  - DOMAIN-SUFFIX,tencent-cloud.net,DIRECT
+  - DOMAIN-SUFFIX,jstucdn.com,DIRECT
+  - DOMAIN-SUFFIX,zimuzu.io,DIRECT
+  - DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+  - DOMAIN-SUFFIX,zmz2019.com,DIRECT
+  - DOMAIN-SUFFIX,zmzapi.com,DIRECT
+  - DOMAIN-SUFFIX,zmzapi.net,DIRECT
+  - DOMAIN-SUFFIX,zmzfile.com,DIRECT
+  - DOMAIN-SUFFIX,ccgslb.com,DIRECT
+  - DOMAIN-SUFFIX,ccgslb.net,DIRECT
+  - DOMAIN-SUFFIX,chinanetcenter.com,DIRECT
+  - DOMAIN-SUFFIX,meixincdn.com,DIRECT
+  - DOMAIN-SUFFIX,ourdvs.com,DIRECT
+  - DOMAIN-SUFFIX,staticdn.net,DIRECT
+  - DOMAIN-SUFFIX,wangsu.com,DIRECT
+  - DOMAIN-SUFFIX,ipip.net,DIRECT
+  - DOMAIN-SUFFIX,ip.la,DIRECT
+  - DOMAIN-SUFFIX,ip-cdn.com,DIRECT
+  - DOMAIN-SUFFIX,ipv6-test.com,DIRECT
+  - DOMAIN-SUFFIX,test-ipv6.com,DIRECT
+  - DOMAIN-SUFFIX,whatismyip.com,DIRECT
+  - DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT
+  - DOMAIN,speedtest.macpaw.com,DIRECT
+  - DOMAIN-SUFFIX,awesome-hd.me,DIRECT
+  - DOMAIN-SUFFIX,broadcasthe.net,DIRECT
+  - DOMAIN-SUFFIX,chdbits.co,DIRECT
+  - DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
+  - DOMAIN-SUFFIX,empornium.me,DIRECT
+  - DOMAIN-SUFFIX,gazellegames.net,DIRECT
+  - DOMAIN-SUFFIX,hdchina.org,DIRECT
+  - DOMAIN-SUFFIX,hdsky.me,DIRECT
+  - DOMAIN-SUFFIX,icetorrent.org,DIRECT
+  - DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
+  - DOMAIN-SUFFIX,keepfrds.com,DIRECT
+  - DOMAIN-SUFFIX,madsrevolution.net,DIRECT
+  - DOMAIN-SUFFIX,m-team.cc,DIRECT
+  - DOMAIN-SUFFIX,nanyangpt.com,DIRECT
+  - DOMAIN-SUFFIX,ncore.cc,DIRECT
+  - DOMAIN-SUFFIX,open.cd,DIRECT
+  - DOMAIN-SUFFIX,ourbits.club,DIRECT
+  - DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
+  - DOMAIN-SUFFIX,privatehd.to,DIRECT
+  - DOMAIN-SUFFIX,redacted.ch,DIRECT
+  - DOMAIN-SUFFIX,springsunday.net,DIRECT
+  - DOMAIN-SUFFIX,tjupt.org,DIRECT
+  - DOMAIN-SUFFIX,totheglory.im,DIRECT
+  - DOMAIN-SUFFIX,acm.org,DIRECT
+  - DOMAIN-SUFFIX,acs.org,DIRECT
+  - DOMAIN-SUFFIX,aip.org,DIRECT
+  - DOMAIN-SUFFIX,ams.org,DIRECT
+  - DOMAIN-SUFFIX,annualreviews.org,DIRECT
+  - DOMAIN-SUFFIX,aps.org,DIRECT
+  - DOMAIN-SUFFIX,ascelibrary.org,DIRECT
+  - DOMAIN-SUFFIX,asm.org,DIRECT
+  - DOMAIN-SUFFIX,asme.org,DIRECT
+  - DOMAIN-SUFFIX,astm.org,DIRECT
+  - DOMAIN-SUFFIX,bmj.com,DIRECT
+  - DOMAIN-SUFFIX,cambridge.org,DIRECT
+  - DOMAIN-SUFFIX,cas.org,DIRECT
+  - DOMAIN-SUFFIX,clarivate.com,DIRECT
+  - DOMAIN-SUFFIX,ebscohost.com,DIRECT
+  - DOMAIN-SUFFIX,emerald.com,DIRECT
+  - DOMAIN-SUFFIX,engineeringvillage.com,DIRECT
+  - DOMAIN-SUFFIX,icevirtuallibrary.com,DIRECT
+  - DOMAIN-SUFFIX,ieee.org,DIRECT
+  - DOMAIN-SUFFIX,imf.org,DIRECT
+  - DOMAIN-SUFFIX,iop.org,DIRECT
+  - DOMAIN-SUFFIX,jamanetwork.com,DIRECT
+  - DOMAIN-SUFFIX,jhu.edu,DIRECT
+  - DOMAIN-SUFFIX,jstor.org,DIRECT
+  - DOMAIN-SUFFIX,karger.com,DIRECT
+  - DOMAIN-SUFFIX,libguides.com,DIRECT
+  - DOMAIN-SUFFIX,madsrevolution.net,DIRECT
+  - DOMAIN-SUFFIX,mpg.de,DIRECT
+  - DOMAIN-SUFFIX,myilibrary.com,DIRECT
+  - DOMAIN-SUFFIX,nature.com,DIRECT
+  - DOMAIN-SUFFIX,oecd-ilibrary.org,DIRECT
+  - DOMAIN-SUFFIX,osapublishing.org,DIRECT
+  - DOMAIN-SUFFIX,oup.com,DIRECT
+  - DOMAIN-SUFFIX,ovid.com,DIRECT
+  - DOMAIN-SUFFIX,oxfordartonline.com,DIRECT
+  - DOMAIN-SUFFIX,oxfordbibliographies.com,DIRECT
+  - DOMAIN-SUFFIX,oxfordmusiconline.com,DIRECT
+  - DOMAIN-SUFFIX,pnas.org,DIRECT
+  - DOMAIN-SUFFIX,proquest.com,DIRECT
+  - DOMAIN-SUFFIX,rsc.org,DIRECT
+  - DOMAIN-SUFFIX,sagepub.com,DIRECT
+  - DOMAIN-SUFFIX,sciencedirect.com,DIRECT
+  - DOMAIN-SUFFIX,sciencemag.org,DIRECT
+  - DOMAIN-SUFFIX,scopus.com,DIRECT
+  - DOMAIN-SUFFIX,siam.org,DIRECT
+  - DOMAIN-SUFFIX,spiedigitallibrary.org,DIRECT
+  - DOMAIN-SUFFIX,springer.com,DIRECT
+  - DOMAIN-SUFFIX,springerlink.com,DIRECT
+  - DOMAIN-SUFFIX,tandfonline.com,DIRECT
+  - DOMAIN-SUFFIX,un.org,DIRECT
+  - DOMAIN-SUFFIX,uni-bielefeld.de,DIRECT
+  - DOMAIN-SUFFIX,webofknowledge.com,DIRECT
+  - DOMAIN-SUFFIX,westlaw.com,DIRECT
+  - DOMAIN-SUFFIX,wiley.com,DIRECT
+  - DOMAIN-SUFFIX,worldbank.org,DIRECT
+  - DOMAIN-SUFFIX,worldscientific.com,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-SUFFIX,360in.com,DIRECT
+  - DOMAIN-SUFFIX,51ym.me,DIRECT
+  - DOMAIN-SUFFIX,8686c.com,DIRECT
+  - DOMAIN-SUFFIX,abchina.com,DIRECT
+  - DOMAIN-SUFFIX,accuweather.com,DIRECT
+  - DOMAIN-SUFFIX,aicoinstorge.com,DIRECT
+  - DOMAIN-SUFFIX,air-matters.com,DIRECT
+  - DOMAIN-SUFFIX,air-matters.io,DIRECT
+  - DOMAIN-SUFFIX,aixifan.com,DIRECT
+  - DOMAIN-SUFFIX,amd.com,DIRECT
+  - DOMAIN-SUFFIX,b612.net,DIRECT
+  - DOMAIN-SUFFIX,bdatu.com,DIRECT
+  - DOMAIN-SUFFIX,beitaichufang.com,DIRECT
+  - DOMAIN-SUFFIX,bjango.com,DIRECT
+  - DOMAIN-SUFFIX,booking.com,DIRECT
+  - DOMAIN-SUFFIX,bstatic.com,DIRECT
+  - DOMAIN-SUFFIX,cailianpress.com,DIRECT
+  - DOMAIN-SUFFIX,camera360.com,DIRECT
+  - DOMAIN-SUFFIX,chinaso.com,DIRECT
+  - DOMAIN-SUFFIX,chua.pro,DIRECT
+  - DOMAIN-SUFFIX,chuimg.com,DIRECT
+  - DOMAIN-SUFFIX,chunyu.mobi,DIRECT
+  - DOMAIN-SUFFIX,chushou.tv,DIRECT
+  - DOMAIN-SUFFIX,cmbchina.com,DIRECT
+  - DOMAIN-SUFFIX,cmbimg.com,DIRECT
+  - DOMAIN-SUFFIX,ctrip.com,DIRECT
+  - DOMAIN-SUFFIX,dfcfw.com,DIRECT
+  - DOMAIN-SUFFIX,docschina.org,DIRECT
+  - DOMAIN-SUFFIX,douban.com,DIRECT
+  - DOMAIN-SUFFIX,doubanio.com,DIRECT
+  - DOMAIN-SUFFIX,douyu.com,DIRECT
+  - DOMAIN-SUFFIX,dxycdn.com,DIRECT
+  - DOMAIN-SUFFIX,dytt8.net,DIRECT
+  - DOMAIN-SUFFIX,eastmoney.com,DIRECT
+  - DOMAIN-SUFFIX,eudic.net,DIRECT
+  - DOMAIN-SUFFIX,feng.com,DIRECT
+  - DOMAIN-SUFFIX,fengkongcloud.com,DIRECT
+  - DOMAIN-SUFFIX,frdic.com,DIRECT
+  - DOMAIN-SUFFIX,futu5.com,DIRECT
+  - DOMAIN-SUFFIX,futunn.com,DIRECT
+  - DOMAIN-SUFFIX,gandi.net,DIRECT
+  - DOMAIN-SUFFIX,geilicdn.com,DIRECT
+  - DOMAIN-SUFFIX,getpricetag.com,DIRECT
+  - DOMAIN-SUFFIX,gifshow.com,DIRECT
+  - DOMAIN-SUFFIX,godic.net,DIRECT
+  - DOMAIN-SUFFIX,hicloud.com,DIRECT
+  - DOMAIN-SUFFIX,hongxiu.com,DIRECT
+  - DOMAIN-SUFFIX,hostbuf.com,DIRECT
+  - DOMAIN-SUFFIX,huxiucdn.com,DIRECT
+  - DOMAIN-SUFFIX,huya.com,DIRECT
+  - DOMAIN-SUFFIX,infinitynewtab.com,DIRECT
+  - DOMAIN-SUFFIX,ithome.com,DIRECT
+  - DOMAIN-SUFFIX,java.com,DIRECT
+  - DOMAIN-SUFFIX,jidian.im,DIRECT
+  - DOMAIN-SUFFIX,kaiyanapp.com,DIRECT
+  - DOMAIN-SUFFIX,kaspersky-labs.com,DIRECT
+  - DOMAIN-SUFFIX,keepcdn.com,DIRECT
+  - DOMAIN-SUFFIX,kkmh.com,DIRECT
+  - DOMAIN-SUFFIX,licdn.com,DIRECT
+  - DOMAIN-SUFFIX,linkedin.com,DIRECT
+  - DOMAIN-SUFFIX,loli.net,DIRECT
+  - DOMAIN-SUFFIX,luojilab.com,DIRECT
+  - DOMAIN-SUFFIX,maoyan.com,DIRECT
+  - DOMAIN-SUFFIX,maoyun.tv,DIRECT
+  - DOMAIN-SUFFIX,meituan.com,DIRECT
+  - DOMAIN-SUFFIX,meituan.net,DIRECT
+  - DOMAIN-SUFFIX,mobike.com,DIRECT
+  - DOMAIN-SUFFIX,moke.com,DIRECT
+  - DOMAIN-SUFFIX,mubu.com,DIRECT
+  - DOMAIN-SUFFIX,myzaker.com,DIRECT
+  - DOMAIN-SUFFIX,nim-lang-cn.org,DIRECT
+  - DOMAIN-SUFFIX,nvidia.com,DIRECT
+  - DOMAIN-SUFFIX,oracle.com,DIRECT
+  - DOMAIN-SUFFIX,paypal.com,DIRECT
+  - DOMAIN-SUFFIX,paypalobjects.com,DIRECT
+  - DOMAIN-SUFFIX,qdaily.com,DIRECT
+  - DOMAIN-SUFFIX,qidian.com,DIRECT
+  - DOMAIN-SUFFIX,qyer.com,DIRECT
+  - DOMAIN-SUFFIX,qyerstatic.com,DIRECT
+  - DOMAIN-SUFFIX,raychase.net,DIRECT
+  - DOMAIN-SUFFIX,ronghub.com,DIRECT
+  - DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+  - DOMAIN-SUFFIX,s-reader.com,DIRECT
+  - DOMAIN-SUFFIX,sankuai.com,DIRECT
+  - DOMAIN-SUFFIX,scomper.me,DIRECT
+  - DOMAIN-SUFFIX,seafile.com,DIRECT
+  - DOMAIN-SUFFIX,sm.ms,DIRECT
+  - DOMAIN-SUFFIX,smzdm.com,DIRECT
+  - DOMAIN-SUFFIX,snapdrop.net,DIRECT
+  - DOMAIN-SUFFIX,snwx.com,DIRECT
+  - DOMAIN-SUFFIX,sspai.com,DIRECT
+  - DOMAIN-SUFFIX,takungpao.com,DIRECT
+  - DOMAIN-SUFFIX,teamviewer.com,DIRECT
+  - DOMAIN-SUFFIX,tianyancha.com,DIRECT
+  - DOMAIN-SUFFIX,udacity.com,DIRECT
+  - DOMAIN-SUFFIX,uning.com,DIRECT
+  - DOMAIN-SUFFIX,vmware.com,DIRECT
+  - DOMAIN-SUFFIX,weather.com,DIRECT
+  - DOMAIN-SUFFIX,weico.cc,DIRECT
+  - DOMAIN-SUFFIX,weidian.com,DIRECT
+  - DOMAIN-SUFFIX,xiachufang.com,DIRECT
+  - DOMAIN-SUFFIX,ximalaya.com,DIRECT
+  - DOMAIN-SUFFIX,xinhuanet.com,DIRECT
+  - DOMAIN-SUFFIX,xmcdn.com,DIRECT
+  - DOMAIN-SUFFIX,yangkeduo.com,DIRECT
+  - DOMAIN-SUFFIX,zhangzishi.cc,DIRECT
+  - DOMAIN-SUFFIX,zhihu.com,DIRECT
+  - DOMAIN-SUFFIX,zhimg.com,DIRECT
+  - DOMAIN-SUFFIX,zhuihd.com,DIRECT
+  - DOMAIN,download.jetbrains.com,DIRECT
+  - DOMAIN,images-cn.ssl-images-amazon.com,DIRECT
+  - IP-CIDR,119.28.28.28/32,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
