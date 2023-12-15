@@ -10,7 +10,7 @@ secret: 761030
 
 #SOCKS/HTTP代理验证
 authentication:
-- cassim1030:1qazxsw2
+    - cassim1030:1qazxsw2
 dns:
   enable: false
   listen: 0.0.0.0:53
@@ -165,26 +165,23 @@ proxies:
   -
     name: DaBai-Downlaods
     type: vmess
-    server: 185.214.103.50
-    port: 443
-    uuid: 26726b2c-a280-356a-a452-4be0bd46ec1e
+    server: 112.26.46.139
+    port: 64001
+    uuid: 4163aa0b-d5f5-31c8-b3ef-cee41afe0091
     alterId: 0
     cipher: auto
     udp: true
-    servername: b.cn-db.top
+    servername: cache-hk-2.cn-db.top
     network: ws
-    ws-path: /dabai.in
+    ws-path: /db00
     ws-headers:
-      Host: b.cn-db.top
+      Host: cache-hk-2.cn-db.top
     ws-opts:
-      path: /dabai.in
-      headers: { Host: b.cn-db.top }
-    tls: true
-    skip-cert-verify: true
-
+      path: /db00
+      headers: { Host: cache-hk-2.cn-db.top }
   - name: PORTX-Downloads
     type: vmess
-    server: 104.19.194.65
+    server: 172.67.0.108
     port: 443
     uuid: ea948a30-70eb-3dad-ae11-38a9fe2024c9
     alterId: 0
