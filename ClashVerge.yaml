@@ -4,7 +4,7 @@ redir-port: 7932
 allow-lan: true
 mode: rule
 log-level: info
-external-controller: 0.0.0.0:9190
+external-controller: 127.0.0.1:9190
 #API授权验证
 secret: 761030
 
