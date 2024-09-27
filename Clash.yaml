@@ -1,30 +1,86 @@
-port: 7920
-socks-port: 7921
-redir-port: 7922
-allow-lan: true
 mode: rule
+ipv6: false
+mixed-port: 20112
+allow-lan: true
 log-level: info
-external-controller: 0.0.0.0:9090
+interface-name: ""
+port: 7910
+socks-port: 7911
 secret: 761030
-authentication:
-  - cassim1030:1qazxsw2
+external-controller: 0.0.0.0:9090
+external-ui: ""
+keep-alive-interval: 30
+find-process-mode: strict
+external-controller-tls: ""
+external-ui-name: ""
+external-ui-url: ""
+unified-delay: true
+tcp-concurrent: true
+authentication: []
+skip-auth-prefixes:
+  - 127.0.0.1/8
+  - ::1/128
+tls:
+  certificate: ""
+  private-key: ""
+global-client-fingerprint: chrome
+geodata-mode: true
+geo-auto-update: false
+geo-update-interval: 24
+geodata-loader: standard
+geosite-matcher: mph
+geox-url:
+  geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+global-ua: chrome
+profile:
+  store-selected: true
+  store-fake-ip: true
+lan-allowed-ips:
+  - 0.0.0.0/0
+  - ::/0
+lan-disallowed-ips: []
+tun:
+  enable: false
+  stack: Mixed
+  auto-route: true
+  route-address:
+    - 0.0.0.0/1
+    - 128.0.0.0/1
+    - ::/1
+    - 8000::/1
+  auto-detect-interface: true
+  dns-hijack:
+    - any:53
+  device: utun_clash
+  mtu: 9000
+  strict-route: true
+  endpoint-independent-nat: false
 dns:
   enable: false
   listen: 0.0.0.0:53
   ipv6: true
+  use-hosts: false
+  use-system-hosts: true
   default-nameserver:
     - 223.5.5.5
     - 114.114.114.114
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  nameserver-policy: {}
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.lan'
-    - '*.linksys.com'
-    - '*.linksyssmartwifi.com'
+    - "*.lan"
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
     - swscan.apple.com
     - mesu.apple.com
-    - '*.msftconnecttest.com'
-    - '*.msftncsi.com'
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
     - time.*.com
     - time.*.gov
     - time.*.edu.cn
@@ -45,17 +101,17 @@ dns:
     - ntp5.*.com
     - ntp6.*.com
     - ntp7.*.com
-    - '*.time.edu.cn'
-    - '*.ntp.org.cn'
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
     - +.pool.ntp.org
     - time1.cloud.tencent.com
     - +.music.163.com
-    - '*.126.net'
+    - "*.126.net"
     - musicapi.taihe.com
     - music.taihe.com
     - songsearch.kugou.com
     - trackercdn.kugou.com
-    - '*.kuwo.cn'
+    - "*.kuwo.cn"
     - api-jooxtt.sanook.com
     - api.joox.com
     - joox.com
@@ -63,7 +119,7 @@ dns:
     - +.music.tc.qq.com
     - aqqmusic.tc.qq.com
     - +.stream.qqmusic.qq.com
-    - '*.xiami.com'
+    - "*.xiami.com"
     - +.music.migu.cn
     - +.srv.nintendo.net
     - +.stun.playstation.net
@@ -73,15 +129,21 @@ dns:
     - proxy.golang.org
     - stun.*.*
     - stun.*.*.*
-    - '*.mcdn.bilivideo.cn'
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - "*.mcdn.bilivideo.cn"
   fallback:
     - tcp://1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: CN
+    geosite:
+      - gfw
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.youtube.com
+  prefer-h3: false
   domain:
     - +.google.com
     - +.facebook.com
@@ -107,137 +169,225 @@ dns:
     - ::1/128
     - fc00::/7
     - fe80::/10
+hosts: {}
+proxy-providers: {}
+rule-providers: {}
 proxies:
-  - {"name":"ABox公益计划-US","type":"vmess","server":"scp.baiyunxray.top","port":443,"cipher":"auto","uuid":"7d04b6ca-939a-4ac1-bec4-34706a9cc68f","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - name: 🇫🇷 FR-X-001
-    type: ss
-    server: 135.125.172.153
-    port: 443
-    cipher: aes-256-cfb
-    password: asdKkaskJKfnsa
-  - name: 🇭🇰 HK-X-003
-    type: ss
-    server: 8.210.85.62
-    port: 80
-    cipher: aes-128-gcm
-    password: a-wym4ovY4Yw
-    plugin: obfs
-    plugin-opts:
-      mode: http
-  - name: 🇭🇰 HK-X-004
-    type: ss
-    server: traffic-in-lite.811920.xyz
-    port: 51013
-    cipher: aes-128-gcm
-    password: be96b3b1-d009-4bf1-9a65-a025def92afd
-  - name: 🇸🇬 SG-X-002
-    server: nangua.lwjyj.com
-    port: 32652
-    client-fingerprint: chrome
+  - name: Office_V2rayN
+    type: socks5
+    server: 192.168.3.31
+    port: "10808"
+  - name: Office_Nekoray
+    type: socks5
+    server: 192.168.3.31
+    port: "2080"
+  - name: Netgear_V2rayN
+    type: socks5
+    server: 10.0.0.3
+    port: "10808"
+  - name: Netgear_ClashVerge
+    type: socks5
+    server: 10.0.0.3
+    port: "12930"
+  - name: Netgear_Nekoray
+    type: socks5
+    server: 10.0.0.3
+    port: "20801"
+  - name: Netgear_Nekoray2
+    type: socks5
+    server: 10.0.0.3
+    port: "30801"
+  - {name: 🇩🇪 DE-X-001, server: cdn.cngfw.online, port: 443, type: vmess, uuid: cab438c4-9c5a-43fd-a623-ce81cb93085c, alterId: 0, cipher: auto, tls: true, network: ws, ws-opts: {path: /ikun, headers: {Host: eu3.kunkunbuku.me}}}
+  
+  - {name: "🇩🇪 DE-X-002", server: 103.6.220.71, port: 21185, type: trojan, password: 91c8b34b-b257-4cd1-9f36-ee3e4cc62bcb, skip-cert-verify: true, udp: true}
+
+  - skip-cert-verify: true
+    type: trojan
+    password: 5c7941b5-c393-4eea-a76d-d44b59baf8a0
+    server: 185.234.64.146
+    port: 2053
+    name: 🇫🇷 FR-X-001
+    
+  - name: 🇫🇷 FR-X-002
     type: vmess
-    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
-    alterId: 0
+    server: 104.21.8.157
+    port: 2082
     cipher: auto
+    uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+    alterId: 0
     tls: false
-    tfo: false
-    skip-cert-verify: false
-  - name: 🇸🇬 SG-X-003
-    type: ss
-    server: 3.1.81.236
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇸🇬 SG-X-004
-    type: ss
-    server: 18.142.250.63
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇸🇬 SG-X-007
-    type: ss
-    server: 18.141.204.149
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇹🇼 TW-X-001
-    server: nbq11.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
     network: ws
     ws-opts:
-      path: /b11
+      path: /
       headers:
-        Host: nbq11.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-003
-    server: b22.ntbq.dynu.net
+        Host: s1c.v2.v001sss.xyz
+        
+  - {name: "🇫🇷 FR-X-003", server: tw4.mhw7e2.online, port: 20028, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+  
+  - {name: "🇫🇷 FR-X-004", server: jp2.mhw7e2.online, port: 20028, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇬🇧 GB-X-001", server: hk3.mhw7e2.online, port: 20021, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇬🇧 GB-X-002", server: sg1.mhw7e2.online, port: 20021, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇬🇧 GB-X-003", server: jp5.mhw7e2.online, port: 20021, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇬🇧 GB-X-004", server: hk5.mhw7e2.online, port: 20021, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇬🇧 GB-X-005", server: tw1.mhw7e2.online, port: 20021, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇭🇰 HK-X-001", server: 14.215.169.69, port: 20002, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+ 
+  - {name: "🇭🇰 HK-X-002", server: 14.215.169.69, port: 20003, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇭🇰 HK-X-003", server: 14.215.169.69, port: 20004, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇭🇰 HK-X-004", server: sg3.mhw7e2.online, port: 20002, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇭🇰 HK-X-005", server: jp1.mhw7e2.online, port: 20002, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇭🇰 HK-X-006", server: jp5.mhw7e2.online, port: 20003, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - name: "🇭🇰 HK-X-007"
+    type: vless
+    server: 274c.0owap.xyz
     port: 443
-    client-fingerprint: chrome
+    udp: true
+    uuid: 1f83827d-b91f-45e1-968b-b7ee597b7d52
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /1f83827d-b91f-45e1-968b-b7ee597b7d52
+      headers:
+        Host: 274c.0owap.xyz
+    network: ws
+    
+  - name: "🇭🇰 HK-X-008"
     type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    server: n1720317059.ryjml.cn
+    port: 443
+    cipher: auto
+    udp: true
+    uuid: 4c3ddef9-4af5-4d7f-ab8c-12f024d9a602
+    alterId: 0
+    skip_cert_verify: true
+    tls: true
+    ws_opts:
+      path: /
+      headers:
+        Host: www.baidui.com
+    network: ws
+
+  - {name: 🇮🇸 IS-X-001, server: 89.221.224.170, port: 5233, type: ss, cipher: chacha20-ietf-poly1305, password: o7jMXAnFi6ojGROTpI5TB5}
+  
+  - {name: "🇰🇷 KR-X-001", server: p235.panda004.net, port: 34997, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@}
+  
+  - {name: "🇰🇷 KR-X-002", server: p226.panda004.net, port: 41715, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@}
+  
+  - {name: "🇰🇷 KR-X-003", server: p228.panda004.net, port: 65025, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@}
+
+  - {name: "🇰🇷 KR-X-004", server: p239.panda004.net, port: 37403, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@}
+
+  - {name: "🇰🇷 KR-X-005", server: p233.panda004.net, port: 37907, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@}
+  
+  - {name: "🇳🇱 NL-X-001", server: 14.215.169.69, port: 20030, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇳🇱 NL-X-002", server: jp5.mhw7e2.online, port: 20030, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇳🇱 NL-X-003", server: sg4.mhw7e2.online, port: 20030, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇳🇱 NL-X-004", server: hk5.mhw7e2.online, port: 20030, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇳🇱 NL-X-005", server: jp1.mhw7e2.online, port: 20030, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - name: 🇷🇺 RU-X-001
+    server: vdsru06.265888.xyz
+    port: 443
+    type: vmess
+    uuid: cc75403c-3237-47cd-aa5c-e40c1cf41372
     alterId: 0
     cipher: auto
+    network: grpc
     tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b22
-      headers:
-        Host: b22.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-004
-    server: b23.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
+    grpc-opts:
+      grpc-service-name: kumiao
+      
+  - {name: 🇷🇺 RU-X-002, server: 46.17.44.16, port: 18162, type: ss, cipher: aes-256-gcm, password: d8285a86cdb003de}
+  
+  - {name: "🇸🇬 SG-X-001", server: jp3.mhw7e2.online, port: 20010, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇸🇬 SG-X-002", server: tw4.mhw7e2.online, port: 20010, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇸🇬 SG-X-003", server: jp1.mhw7e2.online, port: 20010, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇸🇬 SG-X-004", server: sg2.mhw7e2.online, port: 20009, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇸🇬 SG-X-005", server: tw5.mhw7e2.online, port: 20010, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇹🇼 TW-X-001", server: z6.fragranceninja.com, port: 12943, type: vmess, uuid: a32313ad-5e39-4f9a-9cad-512041790050, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: z6.fragranceninja.com}}, udp: true}
+
+  - {name: "🇺🇸 US-X-001", server: 120.241.177.79, port: 30866, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /oooo}, udp: true}
+        
+  - {name: "🇺🇸 US-X-002", server: 14.215.169.69, port: 20018, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇺🇸 US-X-003", server: bfaecsucig.com, port: 443, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: true, servername: bfaecsucig.com, network: ws, ws-opts: {path: /rbqqvws, headers: {Host: bfaecsucig.com}}}
+  
+  - {name: "🇺🇸 US-X-004", server: 172.64.33.206, port: 443, type: vmess, uuid: 6501b611-f242-3d90-91d6-030b193ca11c, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dabai.in, headers: {Host: 100-100-17-497.db-link01.top}}, udp: true}
+
+  - {name: "🇺🇸 US-X-005", server: tw2.mhw7e2.online, port: 20017, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇺🇸 US-X-006", server: sg3.mhw7e2.online, port: 20018, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇺🇸 US-X-007", server: sg4.mhw7e2.online, port: 20018, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇺🇸 US-X-008", server: jp2.mhw7e2.online, port: 20018, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+  
+  - name: 🇺🇸 US-X-009
     type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
+    server: cfcdn1.sanfencdn9.com
+    port: "2095"
+    uuid: a5223108-e3df-4e6c-87f1-329be737a679
     alterId: 0
     cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
+    udp: true
     network: ws
     ws-opts:
-      path: /b23
+      path: /video/qYZue4zaWS
       headers:
-        Host: b23.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-005
-    server: b24.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
+        Host: us82pRzxDMb.fzbqfrse.xyz
+    ws-path: /video/qYZue4zaWS
+    ws-headers:
+      Host: us82pRzxDMb.fzbqfrse.xyz
+      
+  - {name: "🇺🇸 US-X-010", server: sg5.mhw7e2.online, port: 20017, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+
+  - {name: "🇻🇳 VN-X-001", server: std1.loadingip.com, port: 443, type: trojan, password: 94d219c9-1afc-4d42-b090-8b3794764380, skip-cert-verify: true, udp: true}
+
+  - name: 大白-免費節點
     type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
+    server: 104.19.101.50
+    port: 2086
     cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
+    uuid: bef2bad0-cfe9-3da2-8813-4cc438e1675a
+    alterId: 0
+    tls: false
     network: ws
     ws-opts:
-      path: /b24
+      path: /dabai.in104.19.101.50
       headers:
-        Host: b24.ntbq.dynu.net
-  - name: 🇺🇸 US-X-006
+        Host: 100-100-17-23.db-link01.top
+  - name: 🇦🇺 AU-X-001
+    server: ydthree.9sjd2dkesl2.shop
+    port: 18572
     type: ss
-    server: 54.201.23.39
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇺🇸 US-X-007
+    cipher: chacha20-ietf-poly1305
+    password: XoYrrEfZYxxHL3AI
+    udp: true
+    
+  - {name: "🇨🇦 CA-X-001", server: tw2.mhw7e2.online, port: 20023, type: ss, cipher: chacha20-ietf-poly1305, password: 70747514-fb14-4f31-8390-e1f0453eff6d, udp: true}
+  - name: 🇯🇵 JP-X-008
     type: ss
-    server: 54.68.65.193
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇺🇸 US-X-008
-    type: ss
-    server: 54.189.133.33
+    server: 13.112.106.148
     port: 443
     cipher: aes-256-cfb
     password: amazonskr05
@@ -255,146 +405,181 @@ proxies:
     grpc-opts:
       grpc-service-name: freedom
       grpc-mode: gun
-  - name: "🇯🇵 JP-X-007"
+
+  - {name: "🇯🇵 JP-X-001", server: 95b1cd85a0968ff2.cdn.jiashule.com, port: 40201, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: 74592:o4fbeopsgcf, obfs-param: cd5ed74592.6602b8463464108506.microsoft.com, udp: true}
+
+  - {name: "🇯🇵 JP-X-002", server: 95b1cd85a0968ff2.cdn.jiashule.com, port: 40203, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: 74592:o4fbeopsgcf, obfs-param: cd5ed74592.6602b8463464108506.microsoft.com, udp: true}
+
+  - {name: "🇯🇵 JP-X-003", server: 7438974b54cf5c57.cdn.jiashule.com, port: 40220, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: 74592:o4fbeopsgcf, obfs-param: cd5ed74592.6602b8463464108506.microsoft.com, udp: true}
+
+  - {name: "🇯🇵 JP-X-004", server: 7438974b54cf5c57.cdn.jiashule.com, port: 40221, type: ssr, cipher: rc4-md5, password: ENZ52K, protocol: auth_aes128_md5, obfs: plain, protocol-param: 74592:o4fbeopsgcf, obfs-param: cd5ed74592.6602b8463464108506.microsoft.com, udp: true}
+
+  - name: 🇯🇵 JP-X-005
     type: ss
-    server: aca-cm-js-4g.cfprefer1.xyz
-    port: 28436
+    server: 185.172.113.182
+    port: 800
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+  - name: 🇯🇵 JP-X-006
+    server: gzyd5-1.piaomiaoxu.net
+    port: 42100
+    type: ss
     cipher: aes-256-gcm
-    password: 206677df-940f-4204-a67a-016c6b12f1cd
-  - name: 🇹🇼 TW-O-SSR-01
-    type: ssr
-    server: aiatw2.conectinnode.info
-    port: 1202
-    password: mtbv8n
-    cipher: chacha20-ietf
-    obfs: plain
-    protocol: auth_aes128_md5
-    obfs-param: 28f8799610.wns.windows.com
-    protocol-param: 99610:Ss5tcJuseWa
-    group: DY
-  - name: AC900_Clash
-    type: socks5
-    server: 192.168.2.70
-    port: "7910"
-  - name: AC900_Nekoray
-    type: socks5
-    server: 192.168.2.70
-    port: "2080"
-  - name: Windows_V2rayN
-    type: socks5
-    server: 127.0.0.1
-    port: "10808"
-  - name: Windows_V2rayN_SingBox
-    type: socks5
-    server: 127.0.0.1
-    port: "11808"
+    password: 3d775433-5bf3-4147-b24a-377222329a66
     udp: true
-  - name: Windows_Nekoray
-    type: socks5
-    server: 127.0.0.1
-    port: "2080"
-  - name: Windows_Nekoray2
-    type: socks5
-    server: 127.0.0.1
-    port: "3080"
-  - name: Windows_Nekoray3
-    type: socks5
-    server: 127.0.0.1
-    port: "4080"
-  - name: Windows_ClashN
-    type: socks5
-    server: 127.0.0.1
-    port: "7891"
+  - name: 🇯🇵 JP-X-007
+    server: gzyd5-1.piaomiaoxu.net
+    port: 38617
+    type: ss
+    cipher: aes-256-gcm
+    password: 3d775433-5bf3-4147-b24a-377222329a66
     udp: true
-  - name: Office_V2rayN
-    type: socks5
-    server: 192.168.3.40
-    port: "10808"
-  - name: Office_V2rayN_SingBox
-    type: socks5
-    server: 192.168.3.40
-    port: "11808"
-  - name: Office_Nekoray
-    type: socks5
-    server: 192.168.3.40
-    port: "2080"
-  - name: Office_ClashN
-    type: socks5
-    server: 192.168.3.40
-    port: "7891"
-  - name: Netgear_V2rayN
-    type: socks5
-    server: 10.0.0.3
-    port: "10808"
-  - name: Netgear_ClashN
-    type: socks5
-    server: 10.0.0.3
-    port: "7888"
-  - name: Netgear_ClashForWindows
-    type: socks5
-    server: 10.0.0.3
-    port: "7910"
-  - name: Netgear_Nekoray
-    type: socks5
-    server: 10.0.0.3
-    port: "2080"
-  - name: Netgear_Nekoray2
-    type: socks5
-    server: 10.0.0.3
-    port: "3080"
+  - name: 🇹🇼 TW-HIN
+    server: 60.248.63.88
+    port: 12832
+    type: vless
+    uuid: d7dd3a35-b68b-4992-b319-a85b8a1fc8e5
+    tls: true
+    tfo: false
+    servername: dns68.putata.eu.org
+    network: ws
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: dns68.putata.eu.org
 proxy-groups:
   - name: 🔰国外流量
     type: select
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
     proxies:
       - 通道專區
-      - SSR專區
       - USES
+      - JP GROUP
+      - Chain proxy-JP
+      - Chain proxy-HIN
+    disable-udp: false
   - name: 通道專區
+    type: select
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
     proxies:
-      - AC900_Clash
-      - AC900_Nekoray
-      - Windows_V2rayN
-      - Windows_V2rayN_SingBox
-      - Windows_Nekoray
-      - Windows_Nekoray2
-      - Windows_Nekoray3
-      - Windows_ClashN
       - Office_V2rayN
-      - Office_V2rayN_SingBox
       - Office_Nekoray
-      - Office_ClashN
       - Netgear_V2rayN
-      - Netgear_ClashN
-      - Netgear_ClashForWindows
+      - Netgear_ClashVerge
       - Netgear_Nekoray
       - Netgear_Nekoray2
-    type: select
-    _index: 2
-  - name: SSR專區
-    proxies:
-      - 🇹🇼 TW-O-SSR-01
-    type: select
+    disable-udp: false
   - name: USES
+    type: select
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
     proxies:
-      - ABox公益计划-US
+      - 🇦🇺 AU-X-001
+      - 🇨🇦 CA-X-001
+      - 🇩🇪 DE-X-001
+      - 🇩🇪 DE-X-002
       - 🇫🇷 FR-X-001
+      - 🇫🇷 FR-X-002
+      - 🇫🇷 FR-X-003
+      - 🇫🇷 FR-X-004
+      - 🇬🇧 GB-X-001
+      - 🇬🇧 GB-X-002
+      - 🇬🇧 GB-X-003
+      - 🇬🇧 GB-X-004
+      - 🇬🇧 GB-X-005
+      - 🇭🇰 HK-X-001
+      - 🇭🇰 HK-X-002
       - 🇭🇰 HK-X-003
       - 🇭🇰 HK-X-004
-      - 🇯🇵 JP-X-03 (V2/Clash)
-      - 🇯🇵 JP-X-007
+      - 🇭🇰 HK-X-005
+      - 🇭🇰 HK-X-006
+      - 🇭🇰 HK-X-007
+      - 🇭🇰 HK-X-008
+      - 🇮🇸 IS-X-001
+      - 🇰🇷 KR-X-001
+      - 🇰🇷 KR-X-002
+      - 🇰🇷 KR-X-003
+      - 🇰🇷 KR-X-004
+      - 🇰🇷 KR-X-005
+      - 🇳🇱 NL-X-001
+      - 🇳🇱 NL-X-002
+      - 🇳🇱 NL-X-003
+      - 🇳🇱 NL-X-004
+      - 🇳🇱 NL-X-005
+      - 🇷🇺 RU-X-001
+      - 🇷🇺 RU-X-002
+      - 🇸🇬 SG-X-001
       - 🇸🇬 SG-X-002
       - 🇸🇬 SG-X-003
       - 🇸🇬 SG-X-004
-      - 🇸🇬 SG-X-007
+      - 🇸🇬 SG-X-005
       - 🇹🇼 TW-X-001
-      - 🇹🇼 TW-X-003
-      - 🇹🇼 TW-X-004
-      - 🇹🇼 TW-X-005
+      - 🇺🇸 US-X-001
+      - 🇺🇸 US-X-002
+      - 🇺🇸 US-X-003
+      - 🇺🇸 US-X-004
+      - 🇺🇸 US-X-005
       - 🇺🇸 US-X-006
       - 🇺🇸 US-X-007
       - 🇺🇸 US-X-008
+      - 🇺🇸 US-X-009
+      - 🇺🇸 US-X-010
+      - 🇻🇳 VN-X-001
+      - 大白-免費節點
+    disable-udp: false
+  - name: JP GROUP
     type: select
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
+    proxies:
+      - 🇯🇵 JP-X-03 (V2/Clash)
+      - 🇯🇵 JP-X-001
+      - 🇯🇵 JP-X-002
+      - 🇯🇵 JP-X-003
+      - 🇯🇵 JP-X-004
+      - 🇯🇵 JP-X-005
+      - 🇯🇵 JP-X-006
+      - 🇯🇵 JP-X-007
+      - 🇯🇵 JP-X-008
+    disable-udp: false
+  - name: Chain proxy-JP
+    type: relay
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
+    proxies:
+      - USES
+      - JP GROUP
+      - 🇹🇼 TW-HIN
+  - name: Chain proxy-HIN
+    type: relay
+    filter: ""
+    exclude-filter: ""
+    hidden: false
+    icon: ""
+    proxies:
+      - USES
+      - 🇹🇼 TW-HIN
 rules:
+  - DOMAIN-SUFFIX,ip.kkcat.blog,🔰国外流量
+  - DOMAIN-SUFFIX,vercel.com,🔰国外流量
+  - DOMAIN-SUFFIX,gw.dmmapis.com,🔰国外流量
+  - DOMAIN-SUFFIX,firebase-settings.crashlytics.com,🔰国外流量
+  - DOMAIN-SUFFIX,gapi.game-monmusu-td.net,🔰国外流量
+  - DOMAIN-SUFFIX,assets.game-monmusu-td.net,🔰国外流量
+  - DOMAIN-SUFFIX,sweet-home-maid.com,🔰国外流量
   - DOMAIN-SUFFIX,deepone-online.com,🔰国外流量
   - DOMAIN-SUFFIX,zimg.jp,🔰国外流量
   - DOMAIN-SUFFIX,dmmgames.com,🔰国外流量
