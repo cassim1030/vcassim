@@ -277,6 +277,22 @@ proxies:
       headers:
         Host: www.baidui.com
     network: ws
+    
+  - name: "🇭🇰 HK-X-009"
+    type: vmess
+    server: n1724639417.afjian.cn
+    port: 443
+    cipher: auto
+    udp: true
+    uuid: 982d2a92-5bf7-4251-bd05-f0fec8839b25
+    alterId: 0
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: n1724639417.afjian.cn
+    network: ws
 
   - {name: 🇮🇸 IS-X-001, server: 89.221.224.170, port: 5233, type: ss, cipher: chacha20-ietf-poly1305, password: o7jMXAnFi6ojGROTpI5TB5}
   
@@ -504,6 +520,7 @@ proxy-groups:
       - 🇭🇰 HK-X-006
       - 🇭🇰 HK-X-007
       - 🇭🇰 HK-X-008
+      - 🇭🇰 HK-X-009
       - 🇮🇸 IS-X-001
       - 🇰🇷 KR-X-001
       - 🇰🇷 KR-X-002
