@@ -9,8 +9,8 @@ external-controller: 127.0.0.1:9190
 secret: 761030
 
 #SOCKS/HTTP代理验证
-authentication:
-    - cassim1030:1qazxsw2
+#authentication:
+#    - cassim1030:1qazxsw2
 dns:
   enable: false
   listen: 0.0.0.0:53
@@ -111,202 +111,96 @@ dns:
     - fc00::/7
     - fe80::/10
 proxies:
-  - name: 🇫🇷 FR-X-001
-    type: ss
-    server: 135.125.172.153
-    port: 443
-    cipher: aes-256-cfb
-    password: asdKkaskJKfnsa
-  - name: 🇭🇰 HK-X-003
-    type: ss
-    server: 8.210.85.62
-    port: 80
-    cipher: aes-128-gcm
-    password: a-wym4ovY4Yw
-    plugin: obfs
-    plugin-opts:
-      mode: http
-  - name: 🇭🇰 HK-X-004
-    type: ss
-    server: traffic-in-lite.811920.xyz
-    port: 51013
-    cipher: aes-128-gcm
-    password: be96b3b1-d009-4bf1-9a65-a025def92afd
-  - name: 🇯🇵 JP-X-03 (V2/Clash)
-    type: vmess
-    server: fullaccesstointernet.eu.org
-    port: 2053
-    cipher: auto
-    uuid: 5a4cbe4e-dcab-49f9-825e-08bedb396729
-    alterId: 0
-    tls: true
-    skip-cert-verify: true
-    servername: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: freedom
-      grpc-mode: gun
-  - name: "🇯🇵 JP-X-007"
-    type: ss
-    server: aca-cm-js-4g.cfprefer1.xyz
-    port: 28436
-    cipher: aes-256-gcm
-    password: 206677df-940f-4204-a67a-016c6b12f1cd
-  - name: 🇺🇸 US-X-003
-    type: hysteria2
-    server: ushy2.sharecentre.online
-    port: 4434
-    #  up和down均不写或为0则使用BBR流控
-    # up: "30 Mbps" # 若不写单位，默认为 Mbps
-    # down: "200 Mbps" # 若不写单位，默认为 Mbps
-    password: sharecentrepro
-    # obfs: salamander
-    # obfs-password: NTA2OTQ4ZjE3NDQ4ZWMxNQ==
-    sni: ushy2.sharecentre.online
-    skip-cert-verify: true
-    # fingerprint: xxxx
-    # alpn:
-    #   - h3
-    # ca: "./my.ca"
-    # ca-str: "xyz"
-  - name: 🇺🇸 US-X-004
-    server: nangua.lwjyj.com
-    port: 32101
-    client-fingerprint: chrome
-    type: vmess
-    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
-    alterId: 0
-    cipher: auto
-    tls: false
-    tfo: false
-    skip-cert-verify: false
-  - name: 🇺🇸 US-X-006
-    type: ss
-    server: 54.201.23.39
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇺🇸 US-X-007
-    type: ss
-    server: 54.68.65.193
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇺🇸 US-X-008
-    type: ss
-    server: 54.189.133.33
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇹🇼 TW-O-SSR-01
-    type: ssr
-    server: aiatw2.conectinnode.info
-    port: 1202
-    password: mtbv8n
-    cipher: chacha20-ietf
-    obfs: plain
-    protocol: auth_aes128_md5
-    obfs-param: 28f8799610.wns.windows.com
-    protocol-param: 99610:Ss5tcJuseWa
-    group: DY
   -
-    name: DaBai-Downlaods
+    name: 'DaBai-Downlaods'
     type: vmess
-    server: 112.26.46.139
-    port: 64001
-    uuid: 4163aa0b-d5f5-31c8-b3ef-cee41afe0091
+    server: 223.113.130.104
+    port: 50080
+    uuid: 01efea60-2cf3-3248-a204-18a14430d878
     alterId: 0
     cipher: auto
     udp: true
-    servername: cache-hk-2.cn-db.top
+    servername: cache-us-1.db-link01.top
     network: ws
-    ws-path: /db00
+    ws-path: /dabai.in
     ws-headers:
-      Host: cache-hk-2.cn-db.top
+      Host: cache-us-1.db-link01.top
     ws-opts:
-      path: /db00
-      headers: { Host: cache-hk-2.cn-db.top }
+      path: /dabai.in
+      headers: { Host: cache-us-1.db-link01.top }
   - name: PORTX-Downloads
     type: vmess
-    server: 172.67.0.108
+    server: 172.64.106.152
     port: 443
-    uuid: ea948a30-70eb-3dad-ae11-38a9fe2024c9
+    uuid: c0b14728-7362-3253-a66a-7cfdba43b627
     alterId: 0
     cipher: auto
     tls: true
-    servername: ytytitihu.bxshcd.shop
+    servername: iwodxiw.uiwaeo.baby
     network: ws
     ws-opts:
-      path: /3c6f8b53-008a-4223-a5ee-4f5f079c592f
+      path: /945747a7d9f2
       headers:
-        Host: ytytitihu.bxshcd.shop
-
+        Host: iwodxiw.uiwaeo.baby
   - name: FREE-Downloads
-    type: vmess
-    server: yhaa.5489265.xyz
-    port: 2052
+    type: vless
+    server: asbaa.sectigo.pp.ua
+    port: 2053
     uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: auto
+    udp: true
+    tls: true
     network: ws
+    servername: asba.sectigo.pp.ua
     ws-opts:
-      path: /uasfbbc
-      headers: { Host: yha.5489265.xyz }
+     path: /
+     headers:
+      Host: asba.sectigo.pp.ua
 
   - name: KEJIBEAR-Downloads
     type: trojan
-    server: lu1-midpoint.techbear.cyou
+    server: lu1.gtm.kjxstudio.net
     port: 10081
     password: 2e526c01-5add-3498-bbe4-7f092fde7162
     sni: bensll.top
-    
-  -
-    name: REIMU-Downloads
+  
+  - name: DripCloud-Downloads
     type: vmess
-    server: usaarm1.zl.node.redreimu.xyz
-    port: 50000
-    uuid: 00b302f4-6c4d-3f93-9b09-ce674142282a
-    alterId: 0
-    cipher: auto
-    udp: true
-  - { name: DingJi-Downlaods, type: trojan, server: 167.68.11.228, port: 443, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, network: ws, ws-opts: { path: /djjc/jp1, headers: { Host: k2jp1.djjc.sbs } }, sni: k2jp1.djjc.sbs }
-  - { name: BaiPao-Downlaods, type: vmess, server: 162.159.142.211, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.889611.com } }, ws-path: /, ws-headers: { Host: ca3.889611.com } }
-  - { name: Helium Network-Downloads, type: vmess, server: free-relay.themars.top, port: 32201, uuid: af7eeac0-7d41-4794-95de-1496febd47bb, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /cctv1.m3u8, headers: { Host: www.cctv.com } }, ws-path: /cctv1.m3u8, ws-headers: { Host: www.cctv.com } }
-  -
-    name: 6YHY-Downlaods
-    type: vmess
-    server: sg9.6yhy.top
+    server: la2.121219.xyz
     port: 443
-    uuid: 612d958a-bc4a-328b-9f91-342116457183
-    alterId: 0
+    uuid: b23ec8d4-666d-3497-a69b-48a8129a1177
+    alterId: 4
     cipher: auto
     udp: true
-    servername: sg4.6yhy.top
+    tls: true
     network: ws
     ws-opts:
-      path: /6yhy
-      headers: { Host: sg9.6yhy.top }
-    ws-path: /6yhy
-    ws-headers:
-      Host: sg9.6yhy.top
+      path: /v2ray
+      headers:
+        Host: la2.121219.xyz
+
+  - name: "6YHY-Downlaods"
+    type: vless
+    server: sg7.6yhy.top
+    port: 443
+    uuid: 36f4bb6c-5a5c-4d8a-b768-27c15aaa9a33
+    network: grpc
     tls: true
-
-  - name: SANXI-Downloads
-    type: vmess
-    server: br-01sanxi-br-v2boardsanxijichang.sanxi.cyou
-    port: 8080
-    uuid: 3f863586-a258-41fc-8364-b02ff50646fa
-    alterId: 0
-    cipher: auto
-    network: ws
-    # udp: true
-    # tls: true
-    # skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
-
-  - { name: Mars-Download, type: ss, server: free-relay.m.themars.top, port: 32103, cipher: chacha20-ietf-poly1305, password: 148ec602-62db-49be-943f-11738a926dfa, udp: true }
+    flow:
+    client-fingerprint: chrome
+    servername: sg7.6yhy.top # REALITY servername
+    grpc-opts:
+      grpc-service-name: "grpc"
+    reality-opts:
+      public-key: F5kuBBdmfSDDF-kPI9fRGYk6AZ_LwBUTJXIx0JOjfQA
+      short-id: 6ba85179e30d4fc2
+  - name: MiaoSu-Download
+    type: ss
+    server: us01.mmyjiedian.com
+    port: 50001
+    cipher: chacha20-ietf-poly1305
+    password: "3d48429e-815f-41f3-beb5-969de86417b2"
+    udp: true
+  - { name: TaroNet-download, type: ss, server: free-relay.t01.themars.top, port: 49902, cipher: chacha20-ietf-poly1305, password: 18818a29-443b-4357-aae2-1fa648538c74, udp: true }
   - name: AC900_Clash
     type: socks5
     server: 192.168.2.70
@@ -319,11 +213,6 @@ proxies:
     type: socks5
     server: 127.0.0.1
     port: "10808"
-  - name: Windows_V2rayN_SingBox
-    type: socks5
-    server: 127.0.0.1
-    port: "11808"
-    udp: true
   - name: Windows_Nekoray
     type: socks5
     server: 127.0.0.1
@@ -336,1544 +225,161 @@ proxies:
     type: socks5
     server: 127.0.0.1
     port: "4080"
-  - name: Windows_ClashN
-    type: socks5
-    server: 127.0.0.1
-    port: "7891"
-    udp: true
   - name: Office_V2rayN
     type: socks5
     server: 192.168.3.40
     port: "10808"
-  - name: Office_V2rayN_SingBox
-    type: socks5
-    server: 192.168.3.40
-    port: "11808"
   - name: Office_Nekoray
     type: socks5
     server: 192.168.3.40
     port: "2080"
-  - name: Office_ClashN
-    type: socks5
-    server: 192.168.3.40
-    port: "7891"
   - name: Netgear_V2rayN
     type: socks5
-    server: 10.0.0.3
+    server: 10.0.0.5
     port: "10808"
-  - name: Netgear_ClashN
-    type: socks5
-    server: 10.0.0.3
-    port: "7888"
   - name: Netgear_ClashForWindows
     type: socks5
-    server: 10.0.0.3
-    port: "7910"
+    server: 10.0.0.5
+    port: "7920"
+  - name: Netgear_ClashVerge
+    type: socks5
+    server: 10.0.0.5
+    port: "7930"
   - name: Netgear_Nekoray
     type: socks5
-    server: 10.0.0.3
+    server: 10.0.0.5
     port: "2080"
   - name: Netgear_Nekoray2
     type: socks5
-    server: 10.0.0.3
+    server: 10.0.0.5
     port: "3080"
-  - {"name":"ABox公益计划-US","type":"vmess","server":"scp.baiyunxray.top","port":443,"cipher":"auto","uuid":"7d04b6ca-939a-4ac1-bec4-34706a9cc68f","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - name: 🇨🇦 CA-O-01
-    type: hysteria2
-    server: us4837.wusiba.xyz
-    port: 4433
-    #  up和down均不写或为0则使用BBR流控
-    # up: "30 Mbps" # 若不写单位，默认为 Mbps
-    # down: "200 Mbps" # 若不写单位，默认为 Mbps
-    password: 免费节点@WSBVPN
-    # obfs: salamander # 默认为空，如果填写则开启obfs，目前仅支持salamander
-    #obfs-password: NTA2OTQ4ZjE3NDQ4ZWMxNQ==
-    sni: us4837.wusiba.xyz
-    # skip-cert-verify: false
-    # fingerprint: xxxx
-    # alpn:
-    #   - h3
-    # ca: "./my.ca"
-    # ca-str: "xyz"
-  - name: 🇬🇧 GB-O-01-sdgf
-    type: vless
-    server: 104.21.57.240
-    port: 443
-    uuid: e28bb3f8-e64a-4419-9496-33c46220354b
-    network: ws
-    ws-opts:
-     path: /?ed=2048
-     headers:
-      Host: sdgf.bdfstt.sbs
-    tls: true
-    servername: sdgf.bdfstt.sbs
-    # skip-cert-verify: true
-  - name: 🇰🇷 KR-O-01
-    type: ss
-    server: 43.201.253.32
-    port: 443
-    cipher: aes-256-cfb
-    password: "amazonskr05"
-  - name: 🇸🇬 SG-X-001
-    server: nangua.lwjyj.com
-    port: 32651
-    client-fingerprint: chrome
+  - name: "Download01"
     type: vmess
-    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
+    server: 23.158.56.55
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
     alterId: 0
     cipher: auto
+    udp: true
     tls: false
-    tfo: false
-    skip-cert-verify: false
-  - name: 🇸🇬 SG-X-002
-    server: nangua.lwjyj.com
-    port: 32652
-    client-fingerprint: chrome
+  - name: "Download02"
     type: vmess
-    uuid: decfbcf5-975d-45c4-a203-f7c99595ebdc
+    server: 186.190.215.193
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
     alterId: 0
     cipher: auto
+    udp: true
     tls: false
-    tfo: false
-    skip-cert-verify: false
-  - name: 🇸🇬 SG-X-003
-    type: ss
-    server: 3.1.81.236
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇸🇬 SG-X-004
-    type: ss
-    server: 18.142.250.63
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇸🇬 SG-X-007
-    type: ss
-    server: 18.141.204.149
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-  - name: 🇹🇼 TW-X-001
-    server: nbq11.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b11
-      headers:
-        Host: nbq11.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-002
-    server: b21.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b21
-      headers:
-        Host: b21.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-003
-    server: b22.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b22
-      headers:
-        Host: b22.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-004
-    server: b23.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b23
-      headers:
-        Host: b23.ntbq.dynu.net
-  - name: 🇹🇼 TW-X-005
-    server: b24.ntbq.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /b24
-      headers:
-        Host: b24.ntbq.dynu.net
-  - name: 🇹🇼 TW-O-01
-    server: tc11.kq1.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /vbub1
-      headers:
-        Host: tc11.kq1.dynu.net
-  - name: 🇹🇼 TW-O-02
-    server: tc12.kq1.dynu.net
-    port: 443
-    client-fingerprint: chrome
-    type: vmess
-    uuid: 5d739540-3987-494b-9b67-6ede1a2aeb05
-    alterId: 0
-    cipher: auto
-    tls: true
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /vbub2
-      headers:
-        Host: tc12.kq1.dynu.net
+  - {name: "Download03", server: gzyd5-1.piaomiaoxu.net, port: 40090, type: ss, cipher: aes-256-gcm, password: e9e3ecc0-df97-4664-9051-74e4a8dcfa54, udp: true}
+  - {name: "Download04", server: alibaba1.xn--z7x16bf6t.com, port: 23466, type: ss, cipher: aes-128-gcm, password: 1de124fc-2e1b-47bf-a094-9e7494e87be6, udp: true}
+  - {name: "Download05", server: gzyd5-1.piaomiaoxu.net, port: 38424, type: ss, cipher: aes-256-gcm, password: 3f41b92f-9188-431c-be29-a7e5de2722dc, udp: true}
+  - {name: "Download06", server: hainiu.yuzhou889.top, port: 19044, type: trojan, password: 4534f27a-65f3-42e8-bd1f-7d05d6958cd2, skip-cert-verify: true, udp: true}
+  - {name: "Download07", server: hainiu.yuzhou889.top, port: 19044, type: trojan, password: 142f1057-e5d8-4fea-99b8-e1f9c78dee18, skip-cert-verify: true, udp: true}
+  - {name: "Download08", server: dc0.forlive.live, port: 41003, type: trojan, password: f06a6c0a-65e3-40a6-8fcd-a1cb65a37be6, skip-cert-verify: true, udp: true}
+  - {name: "Download09", server: hainiu.yuzhou889.top, port: 19045, type: trojan, password: 34325f28-1c2e-45e1-bf30-7b56d04b40d0, skip-cert-verify: true, udp: true}
+  - {name: "Download10", server: gzyd5-1.piaomiaoxu.net, port: 57826, type: ss, cipher: aes-256-gcm, password: 097397f2-0f34-4d88-be63-e43530535e57, udp: true}
   - name: 🇺🇸 US-O-03
-    type: vless
-    server: dns.ton.org
+    server: digi2.799888.xyz
     port: 443
-    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
-    network: ws
-    ws-opts:
-     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
-     headers:
-      Host: edge.020770.xyz
-    tls: true
-    servername: edge.020770.xyz
-    # skip-cert-verify: true
-  - name: 🇺🇸 US-O-05
-    type: vless
-    server: 172.67.56.144
-    port: 443
-    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
-    network: ws
-    ws-opts:
-     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
-     headers:
-      Host: edge.020770.xyz
-    tls: true
-    servername: edge.020770.xyz
-    # skip-cert-verify: true
-  - name: 🇺🇸 US-O-06
-    type: vless
-    server: 172.67.96.59
-    port: 443
-    uuid: b0138d55-a493-4dc3-9932-c6f0391707c1
-    network: ws
-    ws-opts:
-     path: /vless/b0138d55-a493-4dc3-9932-c6f0391707c1?ed=2048
-     headers:
-      Host: edge.020770.xyz
-    tls: true
-    servername: edge.020770.xyz
-    # skip-cert-verify: true
-  - name: 🇺🇸 US-O-07-sdgf
-    type: vless
-    server: 104.31.16.144
-    port: 443
-    uuid: e28bb3f8-e64a-4419-9496-33c46220354b
-    network: ws
-    ws-opts:
-     path: /?ed=2048
-     headers:
-      Host: sdgf.bdfstt.sbs
-    tls: true
-    servername: sdgf.bdfstt.sbs
-    # skip-cert-verify: true
-  - name: 🇺🇸 US-O-09-xn
-    type: vless
-    server: cf.yx.alue.link
-    port: 80
-    uuid: ca8692b7-8f6f-4346-a916-c1e9798ab91b
-    network: ws
-    ws-opts:
-     path: /?ed=2048
-     headers:
-      Host: xn--vjqt50blsfzoo1f8a.repe.gay
-    # tls: true
-    # servername: edge.020770.xyz
-    # skip-cert-verify: true
-    
-  - name: 🇺🇸 US-O-10-edtu
-    type: vless
-    server: edtunnel-b6t.pages.dev
-    port: 443
-    uuid: c688395a-b36b-4071-974b-bc91ac2ad2c4
-    network: ws
-    ws-opts:
-     path: /
-     headers:
-      Host: edtunnel-b6t.pages.dev
-    tls: true
-    servername: edtunnel-b6t.pages.dev
-    # skip-cert-verify: true
-  - name: 🇺🇸 US-O-11
-    server: us-01.jikuai.xyz
-    port: 2082
-    client-fingerprint: chrome
     type: vmess
-    uuid: c65f5e6c-54df-4bf1-af8e-56141403f94b
+    uuid: cc75403c-3237-47cd-aa5c-e40c1cf41372
     alterId: 0
+    cipher: auto
+    network: grpc
+    tls: true
+    grpc-opts:
+      grpc-service-name: "kumiao"
+  - name: 🇺🇸 US-O-05
+    type: hysteria
+    server: sg0.6yhy.top
+    port: 20000
+    ports: 47000-48000
+    auth_str: 6yhy.com # 将会在未来某个时候删除
+    # auth-str: yourpassword
+    # obfs: obfs_str
+    alpn:
+      - h3
+    protocol: udp # 支持 udp/wechat-video/faketcp
+    up: "55 Mbps" # 若不写单位,默认为 Mbps
+    down: "110 Mbps" # 若不写单位,默认为 Mbps
+    sni: sg0.6yhy.top
+    # skip-cert-verify: false
+    recv_window_conn: 0 # 将会在未来某个时候删除
+    recv-window-conn: 0
+    # recv_window: 52428800 # 将会在未来某个时候删除
+    # recv-window: 52428800
+    # ca: "./my.ca"
+    # ca_str: "xyz" # 将会在未来某个时候删除
+    # ca-str: "xyz"
+    # disable_mtu_discovery: false
+    # fingerprint: xxxx
+    # fast-open: true # 启用 Fast Open (降低连接建立延迟),默认为 false
+  - name: "🇺🇸 US-O-08"
+    server: 107.148.192.148
+    port: 41911
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
     cipher: auto
     tls: false
-    tfo: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: us-01.jikuai.xyz
-  - name: 🇺🇸 US-O-12
-    type: vmess
-    server: us.jsy.gay
-    port: 34175
-    uuid: a597a63d-e427-4e49-b0a9-1e796fed5a8a
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /usa
-      headers:
-        Host: us1.luodi.xyz
-    ws-path: /usa
-    ws-headers:
-      Host: us1.luodi.xyz
-  -
-    name: '香港 | 0x'
-    type: vmess
-    server: hkgsdz.66666654.xyz
-    port: 8880
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: hkg.66666654.xyz
-    network: ws
-    ws-path: /hgcefomn
-    ws-headers:
-      Host: hkg.66666654.xyz
-    ws-opts:
-      path: /hgcefomn
-      headers: { Host: hkg.66666654.xyz }
-  -
-    name: '荷兰PT/BT端口4500 | 0.1x'
-    type: vmess
-    server: nlsdwsz.66666654.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: nlsd.66666654.xyz
-    network: ws
-    ws-path: /hgcefomn
-    ws-headers:
-      Host: nlsd.66666654.xyz
-    ws-opts:
-      path: /hgcefomn
-      headers: { Host: nlsd.66666654.xyz }
-  -
-    name: '韩国1-春川 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: cuna.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: cuna.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: cuna.5489265.xyz }
-  -
-    name: '韩国2-春川 | 1x'
-    type: vmess
-    server: krawycaa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: krawyca.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: krawyca.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: krawyca.76898102.xyz }
-  -
-    name: '韩国3-春川 | 1x'
-    type: vmess
-    server: skopzaa.76898102.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: skopza.76898102.xyz
-    network: ws
-    ws-path: /ubacidb
-    ws-headers:
-      Host: skopza.76898102.xyz
-    ws-opts:
-      path: /ubacidb
-      headers: { Host: skopza.76898102.xyz }
-  -
-    name: '韩国4-春川 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: cund.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: cund.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: cund.5489265.xyz }
-  -
-    name: '韩国1-首尔 | 1x'
-    type: vmess
-    server: shoueraa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: shouera.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: shouera.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: shouera.76898102.xyz }
-  -
-    name: '韩国2-首尔 | 1x'
-    type: vmess
-    server: shouerbb.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: shouerb.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: shouerb.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: shouerb.76898102.xyz }
-  -
-    name: '韩国3-首尔 | 1x'
-    type: vmess
-    server: shouercc.66666654.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: shouerc.66666654.xyz
-    network: ws
-    ws-path: /aiufbwuge
-    ws-headers:
-      Host: shouerc.66666654.xyz
-    ws-opts:
-      path: /aiufbwuge
-      headers: { Host: shouerc.66666654.xyz }
-  -
-    name: '韩国4-首尔 | 1x'
-    type: vmess
-    server: krsctcac.66666654.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: krsctca.66666654.xyz
-    network: ws
-    ws-path: /bxpty
-    ws-headers:
-      Host: krsctca.66666654.xyz
-    ws-opts:
-      path: /bxpty
-      headers: { Host: krsctca.66666654.xyz }
-  -
-    name: '新加坡1 | 0x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: sgpa.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: sgpa.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: sgpa.5489265.xyz }
-  -
-    name: '日本1 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: pana.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: pana.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: pana.5489265.xyz }
-  -
-    name: '日本2 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: panb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: panb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: panb.5489265.xyz }
-  -
-    name: '日本3 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: panc.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: panc.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: panc.5489265.xyz }
-  -
-    name: '日本A | 1x'
-    type: vmess
-    server: jpaa.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: jpa.76898102.xyz
-    network: ws
-    ws-path: /vuesshtgk
-    ws-headers:
-      Host: jpa.76898102.xyz
-    ws-opts:
-      path: /vuesshtgk
-      headers: { Host: jpa.76898102.xyz }
-  -
-    name: '日本B | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: pane.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: pane.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: pane.5489265.xyz }
-  -
-    name: '印度-孟买1 | 0.8x'
-    type: vmess
-    server: menmaza.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: menmaz.76898102.xyz
-    network: ws
-    ws-path: /eduifbiefg
-    ws-headers:
-      Host: menmaz.76898102.xyz
-    ws-opts:
-      path: /eduifbiefg
-      headers: { Host: menmaz.76898102.xyz }
-  -
-    name: '印度-孟买2 | 0.8x'
-    type: vmess
-    server: menmazbb.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: menmazb.76898102.xyz
-    network: ws
-    ws-path: /eduifbiefg
-    ws-headers:
-      Host: menmazb.76898102.xyz
-    ws-opts:
-      path: /eduifbiefg
-      headers: { Host: menmazb.76898102.xyz }
-  -
-    name: '印度1-海得拉巴 | 0.8x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: inhia.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: inhia.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: inhia.5489265.xyz }
-  -
-    name: '印度2-海得拉巴 | 0.8x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: inhib.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: inhib.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: inhib.5489265.xyz }
-  -
-    name: '印度3-海得拉巴 | 0.8x'
-    type: vmess
-    server: ydbb.76898102.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: ydb.76898102.xyz
-    network: ws
-    ws-path: /buiaebd
-    ws-headers:
-      Host: ydb.76898102.xyz
-    ws-opts:
-      path: /buiaebd
-      headers: { Host: ydb.76898102.xyz }
-  -
-    name: '印度4-海得拉巴 | 0.8x'
-    type: vmess
-    server: meeaa.555556789.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: meea.555556789.xyz
-    network: ws
-    ws-path: /buiaebd
-    ws-headers:
-      Host: meea.555556789.xyz
-    ws-opts:
-      path: /buiaebd
-      headers: { Host: meea.555556789.xyz }
-  -
-    name: '印度5-海得拉巴 | 0.8x'
-    type: vmess
-    server: meebb.555556789.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: meeb.555556789.xyz
-    network: ws
-    ws-path: /buiaebd
-    ws-headers:
-      Host: meeb.555556789.xyz
-    ws-opts:
-      path: /buiaebd
-      headers: { Host: meeb.555556789.xyz }
-  -
-    name: '印度6-海得拉巴 | 0.8x'
-    type: vmess
-    server: meecc.555556789.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: meec.555556789.xyz
-    network: ws
-    ws-path: /buiaebd
-    ws-headers:
-      Host: meec.555556789.xyz
-    ws-opts:
-      path: /buiaebd
-      headers: { Host: meec.555556789.xyz }
-  -
-    name: '印度7-海得拉巴 | 0.8x'
-    type: vmess
-    server: meedd.555556789.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: meed.555556789.xyz
-    network: ws
-    ws-path: /buiaebd
-    ws-headers:
-      Host: meed.555556789.xyz
-    ws-opts:
-      path: /buiaebd
-      headers: { Host: meed.555556789.xyz }
-  -
-    name: '澳大利亚-墨尔本1 | 0.8x'
-    type: vmess
-    server: muoaeraa.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: muoaera.76898102.xyz
-    network: ws
-    ws-path: /aiufbwuge
-    ws-headers:
-      Host: muoaera.76898102.xyz
-    ws-opts:
-      path: /aiufbwuge
-      headers: { Host: muoaera.76898102.xyz }
-  -
-    name: '澳大利亚-墨尔本2 | 0.8x'
-    type: vmess
-    server: muoaerbb.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: muoaerb.76898102.xyz
-    network: ws
-    ws-path: /aiufbwuge
-    ws-headers:
-      Host: muoaerb.76898102.xyz
-    ws-opts:
-      path: /aiufbwuge
-      headers: { Host: muoaerb.76898102.xyz }
-  -
-    name: '澳大利亚-悉尼1 | 0.8x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: ausya.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: ausya.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: ausya.5489265.xyz }
-  -
-    name: '澳大利亚-悉尼2 | 0.8x'
-    type: vmess
-    server: xnsybb.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: xnsyb.76898102.xyz
-    network: ws
-    ws-path: /nfdguiw
-    ws-headers:
-      Host: xnsyb.76898102.xyz
-    ws-opts:
-      path: /nfdguiw
-      headers: { Host: xnsyb.76898102.xyz }
-  -
-    name: '南非1-约翰内斯堡 | 0.1x'
-    type: vmess
-    server: jhpcza.66666654.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: jhpcz.66666654.xyz
-    network: ws
-    ws-path: /bxpty
-    ws-headers:
-      Host: jhpcz.66666654.xyz
-    ws-opts:
-      path: /bxpty
-      headers: { Host: jhpcz.66666654.xyz }
-  -
-    name: '南非2-约翰内斯堡 | 0.1x'
-    type: vmess
-    server: nfbb.66666654.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: nfb.66666654.xyz
-    network: ws
-    ws-path: /aiufbwuge
-    ws-headers:
-      Host: nfb.66666654.xyz
-    ws-opts:
-      path: /aiufbwuge
-      headers: { Host: nfb.66666654.xyz }
-  -
-    name: '土耳其 | 1x'
-    type: vmess
-    server: trorc.66666654.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: tror.66666654.xyz
-    network: ws
-    ws-path: /aoigbneioueb
-    ws-headers:
-      Host: tror.66666654.xyz
-    ws-opts:
-      path: /aoigbneioueb
-      headers: { Host: tror.66666654.xyz }
-  -
-    name: '智利圣地亚哥1-广播阿根廷(白天默认UTC+8) | 0.1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: gena.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: gena.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: gena.5489265.xyz }
-  -
-    name: '智利圣地亚哥2-广播阿根廷(白天默认UTC+8)  | 0.1x'
-    type: vmess
-    server: iaudhcui.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: asfgdvf.76898102.xyz
-    network: ws
-    ws-path: /nfdguiw
-    ws-headers:
-      Host: asfgdvf.76898102.xyz
-    ws-opts:
-      path: /nfdguiw
-      headers: { Host: asfgdvf.76898102.xyz }
-  -
-    name: '美国东部阿什本1 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: auba.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: auba.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: auba.5489265.xyz }
-  -
-    name: '美国东部阿什本2 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: aubb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: aubb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: aubb.5489265.xyz }
-  -
-    name: '美国东部阿什本3 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: aubc.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: aubc.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: aubc.5489265.xyz }
-  -
-    name: '美国西部凤凰城1 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: pha.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: pha.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: pha.5489265.xyz }
-  -
-    name: '美国西部凤凰城2 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: phb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: phb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: phb.5489265.xyz }
-  -
-    name: '美国西部圣何塞1 | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: sjca.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: sjca.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: sjca.5489265.xyz }
-  -
-    name: '美国西部圣何塞2 | 1x'
-    type: vmess
-    server: shsawcaa.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: shsawca.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: shsawca.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: shsawca.76898102.xyz }
-  -
-    name: '美国西部洛杉矶1 | 1x'
-    type: vmess
-    server: laxdscaa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: laxdsca.76898102.xyz
-    network: ws
-    ws-path: /bvdfyueusf
-    ws-headers:
-      Host: laxdsca.76898102.xyz
-    ws-opts:
-      path: /bvdfyueusf
-      headers: { Host: laxdsca.76898102.xyz }
-  -
-    name: '美国西部洛杉矶2 | 1x'
-    type: vmess
-    server: iudbvcxa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: laxdscb.76898102.xyz
-    network: ws
-    ws-path: /bvdfyueusf
-    ws-headers:
-      Host: laxdscb.76898102.xyz
-    ws-opts:
-      path: /bvdfyueusf
-      headers: { Host: laxdscb.76898102.xyz }
-  -
-    name: '巴西1 | 0.1x'
-    type: vmess
-    server: bxaa.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: bxa.76898102.xyz
-    network: ws
-    ws-path: /bxqmiao
-    ws-headers:
-      Host: bxa.76898102.xyz
-    ws-opts:
-      path: /bxqmiao
-      headers: { Host: bxa.76898102.xyz }
-  -
-    name: '巴西2 | 0.1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: baxb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: baxb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: baxb.5489265.xyz }
-  -
-    name: '巴西4 | 0.1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: baxd.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: baxd.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: baxd.5489265.xyz }
-  -
-    name: '巴西5 | 0.1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: baxe.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: baxe.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: baxe.5489265.xyz }
-  -
-    name: '巴西7 | 0.1x'
-    type: vmess
-    server: baxtc.66666654.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: baxt.66666654.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: baxt.66666654.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: baxt.66666654.xyz }
-  -
-    name: '加拿大-蒙特利尔1 | 0.5x'
-    type: vmess
-    server: camtleaa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: camtlea.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: camtlea.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: camtlea.76898102.xyz }
-  -
-    name: '加拿大-蒙特利尔2 | 0.5x'
-    type: vmess
-    server: camtlebb.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: camtleb.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: camtleb.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: camtleb.76898102.xyz }
-  -
-    name: '法国1 | 0.5x'
-    type: vmess
-    server: frsadubiaa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: frsadubia.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: frsadubia.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: frsadubia.76898102.xyz }
-  -
-    name: '法国2 | 0.5x'
-    type: vmess
-    server: frsadubibb.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: frsadubib.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: frsadubib.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: frsadubib.76898102.xyz }
-  -
-    name: '法国3 | 0.5x'
-    type: vmess
-    server: frsadubicc.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: frsadubic.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: frsadubic.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: frsadubic.76898102.xyz }
-  -
-    name: '法国4 | 0.5x'
-    type: vmess
-    server: frsadubidd.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: frsadubid.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: frsadubid.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: frsadubid.76898102.xyz }
-  -
-    name: '俄罗斯-BT/PT端口:4500-DMCA | 1x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: rus.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: rus.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: rus.5489265.xyz }
-  -
-    name: '德国1 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: dea.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: dea.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: dea.5489265.xyz }
-  -
-    name: '德国2 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: deb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: deb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: deb.5489265.xyz }
-  -
-    name: '德国3 | 0.5x'
-    type: vmess
-    server: decc.66666654.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: dec.66666654.xyz
-    network: ws
-    ws-path: /aoigbneioueb
-    ws-headers:
-      Host: dec.66666654.xyz
-    ws-opts:
-      path: /aoigbneioueb
-      headers: { Host: dec.66666654.xyz }
-  -
-    name: '德国4 | 0.5x'
-    type: vmess
-    server: dedd.66666654.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: ded.66666654.xyz
-    network: ws
-    ws-path: /aoigbneioueb
-    ws-headers:
-      Host: ded.66666654.xyz
-    ws-opts:
-      path: /aoigbneioueb
-      headers: { Host: ded.66666654.xyz }
-  -
-    name: '英国1 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: gba.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: gba.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: gba.5489265.xyz }
-  -
-    name: '英国2 | 0.5x'
-    type: vmess
-    server: gbbb.76898102.xyz
-    port: 2052
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: gbb.76898102.xyz
-    network: ws
-    ws-path: /miao
-    ws-headers:
-      Host: gbb.76898102.xyz
-    ws-opts:
-      path: /miao
-      headers: { Host: gbb.76898102.xyz }
-  -
-    name: '英国3 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2086
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: gbc.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: gbc.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: gbc.5489265.xyz }
-  -
-    name: '荷兰1 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2082
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: nla.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: nla.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: nla.5489265.xyz }
-  -
-    name: '荷兰2 | 0.5x'
-    type: vmess
-    server: speedcl.5489265.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: nlb.5489265.xyz
-    network: ws
-    ws-path: /uasfbbc
-    ws-headers:
-      Host: nlb.5489265.xyz
-    ws-opts:
-      path: /uasfbbc
-      headers: { Host: nlb.5489265.xyz }
-  -
-    name: '荷兰3 | 0.5x'
-    type: vmess
-    server: amstdheaa.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: amstdhea.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: amstdhea.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: amstdhea.76898102.xyz }
-  -
-    name: '荷兰4 | 0.5x'
-    type: vmess
-    server: amstdhebb.76898102.xyz
-    port: 2095
-    uuid: 17f10d7d-5503-3e2a-bbf4-e43ea0e65810
-    alterId: 0
-    cipher: aes-128-gcm
-    udp: true
-    servername: amstdheb.76898102.xyz
-    network: ws
-    ws-path: /funsdfrh
-    ws-headers:
-      Host: amstdheb.76898102.xyz
-    ws-opts:
-      path: /funsdfrh
-      headers: { Host: amstdheb.76898102.xyz }
-  - name: JP sg5 日本
-    type: vmess
-    server: sg5.6yhy.top
-    port: 443
-    uuid: 612d958a-bc4a-328b-9f91-342116457183
-    alterId: 0
-    cipher: auto
-    udp: true
-    servername: sg5.6yhy.top
-    network: ws
-    ws-opts:
-      path: /6yhy
-      headers:
-        Host: sg5.6yhy.top
-    ws-path: /6yhy
-    ws-headers:
-      Host: sg5.6yhy.top
-    tls: true
-  - name: JP 日本 sg4
-    type: vmess
-    server: zf.sh.cu.edu.kg
-    port: 16565
-    uuid: 612d958a-bc4a-328b-9f91-342116457183
-    alterId: 0
-    cipher: auto
-    udp: true
-    servername: sg4.6yhy.top
-    network: ws
-    ws-opts:
-      path: /6yhy
-      headers:
-        Host: sg4.6yhy.top
-    ws-path: /6yhy
-    ws-headers:
-      Host: sg4.6yhy.top
-    tls: true
     skip-cert-verify: true
-  - name: US sg7 dedipath圣何赛
-    type: vmess
-    server: zf.hn.cu.edu.kg
-    port: 17837
-    uuid: 612d958a-bc4a-328b-9f91-342116457183
-    alterId: 0
-    cipher: auto
     udp: true
-    servername: sg7.6yhy.top
-    network: ws
-    ws-opts:
-      path: /6yhy
-      headers:
-        Host: sg7.6yhy.top
-    ws-path: /6yhy
-    ws-headers:
-      Host: sg7.6yhy.top
-    tls: true
-    skip-cert-verify: true
-  - name: US sg9 digitalvirt洛杉矶
-    type: vmess
-    server: sg9.6yhy.top
-    port: 443
-    uuid: 612d958a-bc4a-328b-9f91-342116457183
-    alterId: 0
-    cipher: auto
-    udp: true
-    servername: sg9.6yhy.top
-    network: ws
-    ws-opts:
-      path: /6yhy
-      headers:
-        Host: sg9.6yhy.top
-    ws-path: /6yhy
-    ws-headers:
-      Host: sg9.6yhy.top
-    tls: true
-  - {name: 🇺🇸 美国 圣何塞 V2 -1, server: 108.165.211.158, port: 40056, client-fingerprint: chrome, type: vmess, uuid: b23ec8d4-666d-3497-a69b-48a8129a1177, alterId: 4, cipher: auto, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: microsoft.com}}, udp: true}
+    # DingJI-G
+  - { name: 🇺🇸美国凤凰城_gpt, server: 163.123.192.167, port: 50000, ports: 50000-50080, mport: 50000-50080, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国凤凰城1号, server: 129.153.75.202, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国凤凰城2号, server: 129.153.80.156, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国凤凰城3号, server: 158.101.37.59, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国凤凰城4号, server: 129.146.249.162, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇸🇬新加坡hy, server: 140.245.52.9, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇫🇷法国hy, server: 62.210.71.30, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇩🇪德国法兰克福, server: 138.2.179.192, port: 1, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇩🇪德国法兰克福2, server: 152.70.176.68, port: 1, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国芝加哥, server: 149.130.215.22, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 328514fa-a78c-4e9c-92af-bec721a6cbc2 }
+  - { name: 🇺🇸美国凤凰城-0.1倍, type: vless, server: 129.146.102.191, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: chrome, servername: djdownloadus.xn--4gq62f52gopi49k.com }
+  - { name: 🇺🇸美国凤凰城-三网-0.1倍, type: vless, server: 141.193.68.81, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: xtls-rprx-vision, client-fingerprint: safari, servername: djdownloadus.xn--4gq62f52gopi49k.com }
+  - { name: 🇺🇸美国1号-0.1倍, type: vless, server: 77.75.199.163, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: '', client-fingerprint: chrome, network: ws, ws-opts: { path: /djjc/us1, headers: { Host: k12us1.djjc.sbs } } }
+  - { name: 🇺🇸美国2号-0.1倍, type: vless, server: 77.75.199.163, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: '', client-fingerprint: safari, network: ws, ws-opts: { path: /djjc/us2, headers: { Host: k4us2.djjc.sbs } } }
+  - { name: 🇺🇸美国3号-0.1倍, type: vless, server: 77.75.199.163, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: '', client-fingerprint: ios, network: ws, ws-opts: { path: /djjc/us3, headers: { Host: k11us3.djjc.sbs } } }
+  - { name: 🇺🇸美国4号-0.1倍, type: vless, server: 77.75.199.163, port: 443, uuid: 328514fa-a78c-4e9c-92af-bec721a6cbc2, udp: true, tls: true, skip-cert-verify: false, flow: '', client-fingerprint: ios, network: ws, ws-opts: { path: /djjc/us4, headers: { Host: kus4.djjc.sbs } } }
+    # BaiPao-G
+  - { name: 🇺🇸请每月更-新一次订阅, type: vmess, server: uu8bakea4d07b2ww1.lovebaipiao.net, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: azure.microsoft.com } }, ws-path: /, ws-headers: { Host: azure.microsoft.com } }
+  - { name: 永久官网-白嫖机场.com, type: vmess, server: digitalocean.com, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }, ws-path: /, ws-headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }
+  - { name: 🇺🇸美国1-baipiaoyes.top, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }, ws-path: /, ws-headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }
+  - { name: 🇺🇸美国2-baipiaoyes.top, type: vmess, server: 104.19.174.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }, ws-path: /, ws-headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }
+  - { name: 🇷🇺俄罗斯-cn2专线-去广告, type: vmess, server: eedp257bubu2wefy.lovebaipiao.net, port: 54321, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /iphone, headers: { Host: www.apple.com } }, ws-path: /iphone, ws-headers: { Host: www.apple.com } }
+  - { name: 🇷🇺俄罗斯1-cn2专线-去广告, type: vmess, server: eedp257bubu2wefy1.lovebaipiao.net, port: 54321, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /iphone, headers: { Host: www.apple.com } }, ws-path: /iphone, ws-headers: { Host: www.apple.com } }
+  - { name: 🇷🇺俄罗斯2-cn2专线-去广告, type: vmess, server: eedp257bubu2wefy2.lovebaipiao.net, port: 54321, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /iphone, headers: { Host: www.apple.com } }, ws-path: /iphone, ws-headers: { Host: www.apple.com } }
+  - { name: 🇷🇺俄罗斯3-cn2专线-去广告, type: vmess, server: eedp257bubu2wefy3.lovebaipiao.net, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /iphone, headers: { Host: www.apple.com } }, ws-path: /iphone, ws-headers: { Host: www.apple.com } }
+  - { name: 🇨🇦加拿大S丨电报群@bp520, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.889611.com } }, ws-path: /, ws-headers: { Host: ca3.889611.com } }
+  - { name: 🇬🇧英国S-ChatGpt, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: uk3.889611.com } }, ws-path: /, ws-headers: { Host: uk3.889611.com } }
+  - { name: 🇷🇺俄罗斯S丨白嫖机场.com, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: er3.889611.com } }, ws-path: /, ws-headers: { Host: er3.889611.com } }
+  - { name: 香港S, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hk3.889611.com } }, ws-path: /, ws-headers: { Host: hk3.889611.com } }
+  - { name: 🇹🇷土耳其S丨Netflix可中文字幕, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: tr3.889611.com } }, ws-path: /, ws-headers: { Host: tr3.889611.com } }
+  - { name: 🇸🇬新加坡S丨白嫖机场.com, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: sg3.889611.com } }, ws-path: /, ws-headers: { Host: sg3.889611.com } }
+  - { name: 🇭🇰香港1丨白嫖机场.com, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hk3.889611.com } }, ws-path: /, ws-headers: { Host: hk3.889611.com } }
+  - { name: 🇭🇰香港3丨白嫖机场.com, type: vmess, server: 104.18.154.42, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hk3.visaapp.top } }, ws-path: /, ws-headers: { Host: hk3.visaapp.top } }
+  - { name: Youtube破解广告1, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: er3.889611.com } }, ws-path: /, ws-headers: { Host: er3.889611.com } }
+  - { name: Youtube破解广告2, type: vmess, server: 104.18.15.148, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: er3.889611.com } }, ws-path: /, ws-headers: { Host: er3.889611.com } }
+  - { name: Youtube破解广告3, type: vmess, server: 104.18.15.149, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: er3.visaapp.top } }, ws-path: /, ws-headers: { Host: er3.visaapp.top } }
+  - { name: Youtube破解广告4, type: vmess, server: 104.18.15.150, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: er3.889611.com } }, ws-path: /, ws-headers: { Host: er3.889611.com } }
+  - { name: 🇨🇦加拿大1丨电报群@bp520, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.889611.com } }, ws-path: /, ws-headers: { Host: ca3.889611.com } }
+  - { name: 🇨🇦加拿大2丨电报群@bp520, type: vmess, server: 104.18.15.148, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.889611.com } }, ws-path: /, ws-headers: { Host: ca3.889611.com } }
+  - { name: 🇨🇦加拿大3丨电报群@bp520, type: vmess, server: 172.67.170.142, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.visaapp.top } }, ws-path: /, ws-headers: { Host: ca3.visaapp.top } }
+  - { name: 🇨🇦加拿大6丨电报群@bp520, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ca3.visaapp.top } }, ws-path: /, ws-headers: { Host: ca3.visaapp.top } }
+  - { name: 🇸🇬新加坡1丨电报群@bp520, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: sg3.889611.com } }, ws-path: /, ws-headers: { Host: sg3.889611.com } }
+  - { name: 🇸🇬新加坡2丨电报群@bp520, type: vmess, server: 104.18.15.148, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: sg3.889611.com } }, ws-path: /, ws-headers: { Host: sg3.889611.com } }
+  - { name: 🇸🇬新加坡3丨电报群@bp520, type: vmess, server: 104.19.173.168, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: sg3.889611.com } }, ws-path: /, ws-headers: { Host: sg3.889611.com } }
+  - { name: 🇹🇷土耳其1丨白嫖机场.com, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: tr3.889611.com } }, ws-path: /, ws-headers: { Host: tr3.889611.com } }
+  - { name: 🇹🇷土耳其2丨白嫖机场.com, type: vmess, server: 104.18.15.148, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: tr3.889611.com } }, ws-path: /, ws-headers: { Host: tr3.889611.com } }
+  - { name: 🇹🇷土耳其3丨白嫖机场.com, type: vmess, server: 104.18.15.149, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: tr3.889611.com } }, ws-path: /, ws-headers: { Host: tr3.889611.com } }
+  - { name: 🇬🇧英国1丨ChatGpt, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: uk3.889611.com } }, ws-path: /, ws-headers: { Host: uk3.889611.com } }
+  - { name: 🇬🇧英国6丨ChatGpt, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: uk3.visaapp.top } }, ws-path: /, ws-headers: { Host: uk3.visaapp.top } }
+  - { name: 🇺🇸美国光速1, type: vmess, server: 104.18.15.147, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us3.889611.com } }, ws-path: /, ws-headers: { Host: us3.889611.com } }
+  - { name: 🇺🇸美国光速2, type: vmess, server: 104.18.15.148, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }, ws-path: /, ws-headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }
+  - { name: 🇺🇸美国光速3, type: vmess, server: 104.18.15.149, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }, ws-path: /, ws-headers: { Host: ustoucjjnid18sj6us.lovebaipiao.com } }
+  - { name: 🇺🇸美国光速4, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }, ws-path: /, ws-headers: { Host: us3.nnc6umer4.baijieedmcv9cuc.xyz } }
+  - { name: 🇺🇸美国光速6, type: vmess, server: 104.19.173.68, port: 80, uuid: 77753d9e-df57-437e-826a-ce6235ecde77, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us3.visaapp.top } }, ws-path: /, ws-headers: { Host: us3.visaapp.top } }
 proxy-groups:
   - name: 🔰国外流量
     type: select
@@ -1884,46 +390,31 @@ proxy-groups:
       - PORTX-Downloads
       - Chain proxy-FREE
       - Chain proxy-KEJIBEAR
-      - Chain proxy-REIMU
       - Chain proxy-DripCloud
-      - DingJi-Downlaods
       - Chain proxy-DingJI
       - Chain proxy-BaiPao
-      - BaiPao-Downlaods
-      - Chain proxy-Helium Network
       - Chain proxy-6yhy
       - 6YHY-Downlaods
-      - Chain proxy-SANXI
-      - Chain proxy-Mars
-      - Chain proxy-USES
+      - Chain proxy-TaroNet
+      - Chain proxy-MiaoSu
       - Downloads
-      - SSR專區
-      - USES
   - name: 通道專區
     proxies:
       - AC900_Clash
       - AC900_Nekoray
       - Windows_V2rayN
-      - Windows_V2rayN_SingBox
       - Windows_Nekoray
       - Windows_Nekoray2
       - Windows_Nekoray3
-      - Windows_ClashN
       - Office_V2rayN
-      - Office_V2rayN_SingBox
       - Office_Nekoray
-      - Office_ClashN
       - Netgear_V2rayN
-      - Netgear_ClashN
       - Netgear_ClashForWindows
+      - Netgear_ClashVerge
       - Netgear_Nekoray
       - Netgear_Nekoray2
     type: select
     _index: 2
-  - name: SSR專區
-    proxies:
-      - 🇹🇼 TW-O-SSR-01
-    type: select
   - name: Chain proxy-Dabai
     proxies:
       - DaBai-Downlaods
@@ -1944,30 +435,79 @@ proxy-groups:
       - KEJIBEAR-Downloads
       - Downloads
     type: relay
-  - name: Chain proxy-REIMU
-    proxies:
-      - REIMU-Downloads
-      - Downloads
-    type: relay
-    
   - name: Chain proxy-DripCloud
     proxies:
-      - DripCloud Group
+      - DripCloud-Downloads
       - Downloads
     type: relay
+  - name: DingJI-G
+    proxies:
+      - 🇺🇸美国凤凰城_gpt
+      - 🇺🇸美国凤凰城1号
+      - 🇺🇸美国凤凰城2号
+      - 🇺🇸美国凤凰城3号
+      - 🇺🇸美国凤凰城4号
+      - 🇸🇬新加坡hy
+      - 🇫🇷法国hy
+      - 🇩🇪德国法兰克福
+      - 🇩🇪德国法兰克福2
+      - 🇺🇸美国芝加哥
+      - 🇺🇸美国凤凰城-0.1倍
+      - 🇺🇸美国凤凰城-三网-0.1倍
+      - 🇺🇸美国1号-0.1倍
+      - 🇺🇸美国2号-0.1倍
+      - 🇺🇸美国3号-0.1倍
+      - 🇺🇸美国4号-0.1倍
+    type: select
+  - name: BaiPao-G
+    type: select
+    proxies:
+      - 🇺🇸请每月更-新一次订阅
+      - 永久官网-白嫖机场.com
+      - 🇺🇸美国1-baipiaoyes.top
+      - 🇺🇸美国2-baipiaoyes.top
+      - 🇷🇺俄罗斯-cn2专线-去广告
+      - 🇷🇺俄罗斯1-cn2专线-去广告
+      - 🇷🇺俄罗斯2-cn2专线-去广告
+      - 🇷🇺俄罗斯3-cn2专线-去广告
+      - 🇨🇦加拿大S丨电报群@bp520
+      - 🇬🇧英国S-ChatGpt
+      - 🇷🇺俄罗斯S丨白嫖机场.com
+      - 香港S
+      - 🇹🇷土耳其S丨Netflix可中文字幕
+      - 🇸🇬新加坡S丨白嫖机场.com
+      - 🇭🇰香港1丨白嫖机场.com
+      - 🇭🇰香港3丨白嫖机场.com
+      - Youtube破解广告1
+      - Youtube破解广告2
+      - Youtube破解广告3
+      - Youtube破解广告4
+      - 🇨🇦加拿大1丨电报群@bp520
+      - 🇨🇦加拿大2丨电报群@bp520
+      - 🇨🇦加拿大3丨电报群@bp520
+      - 🇨🇦加拿大6丨电报群@bp520
+      - 🇸🇬新加坡1丨电报群@bp520
+      - 🇸🇬新加坡2丨电报群@bp520
+      - 🇸🇬新加坡3丨电报群@bp520
+      - 🇹🇷土耳其1丨白嫖机场.com
+      - 🇹🇷土耳其2丨白嫖机场.com
+      - 🇹🇷土耳其3丨白嫖机场.com
+      - 🇬🇧英国1丨ChatGpt
+      - 🇬🇧英国6丨ChatGpt
+      - 🇺🇸美国光速1
+      - 🇺🇸美国光速2
+      - 🇺🇸美国光速3
+      - 🇺🇸美国光速4
+      - 🇺🇸美国光速6
   - name: Chain proxy-DingJI
     proxies:
-      - DingJi-Downlaods
+      - DingJI-G
       - Downloads
     type: relay 
+    
   - name: Chain proxy-BaiPao
     proxies:
-      - BaiPao-Downlaods
-      - Downloads
-    type: relay
-  - name: Chain proxy-Helium Network
-    proxies:
-      - Helium Network-Downloads
+      - BaiPao-G
       - Downloads
     type: relay
   - name: Chain proxy-6yhy
@@ -1975,65 +515,34 @@ proxy-groups:
       - 6YHY-Downlaods
       - Downloads
     type: relay
-  - name: Chain proxy-SANXI
+  - name: Chain proxy-TaroNet
     proxies:
-      - SANXI-Downloads
+      - TaroNet-download
       - Downloads
     type: relay
-  - name: Chain proxy-Mars
+  - name: Chain proxy-MiaoSu
     proxies:
-      - Mars-Download
+      - MiaoSu-Download
       - Downloads
-    type: relay
-    
-  - name: Chain proxy-USES
-    proxies:
-      - USES
-      - 🇯🇵 JP-X-03 (V2/Clash)
     type: relay
   - name: Downloads
     proxies:
-      - ABox公益计划-US
-      - 🇨🇦 CA-O-01
-      - 🇬🇧 GB-O-01-sdgf
-      - 🇰🇷 KR-O-01
-      - 🇹🇼 TW-O-01
-      - 🇹🇼 TW-O-02
+      - Download01
+      - Download02
+      - Download03
+      - Download04
+      - Download05
+      - Download06
+      - Download07
+      - Download08
+      - Download09
+      - Download10
       - 🇺🇸 US-O-03
       - 🇺🇸 US-O-05
-      - 🇺🇸 US-O-06
-      - 🇺🇸 US-O-07-sdgf
-      - 🇺🇸 US-O-09-xn
-      - 🇺🇸 US-O-10-edtu
-      - 🇺🇸 US-O-11
-      - 🇺🇸 US-O-12
-    type: select
-  - name: USES
-    proxies:
-      - 🇫🇷 FR-X-001
-      - 🇯🇵 JP-X-03 (V2/Clash)
-      - 🇯🇵 JP-X-007
-      - 🇸🇬 SG-X-001
-      - 🇸🇬 SG-X-002
-      - 🇸🇬 SG-X-003
-      - 🇸🇬 SG-X-004
-      - 🇸🇬 SG-X-007
-      - 🇹🇼 TW-X-001
-      - 🇹🇼 TW-X-002
-      - 🇹🇼 TW-X-003
-      - 🇹🇼 TW-X-004
-      - 🇹🇼 TW-X-005
-      - 🇺🇸 US-X-003
-      - 🇺🇸 US-X-004
-      - 🇺🇸 US-X-006
-      - 🇺🇸 US-X-007
-      - 🇺🇸 US-X-008
-    type: select
-  - name: DripCloud Group
-    proxies:
-      - 🇺🇸 美国 圣何塞 V2 -1
+      - 🇺🇸 US-O-08
     type: select
 rules:
+  - DOMAIN-SUFFIX,sweet-home-maid.com,🔰国外流量
   - DOMAIN-SUFFIX,leech.ninja,🔰国外流量
   - DOMAIN-SUFFIX,jpavz.net,🔰国外流量
   - DOMAIN-SUFFIX,zimg.jp,🔰国外流量
