@@ -203,7 +203,7 @@ proxies:
 
   - {"type":"vless","name":"🇺🇸 US-X-009","server":"172.67.191.50","port":443,"uuid":"eac8fbd4-eb58-4e93-a205-86021dc0bf9a","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-08-m-19.222222288.xyz"},"path":"/1F0PZ4hiduitoYk9Pa"},"encryption":"none","servername":"c-l-08-m-19.222222288.xyz"}
   
-  - {"type":"vless","name":"🇺🇸 US-X-010-優選IP","server":"162.159.44.201","port":443,"uuid":"930a1b6f-f310-4e34-ba7a-c8b6f552a313","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-01-m-11.666666665.xyz"},"path":"/dJTMmjUWr7ea4sfg"},"encryption":"none","servername":"c-l-01-m-11.666666665.xyz"}
+  - {"type":"vless","name":"🇺🇸 US-X-010","server":"162.159.44.201","port":443,"uuid":"930a1b6f-f310-4e34-ba7a-c8b6f552a313","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-01-m-11.666666665.xyz"},"path":"/dJTMmjUWr7ea4sfg"},"encryption":"none","servername":"c-l-01-m-11.666666665.xyz"}
 
   - {"skip-cert-verify":true,"sni":"iepl.vnz2.cat.bilibili.com","type":"trojan","password":"bed02300-1d8c-49b2-9ae4-785086049773","server":"d1.catcat321.com","port":44183,"name":"🇻🇳 VN-X-001"}
   
@@ -301,7 +301,7 @@ proxy-groups:
       - 🇺🇸 US-X-007
       - 🇺🇸 US-X-008
       - 🇺🇸 US-X-009
-      - 🇺🇸 US-X-010-優選IP
+      - 🇺🇸 US-X-010
       - 🇻🇳 VN-X-001
       - 🇻🇳 VN-X-002
       - 🇻🇳 VN-X-003
