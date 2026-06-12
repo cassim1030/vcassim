@@ -42,7 +42,7 @@ proxies:
 
   - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"frk.fastsoonlink.com","port":40011,"cipher":"chacha20-ietf-poly1305","password":"574F4665-736E-40FF-B2C7-16095F9BE8E9","name":"🇦🇺 AU-X-005"}
 
-  - {"type":"hysteria2","name":"🇨🇦 CA-X-001","server":"jnd.dabache.top","port":20000,"password":"65327fe9-adb9-488d-8161-376d540e942f","sni":"jnd.dabache.top","skip-cert-verify":true,"tfo":false}
+  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"35.183.244.34","port":443,"cipher":"aes-256-cfb","password":"amazonskr05","name":"🇨🇦 CA-X-001"}
   
   - {"name":"🇨🇦 CA-X-002","type":"vmess","server":"146.724064.xyz","port":443,"cipher":"auto","uuid":"ab6c0c3d-bd17-4917-bf09-d21c9404f48f","alterId":0,"tls":true,"network":"ws","ws-opts":{"path":"/cizrvws","headers":{"Host":"146.724064.xyz"}},"servername":"146.724064.xyz"}
   
@@ -82,9 +82,9 @@ proxies:
    
   - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"chengbai02.ascwt179.com","port":13223,"cipher":"aes-128-gcm","password":"JVrsLLN1tkN8oXZO","name":"🇬🇧 GB-X-005"}
   
-  - {"type":"hysteria2","name":"🇭🇰 HK-X-001","server":"194.156.99.107","port":50764,"password":"73ffcd12-0155-432f-9fd4-c1d2bf9190d7","sni":"api.push.apple.com","skip-cert-verify":true,"tfo":false}
+  - {"skip-cert-verify":true,"sni":"de.01.naiun.bilibili.com","network":"tcp","type":"trojan","password":"4f4d1167-ef14-4304-9bce-0740472503ef","server":"155.117.198.85","port":46424,"name":"🇭🇰 HK-X-001","client-fingerprint":"chrome"}
  
-  - {"type":"tuic","name":"🇭🇰 HK-X-002","server":"151.242.153.94","port":59737,"password":"JztzkUIPucSgg4Wma5y0cKrk","uuid":"de0cf2ee-e982-45f7-b2ab-dd40919ae075","sni":"www.bing.com","alpn":["h3"],"skip-cert-verify":true,"allowInsecure":"1","congestion-controller":"bbr","version":5}
+  - {"skip-cert-verify":true,"sni":"is.01.naiun.bilibili.com","network":"tcp","type":"trojan","password":"4f4d1167-ef14-4304-9bce-0740472503ef","server":"103.177.136.45","port":47909,"name":"🇭🇰 HK-X-002","client-fingerprint":"chrome"}
 
   - {"type":"vless","name":"🇭🇰 HK-X-003","server":"n1732526138.lie5d.cyou","port":443,"uuid":"00ea4c5c-104e-434f-a126-29d34fa7bb0f","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"headers":{"Host":"n1732526138.lie5d.cyou"},"path":"/00ea4c5c-104e-434f-a126-29d34fa7bb0f"},"encryption":"none","client-fingerprint":"chrome","servername":"n1732526138.lie5d.cyou"}
   
@@ -92,25 +92,12 @@ proxies:
   
   - {"type":"ss","server":"103.73.67.194","port":38388,"cipher":"aes-256-cfb","password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","name":"🇭🇰 HK-X-005"}
 
-  - name: 🇯🇵 JP-X-03 (V2/Clash)
-    type: vmess
-    server: fullaccesstointernet.eu.org
-    port: 2053
-    cipher: auto
-    uuid: 5a4cbe4e-dcab-49f9-825e-08bedb396729
-    alterId: 0
-    tls: true
-    skip-cert-verify: true
-    servername: ""
-    network: grpc
-    grpc-opts:
-      grpc-service-name: freedom
-      grpc-mode: gun
-
-  - {"name":"🇯🇵 JP-X-001","type":"vmess","server":"c60s4.portablesubmarines.com","port":26351,"cipher":"auto","uuid":"827aa158-679f-4c5e-8a84-d8f7d142c9de","alterId":0,"tls":false,"client-fingerprint":"chrome","network":"tcp"}
+  - {"type":"anytls","name":"🇯🇵 JP-X-001","server":"2.6rguyesfdhvbz.uk","port":25223,"sni":"2.6rguyesfdhvbz.uk","skip-cert-verify":false,"password":"4f87f425-6fc3-4955-a61a-53877e3d00e3","allowInsecure":"0","headerType":"none"}
   
-  - {"type":"vless","name":"🇯🇵 JP-X-002","server":"aws-yyyun21.yyds180.com","port":55411,"uuid":"692565c8-827d-4027-ab80-30daf570fc7d","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"qq","skip-cert-verify":false,"reality-opts":{"public-key":"K6SSqm0SqS89yS5QNW4RTyvryI-EaZEGNzpRGBU9ZAg","short-id":"f26074ab89dd83ce"},"network":"tcp","encryption":"none","servername":"www.apple.com.cn"}
+  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"89.125.244.186","port":8388,"cipher":"aes-256-gcm","password":"p0S6K0qTfVC2","name":"🇯🇵 JP-X-002"}
  
+  - {"type":"vless","name":"🇯🇵 JP-X-003","server":"jp4.zywm.eu.org","port":15198,"uuid":"83564060-4069-40b4-e657-adccef9c4b62","tls":true,"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"jp4.zywm.eu.org"},"path":"/jjp"},"encryption":"none","client-fingerprint":"chrome","servername":"jp4.zywm.eu.org"}
+  
   - {"type":"hysteria2","name":"🇯🇵 JP-X-004","server":"jp6.dexlos.com","port":21175,"password":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","sni":"jp6.dexlos.com","skip-cert-verify":false,"tfo":false}
    
   - {"type":"vless","name":"🇯🇵 JP-X-005","server":"n1743918700.lie5d.cyou","port":443,"uuid":"ab3a639a-2bec-4122-b891-38d9084fc067","tls":true,"client-fingerprint":"chrome","skip-cert-verify":true,"network":"ws","ws-opts":{"headers":{"Host":"n1743918700.lie5d.cyou"},"path":"/ab3a639a-2bec-4122-b891-38d9084fc067"},"servername":"n1743918700.lie5d.cyou"}
@@ -129,15 +116,15 @@ proxies:
   
   - {"type":"vless","name":"🇰🇷 KR-X-002","server":"cf.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
-  - {"type":"vless","name":"🇰🇷 KR-X-003","server":"103.150.8.160","port":50888,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
+  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"218.234.149.9","port":36785,"cipher":"aes-256-cfb","password":"qwerREWQ@@","name":"🇰🇷 KR-X-003"}
    
   - {"type":"vless","name":"🇰🇷 KR-X-004","server":"162.159.12.26","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
   - {"type":"vless","name":"🇰🇷 KR-X-005","server":"213.241.198.85","port":2096,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
-  - {"type":"vless","name":"🇳🇱 NL-X-001","server":"1758854058.tencentapp.cn","port":2096,"uuid":"70ced2e5-e10f-442e-bb2c-36f6ade7a43c","tls":true,"client-fingerprint":"chrome","skip-cert-verify":true,"network":"ws","ws-opts":{"headers":{"Host":"1758854149.speed.ukpgki.china.cctvalipay.cn"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2560},"servername":"1758854149.speed.ukpgki.china.cctvalipay.cn"}
+  - {"type":"vless","name":"🇳🇱 NL-X-001","server":"89.187.174.104","port":8443,"uuid":"394f6981-a782-4779-9a85-e6cf22935d93","tls":true,"alpn":["h2"],"skip-cert-verify":false,"network":"tcp","encryption":"none","client-fingerprint":"chrome","servername":"ams1.fromblancwithlove.com"}
   
-  - {"type":"vless","name":"🇳🇱 NL-X-002","server":"188.114.96.3","port":2082,"uuid":"28e96d9a-56d0-481a-a07c-b015009a0593","tls":false,"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"ghm.gh-ghnbari6264.workers.dev"},"path":"/eyJqdW5rIjoiQmx2MkRnWkdKT2giLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2560},"encryption":"none","client-fingerprint":"chrome","servername":"ghm.gh-ghnbari6264.workers.dev"}
+  - {"type":"vless","name":"🇳🇱 NL-X-002","server":"104.43.91.69","port":443,"uuid":"afcac633-0e1a-46c3-bef2-cc01cc0097c8","tls":true,"flow":"xtls-rprx-vision-udp443","client-fingerprint":"edge","skip-cert-verify":false,"network":"tcp","encryption":"none","servername":"r1.mizulina.top"}
   
   - {"type":"vless","name":"🇳🇱 NL-X-003","server":"104.21.1.102","port":2095,"uuid":"e382220d-7ecb-4063-89f3-fd5a4d46ee87","tls":false,"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"newbp.amiralinorozjam.workers.dev"},"path":"/eyJqdW5rIjoiYmMxRGZIeDNQIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2560},"encryption":"none","client-fingerprint":"chrome","servername":"newbp.amiralinorozjam.workers.dev"}
   
@@ -175,7 +162,7 @@ proxies:
 
   - {"type":"hysteria2","name":"🇸🇬 SG-X-005","server":"sg2.dexlos.com","port":20271,"password":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","sni":"sg2.dexlos.com","skip-cert-verify":false,"tfo":false}
 
-  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"r3mrcg007150y7y.cybervena.com","port":50099,"cipher":"chacha20-ietf-poly1305","password":"7e731ec3-f8e1-43f6-92cf-3978d14705c4","name":"🇹🇼 TW-X-001"}
+  - {"type":"anytls","name":"🇹🇼 TW-X-001","server":"2.6rguyesfdhvbz.uk","port":12344,"sni":"2.6rguyesfdhvbz.uk","skip-cert-verify":false,"password":"4f87f425-6fc3-4955-a61a-53877e3d00e3","allowInsecure":"0","headerType":"none"}
   
   - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"r3mrcg0071643p7.cybervena.com","port":50099,"cipher":"chacha20-ietf-poly1305","password":"7e731ec3-f8e1-43f6-92cf-3978d14705c4","name":"🇹🇼 TW-X-002"}
   
@@ -191,7 +178,7 @@ proxies:
 
   - {"type":"vless","name":"🇺🇸 US-X-003","server":"mobile.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
-  - {"type":"vless","name":"🇺🇸 US-X-004","server":"104.21.2.155","port":443,"uuid":"930a1b6f-f310-4e34-ba7a-c8b6f552a313","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-01-m-11-a.666666661.xyz"},"path":"/dJTMmjUWr7ea4sfg"},"encryption":"none","servername":"c-l-01-m-11-a.666666661.xyz"}
+  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"198.98.53.130","port":443,"cipher":"chacha20-ietf-poly1305","password":"eDfN7SODQceIOmIAbtJJtK","name":"🇺🇸 US-X-004"}
   
   - {"type":"vless","name":"🇺🇸 US-X-005","server":"104.18.102.220","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
@@ -310,9 +297,9 @@ proxy-groups:
   - name: JP GROUP
     type: select
     proxies:
-      - 🇯🇵 JP-X-03 (V2/Clash)
       - 🇯🇵 JP-X-001
       - 🇯🇵 JP-X-002
+      - 🇯🇵 JP-X-003
       - 🇯🇵 JP-X-004
       - 🇯🇵 JP-X-005
       - 🇯🇵 JP-X-006
