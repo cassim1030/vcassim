@@ -178,7 +178,7 @@ proxies:
 
   - {"type":"vless","name":"🇺🇸 US-X-003","server":"mobile.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","network":"ws","tls":true,"servername":"dd.ccfly.tech","ws-opts":{"path":"/","headers":{"Host":"dd.ccfly.tech"}}}
   
-  - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"198.98.53.130","port":443,"cipher":"chacha20-ietf-poly1305","password":"eDfN7SODQceIOmIAbtJJtK","name":"🇺🇸 US-X-004"}
+  - {"type":"vless","name":"🇺🇸 US-X-004","server":"144.34.228.128","port":6937,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","network":"ws","tls":true,"servername":"dd.ccfly.tech","ws-opts":{"path":"/","headers":{"Host":"dd.ccfly.tech"}}}
   
   - {"type":"vless","name":"🇺🇸 US-X-005","server":"104.18.102.220","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
