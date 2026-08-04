@@ -154,7 +154,7 @@ proxies:
 
   - {"type":"hysteria2","name":"🇸🇬 SG-X-001","server":"sg.20240211.xyz","port":52341,"password":"QMpJVYJVps","sni":"sg.20240211.xyz","skip-cert-verify":true,"tfo":false}
 
-  - {"type":"vless","name":"🇸🇬 SG-X-002","server":"sg1-r.link-t7.com","port":10036,"uuid":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE","short-id":"686c0ef0"},"network":"grpc","grpc-opts":{"grpc-service-name":"update"},"encryption":"none","servername":"s0.awsstatic.com"}
+  - {"type":"ss","name":"🇸🇬 SG-X-002","server":"13.229.182.63","port":80,"cipher":"aes-256-gcm","password":"dada1203","udp":true}
 
   - {"type":"vless","name":"🇸🇬 SG-X-003","server":"sg3-r.link-t7.com","port":10038,"uuid":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE","short-id":"686c0ef0"},"network":"grpc","grpc-opts":{"grpc-service-name":"update"},"encryption":"none","servername":"d1.awsstatic.com"}
 
