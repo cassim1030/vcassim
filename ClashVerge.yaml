@@ -82,7 +82,7 @@ proxies:
    
   - {"type":"ss","skip-cert-verify":false,"udp":false,"server":"chengbai02.ascwt179.com","port":13223,"cipher":"aes-128-gcm","password":"JVrsLLN1tkN8oXZO","name":"🇬🇧 GB-X-005"}
   
-  - {"skip-cert-verify":true,"sni":"de.01.naiun.bilibili.com","network":"tcp","type":"trojan","password":"4f4d1167-ef14-4304-9bce-0740472503ef","server":"155.117.198.85","port":46424,"name":"🇭🇰 HK-X-001","client-fingerprint":"chrome"}
+  - {"type":"vmess","name":"🇭🇰 HK-X-001","server":"n1767677275.wog3c.top","port":443,"uuid":"0bf83ee2-0428-4a4a-816c-753a462ae57d","alterId":0,"cipher":"auto","network":"ws","udp":true,"tls":true,"skip-cert-verify":false,"servername":"n1767677275.wog3c.top"}
  
   - {"skip-cert-verify":true,"sni":"is.01.naiun.bilibili.com","network":"tcp","type":"trojan","password":"4f4d1167-ef14-4304-9bce-0740472503ef","server":"103.177.136.45","port":47909,"name":"🇭🇰 HK-X-002","client-fingerprint":"chrome"}
 
