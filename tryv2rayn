@@ -82,7 +82,7 @@ hysteria2://73ffcd12-0155-432f-9fd4-c1d2bf9190d7@46.17.40.117:50198?sni=music.ap
 
 #SG
 hysteria2://QMpJVYJVps@sg.20240211.xyz:52341?sni=sg.20240211.xyz&insecure=1&allowInsecure=1#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-001
-vless://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg1-r.link-t7.com:10036?encryption=none&security=reality&sni=s0.awsstatic.com&fp=chrome&pbk=wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE&sid=686c0ef0&type=grpc&authority=&serviceName=update&mode=gun#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-002
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDM@13.229.182.63:80?#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-002
 vless://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg3-r.link-t7.com:10038?encryption=none&security=reality&sni=d1.awsstatic.com&fp=chrome&pbk=wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE&sid=686c0ef0&type=grpc&authority=&serviceName=update&mode=gun#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-003
 hysteria2://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg1.dexlos.com:20002?sni=sg1.dexlos.com&insecure=0&allowInsecure=0#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-004
 hysteria2://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg2.dexlos.com:20271?sni=sg2.dexlos.com&insecure=0&allowInsecure=0#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-005
