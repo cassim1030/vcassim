@@ -174,7 +174,7 @@ proxies:
   
   - {"type":"hysteria2","name":"🇺🇸 US-X-001","server":"cloudcone.20240211.xyz","port":52341,"password":"QMpJVYJVps","sni":"cloudcone.20240211.xyz","skip-cert-verify":true,"tfo":false}
 
-  - {"type":"vless","name":"🇺🇸 US-X-002","server":"cf.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
+  - {"type":"vless","name":"🇺🇸 US-X-002","server":"telecom.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","network":"ws","tls":true,"servername":"dd.ccfly.tech","ws-opts":{"path":"/","headers":{"Host":"dd.ccfly.tech"}}}
 
   - {"type":"vless","name":"🇺🇸 US-X-003","server":"mobile.twitter.now.cc","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","network":"ws","tls":true,"servername":"dd.ccfly.tech","ws-opts":{"path":"/","headers":{"Host":"dd.ccfly.tech"}}}
   
