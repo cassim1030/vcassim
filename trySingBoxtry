@@ -127,7 +127,7 @@
       "tag": "V2RAYN",
       "type": "socks",
       "server": "127.0.0.1",
-      "server_port": 20808,
+      "server_port": 10808,
       "password": "",
       "version": "5"
     },
