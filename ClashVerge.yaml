@@ -84,7 +84,7 @@ proxies:
   
   - {"type":"vmess","name":"🇭🇰 HK-X-001","server":"n1767677275.wog3c.top","port":443,"uuid":"0bf83ee2-0428-4a4a-816c-753a462ae57d","alterId":0,"cipher":"auto","network":"ws","udp":true,"tls":true,"skip-cert-verify":false,"servername":"n1767677275.wog3c.top"}
  
-  - {"skip-cert-verify":true,"sni":"is.01.naiun.bilibili.com","network":"tcp","type":"trojan","password":"4f4d1167-ef14-4304-9bce-0740472503ef","server":"103.177.136.45","port":47909,"name":"🇭🇰 HK-X-002","client-fingerprint":"chrome"}
+  - {"type":"vless","name":"🇭🇰 HK-X-002","server":"2.26.224.98","port":443,"uuid":"75baa52e-0655-4c6b-8685-e8058b0adb7a","network":"xhttp","tls":true,"servername":"www.amd.com","reality-opts":{"public-key":"jgf0wWpgkEJZzu9wu45Ms33SNZpibtx507rpvzfz3mQ","short-id":"635a76c25a4b1820"},"client-fingerprint":"firefox"}
 
   - {"type":"vless","name":"🇭🇰 HK-X-003","server":"n1732526138.lie5d.cyou","port":443,"uuid":"00ea4c5c-104e-434f-a126-29d34fa7bb0f","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"headers":{"Host":"n1732526138.lie5d.cyou"},"path":"/00ea4c5c-104e-434f-a126-29d34fa7bb0f"},"encryption":"none","client-fingerprint":"chrome","servername":"n1732526138.lie5d.cyou"}
   
