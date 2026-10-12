@@ -180,7 +180,7 @@ proxies:
   
   - {"type":"vless","name":"🇺🇸 US-X-004","server":"144.34.228.128","port":6937,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","network":"ws","tls":true,"servername":"dd.ccfly.tech","ws-opts":{"path":"/","headers":{"Host":"dd.ccfly.tech"}}}
   
-   - {"type":"vless","name":"🇺🇸 US-X-005","server":"169.40.42.229","port":443,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"ios","skip-cert-verify":false,"reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"},"network":"tcp","encryption":"none","servername":"yahoo.com"}
+  - {"type":"vless","name":"🇺🇸 US-X-005","server":"169.40.42.229","port":443,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"ios","skip-cert-verify":false,"reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"},"network":"tcp","encryption":"none","servername":"yahoo.com"}
   
   - {"name":"🇺🇸 US-X-006","type":"vmess","server":"phoenix0202.zgjok.com","port":443,"cipher":"auto","uuid":"d9c36b55-447a-4484-882b-d799f5301681","alterId":0,"tls":true,"network":"ws","ws-opts":{"path":"/d9c36b55-447a-4484-882b-d799f5301681","headers":{"Host":"phoenix0202.zgjok.com"}},"client-fingerprint":"","servername":"phoenix0202.zgjok.com"}
 
