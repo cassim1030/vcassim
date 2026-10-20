@@ -54,7 +54,7 @@ proxies:
   
   - {"type":"vless","name":"🇩🇪 DE-X-001","server":"104.21.50.90","port":443,"uuid":"4a471796-7c30-42b7-af97-637630bd04de","network":"ws","tls":true,"servername":"abibas.nl.eu.org","ws-opts":{"path":"/anonLhx0SFASG4l9FERJ1g","headers":{"Host":"abibas.nl.eu.org"}}}
   
-  - {"type":"hysteria2","name":"🇩🇪 DE-X-002","server":"130.61.50.75","port":6443,"password":"zhangyang","sni":"dash.cloudflare.com","skip-cert-verify":true,"tfo":false}
+  - {"type":"vless","name":"🇩🇪 DE-X-002","server":"2.26.60.235","port":443,"uuid":"4d6c61bc-c5b4-40f1-b693-5da35b564a01","tls":true,"client-fingerprint":"edge","skip-cert-verify":false,"reality-opts":{"public-key":"Yp3-UzTY6jo3JQZR9wUvAhMjZxSpb0FmuiQN41TZUHY","short-id":"396dc80c7d8b9c1c"},"network":"tcp","encryption":"none","servername":"www.sony.com"}
   
   - {"type":"hysteria2","name":"🇩🇪 DE-X-003","server":"www.fireflya.buzz","port":3549,"password":"S9VB96r2xegZUGfaMeBmRdLHAcxbH1QC","sni":"bing.com","skip-cert-verify":true,"tfo":false}
   
