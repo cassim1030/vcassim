@@ -122,7 +122,7 @@ proxies:
   
   - {"type":"vless","name":"🇰🇷 KR-X-005","server":"213.241.198.85","port":2096,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
   
-  - {"type":"vless","name":"🇳🇱 NL-X-001","server":"89.187.174.104","port":8443,"uuid":"394f6981-a782-4779-9a85-e6cf22935d93","tls":true,"alpn":["h2"],"skip-cert-verify":false,"network":"tcp","encryption":"none","client-fingerprint":"chrome","servername":"ams1.fromblancwithlove.com"}
+  - {"type":"vless","name":"🇳🇱 NL-X-001","server":"77.239.108.6","port":8443,"uuid":"4d6c61bc-c5b4-40f1-b693-5da35b564a01","tls":true,"client-fingerprint":"edge","skip-cert-verify":false,"reality-opts":{"public-key":"NLGSVk02dzUwiR4jj5Tei4xuIE7_UwBnYox3FluK6W0","short-id":"72"},"network":"tcp","encryption":"none","servername":"www.sony.com"}
   
   - {"type":"vless","name":"🇳🇱 NL-X-002","server":"104.43.91.69","port":443,"uuid":"afcac633-0e1a-46c3-bef2-cc01cc0097c8","tls":true,"flow":"xtls-rprx-vision-udp443","client-fingerprint":"edge","skip-cert-verify":false,"network":"tcp","encryption":"none","servername":"r1.mizulina.top"}
   
