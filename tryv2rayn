@@ -14,7 +14,7 @@ ss://2022-blake3-aes-128-gcm:MDhhMTdjZDI0MjI2ZWRlNg==:NTgyNGI4N2YtNjQ1ZS00Mg==@x
 
 #DE
 vless://4a471796-7c30-42b7-af97-637630bd04de@104.21.50.90:443?encryption=none&security=tls&sni=abibas.nl.eu.org&insecure=0&allowInsecure=0&type=ws&host=abibas.nl.eu.org&path=%2FanonLhx0SFASG4l9FERJ1g#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-001
-hysteria2://zhangyang@130.61.50.75:6443?sni=dash.cloudflare.com&insecure=1&allowInsecure=1#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-002
+vless://4d6c61bc-c5b4-40f1-b693-5da35b564a01@2.26.60.235:443?encryption=none&security=reality&sni=www.sony.com&fp=edge&pbk=Yp3-UzTY6jo3JQZR9wUvAhMjZxSpb0FmuiQN41TZUHY&sid=396dc80c7d8b9c1c&type=tcp&headerType=none#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-002
 hysteria2://S9VB96r2xegZUGfaMeBmRdLHAcxbH1QC@www.fireflya.buzz:3549?sni=bing.com&insecure=1&allowInsecure=1#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-003
 hysteria2://Nb9TGm83EuscOloRCyOsTDQlK5jxNU8N@www.flowerye.shop:7726?sni=bing.com&insecure=1&allowInsecure=1#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-004
 vless://d65cc14c-f53f-4fe2-b262-97856601319c@143.20.213.240:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=yahoo.com&fp=edge&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a&allowInsecure=1&type=tcp&headerType=none#%F0%9F%87%A9%F0%9F%87%AA%20DE-X-005
