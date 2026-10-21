@@ -102,7 +102,7 @@ proxies:
    
   - {"type":"vless","name":"🇯🇵 JP-X-005","server":"jp-1.gsafevpnapi.com","port":20270,"uuid":"4fd6f397-e208-4ae9-b123-234316aa20f4","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"mDNvQ3OjCNEY4NDgAQn6jlkM6wIfRDEWwFzmCaS9GDg","short-id":"038ab1496cef9c0c","_spider-x":"/"},"network":"tcp","encryption":"none","servername":"www.yahoo.com"}
   
-  - {"type":"vless","name":"🇯🇵 JP-X-006","server":"jp1-r.link-t7.com","port":10031,"uuid":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE","short-id":"686c0ef0"},"network":"grpc","grpc-opts":{"grpc-service-name":"update"},"encryption":"none","servername":"s0.awsstatic.com"}
+  - {"type":"vless","name":"🇯🇵 JP-X-006","server":"jp-1.gsafevpnapi.com","port":20270,"uuid":"328e5d4c-3e07-4fb5-b593-a0f146e1ce1a","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"mDNvQ3OjCNEY4NDgAQn6jlkM6wIfRDEWwFzmCaS9GDg","short-id":"038ab1496cef9c0c","_spider-x":"/"},"network":"tcp","encryption":"none","servername":"www.yahoo.com"}
   
   - {"type":"vless","name":"🇯🇵 JP-X-007","server":"jp2-r.link-t7.com","port":10032,"uuid":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE","short-id":"686c0ef0"},"network":"grpc","grpc-opts":{"grpc-service-name":"update"},"encryption":"none","servername":"s0.awsstatic.com"}
   
