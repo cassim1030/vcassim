@@ -188,7 +188,7 @@ proxies:
    
   - {"type":"vless","name":"🇺🇸 US-X-008","server":"162.159.41.230","port":443,"uuid":"58343483-51aa-422a-9ae5-3e550c074a0f","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"dd.ccfly.tech"},"path":"/","early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2048},"encryption":"none","servername":"dd.ccfly.tech"}
 
-  - {"type":"vless","name":"🇺🇸 US-X-009","server":"172.67.191.50","port":443,"uuid":"eac8fbd4-eb58-4e93-a205-86021dc0bf9a","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-08-m-19.222222288.xyz"},"path":"/1F0PZ4hiduitoYk9Pa"},"encryption":"none","servername":"c-l-08-m-19.222222288.xyz"}
+  - { name: 🇺🇸 US-X-009, type: vless, server: us-1.gsafevpnapi.com, port: 20270, uuid: d3f9c022-6bc1-4367-9481-0817aa2d61d4, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, encryption: none, tls: true, skip-cert-verify: false, servername: www.yahoo.com, reality-opts: { public-key: eadapatOPUV75uDTLPqrRHD1vAAmu_Y-SyQCbp9wgwM, short-id: f7a0cd272f3f20a7 }, client-fingerprint: chrome, network: tcp }
   
   - {"type":"vless","name":"🇺🇸 US-X-010","server":"162.159.44.201","port":443,"uuid":"930a1b6f-f310-4e34-ba7a-c8b6f552a313","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-01-m-11.666666665.xyz"},"path":"/dJTMmjUWr7ea4sfg"},"encryption":"none","servername":"c-l-01-m-11.666666665.xyz"}
 
