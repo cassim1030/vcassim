@@ -84,7 +84,7 @@ hysteria2://73ffcd12-0155-432f-9fd4-c1d2bf9190d7@46.17.40.117:50198?sni=music.ap
 hysteria2://QMpJVYJVps@sg.20240211.xyz:52341?sni=sg.20240211.xyz&insecure=1&allowInsecure=1#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-001
 ss://YWVzLTI1Ni1nY206ZGFkYTEyMDM@13.229.182.63:80?#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-002
 trojan://ee9d10ff-da1d-4496-8f51-a3ef82aa758d@104.17.3.81:443?security=tls&sni=sg1.nathaya.web.id&insecure=0&allowInsecure=0&type=ws&host=sg1.nathaya.web.id&path=%2Ftrojan#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-003
-hysteria2://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg1.dexlos.com:20002?sni=sg1.dexlos.com&insecure=0&allowInsecure=0#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-004
+trojan://qw6698@cdns.doon.eu.org:443?security=tls&sni=sdgsd.pages.dev&fp=chrome&type=ws&host=sdgsd.pages.dev&path=%2F%3Fed%3D2560#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-004
 hysteria2://CEF36A2A-E74B-4F86-A704-FE801822DA7F@sg2.dexlos.com:20271?sni=sg2.dexlos.com&insecure=0&allowInsecure=0#%F0%9F%87%B8%F0%9F%87%AC%20SG-X-005
 
 #TW
