@@ -158,7 +158,7 @@ proxies:
 
   - {"type":"trojan","name":"🇸🇬 SG-X-003","server":"104.17.3.81","port":443,"password":"ee9d10ff-da1d-4496-8f51-a3ef82aa758d","udp":true,"sni":"sg1.nathaya.web.id"}
 
-  - {"type":"hysteria2","name":"🇸🇬 SG-X-004","server":"sg1.dexlos.com","port":20002,"password":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","sni":"sg1.dexlos.com","skip-cert-verify":false,"tfo":false}
+  - {"sni":"sdgsd.pages.dev","client-fingerprint":"chrome","network":"ws","ws-opts":{"path":"/","headers":{"Host":"sdgsd.pages.dev"},"early-data-header-name":"Sec-WebSocket-Protocol","max-early-data":2560},"type":"trojan","password":"qw6698","server":"cdns.doon.eu.org","port":443,"name":"🇸🇬 SG-X-004"}
 
   - {"type":"hysteria2","name":"🇸🇬 SG-X-005","server":"sg2.dexlos.com","port":20271,"password":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","sni":"sg2.dexlos.com","skip-cert-verify":false,"tfo":false}
 
