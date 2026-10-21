@@ -92,7 +92,7 @@ proxies:
   
   - {"type":"ss","server":"103.73.67.194","port":38388,"cipher":"aes-256-cfb","password":"Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV","name":"🇭🇰 HK-X-005"}
 
-  - {"type":"hysteria2","name":"🇯🇵 JP-X-001","server":"140-238-43-0.liao.kdns.fr","port":50160,"password":"3489a008067e4b789cd91f3f0d3ece47","sni":"140-238-43-0.liao.kdns.fr","skip-cert-verify":false,"tfo":false}
+  - {"type":"vless","name":"🇯🇵 JP-X-001","server":"116.206.93.5","port":443,"uuid":"cd578a0f-4b18-43ce-9a38-52d5919fd4bc","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"safari","skip-cert-verify":false,"reality-opts":{"public-key":"jGpS_zJlDp2Jmo87eVM-pYcVd3XkRL4J-lzn7QpWah4","short-id":"7b160d08e2213a6d"},"network":"tcp","encryption":"none","servername":"www.apple.com"}
   
   - {"type":"vless","name":"🇯🇵 JP-X-002","server":"13.114.30.50","port":443,"uuid":"65d9d46a-bfc1-4189-8a8d-cb199aba846b","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"edtun-cassim01.pages.dev"},"path":"/"},"encryption":"none","servername":"edtun-cassim01.pages.dev"}
  
