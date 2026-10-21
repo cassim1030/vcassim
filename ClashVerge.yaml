@@ -94,7 +94,7 @@ proxies:
 
   - {"type":"vless","name":"🇯🇵 JP-X-001","server":"116.206.93.5","port":443,"uuid":"cd578a0f-4b18-43ce-9a38-52d5919fd4bc","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"safari","skip-cert-verify":false,"reality-opts":{"public-key":"jGpS_zJlDp2Jmo87eVM-pYcVd3XkRL4J-lzn7QpWah4","short-id":"7b160d08e2213a6d"},"network":"tcp","encryption":"none","servername":"www.apple.com"}
   
-  - {"type":"vless","name":"🇯🇵 JP-X-002","server":"13.114.30.50","port":443,"uuid":"65d9d46a-bfc1-4189-8a8d-cb199aba846b","tls":true,"client-fingerprint":"chrome","skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"edtun-cassim01.pages.dev"},"path":"/"},"encryption":"none","servername":"edtun-cassim01.pages.dev"}
+  - {"type":"vless","name":"🇯🇵 JP-X-002","server":"103.137.215.36","port":443,"uuid":"ac16d60a-0515-47f5-ae27-5984551db64b","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"safari","skip-cert-verify":false,"reality-opts":{"public-key":"rcKY_GQQwPb24iSyOkzMpKJhAKsuHmHLZQcnRpFyvRk","short-id":"e4b1f2be3e7b226d"},"network":"tcp","encryption":"none","servername":"www.apple.com"}
  
   - {"type":"vless","name":"🇯🇵 JP-X-003","server":"jp4.zywm.eu.org","port":15198,"uuid":"83564060-4069-40b4-e657-adccef9c4b62","tls":true,"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"jp4.zywm.eu.org"},"path":"/jjp"},"encryption":"none","client-fingerprint":"chrome","servername":"jp4.zywm.eu.org"}
   
