@@ -190,7 +190,7 @@ proxies:
 
   - { name: 🇺🇸 US-X-009, type: vless, server: us-1.gsafevpnapi.com, port: 20270, uuid: d3f9c022-6bc1-4367-9481-0817aa2d61d4, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, encryption: none, tls: true, skip-cert-verify: false, servername: www.yahoo.com, reality-opts: { public-key: eadapatOPUV75uDTLPqrRHD1vAAmu_Y-SyQCbp9wgwM, short-id: f7a0cd272f3f20a7 }, client-fingerprint: chrome, network: tcp }
   
-  - {"type":"vless","name":"🇺🇸 US-X-010","server":"162.159.44.201","port":443,"uuid":"930a1b6f-f310-4e34-ba7a-c8b6f552a313","tls":true,"client-fingerprint":"chrome","alpn":["http/1.1"],"skip-cert-verify":false,"network":"ws","ws-opts":{"headers":{"Host":"c-l-01-m-11.666666665.xyz"},"path":"/dJTMmjUWr7ea4sfg"},"encryption":"none","servername":"c-l-01-m-11.666666665.xyz"}
+  - {"type":"vless","name":"🇺🇸 US-X-010","server":"us-1.gsafevpnapi.com","port":20270,"uuid":"4fd6f397-e208-4ae9-b123-234316aa20f4","tls":true,"flow":"xtls-rprx-vision","client-fingerprint":"chrome","skip-cert-verify":false,"reality-opts":{"public-key":"eadapatOPUV75uDTLPqrRHD1vAAmu_Y-SyQCbp9wgwM","short-id":"f7a0cd272f3f20a7","_spider-x":"/"},"network":"tcp","encryption":"none","servername":"www.yahoo.com"}
 
   - {"skip-cert-verify":true,"sni":"iepl.vnz2.cat.bilibili.com","type":"trojan","password":"bed02300-1d8c-49b2-9ae4-785086049773","server":"d1.catcat321.com","port":44183,"name":"🇻🇳 VN-X-001"}
   
