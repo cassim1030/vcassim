@@ -98,7 +98,7 @@ proxies:
  
   - { name: 🇯🇵 JP-X-003, type: vless, server: jp-1.gsafevpnapi.com, port: 20270, uuid: f97091dc-da83-4e50-889c-c7ded73c8525, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, encryption: none, tls: true, skip-cert-verify: false, servername: www.yahoo.com, reality-opts: { public-key: mDNvQ3OjCNEY4NDgAQn6jlkM6wIfRDEWwFzmCaS9GDg, short-id: 038ab1496cef9c0c }, client-fingerprint: chrome, network: tcp }
   
-  - {"type":"hysteria2","name":"🇯🇵 JP-X-004","server":"jp6.dexlos.com","port":21175,"password":"CEF36A2A-E74B-4F86-A704-FE801822DA7F","sni":"jp6.dexlos.com","skip-cert-verify":false,"tfo":false}
+  - { name: 🇯🇵 JP-X-004, type: vless, server: jp-1.gsafevpnapi.com, port: 20270, uuid: d3f9c022-6bc1-4367-9481-0817aa2d61d4, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, encryption: none, tls: true, skip-cert-verify: false, servername: www.yahoo.com, reality-opts: { public-key: mDNvQ3OjCNEY4NDgAQn6jlkM6wIfRDEWwFzmCaS9GDg, short-id: 038ab1496cef9c0c }, client-fingerprint: chrome, network: tcp }
    
   - {"type":"vless","name":"🇯🇵 JP-X-005","server":"n1743918700.lie5d.cyou","port":443,"uuid":"ab3a639a-2bec-4122-b891-38d9084fc067","tls":true,"client-fingerprint":"chrome","skip-cert-verify":true,"network":"ws","ws-opts":{"headers":{"Host":"n1743918700.lie5d.cyou"},"path":"/ab3a639a-2bec-4122-b891-38d9084fc067"},"servername":"n1743918700.lie5d.cyou"}
   
