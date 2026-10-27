@@ -32,7 +32,7 @@ proxies:
     server: 10.168.1.111
     port: "20124"
  
-  - {"type":"hysteria2","name":"🇦🇺 AU-X-001","server":"192.9.165.40","port":51000,"password":"df29af72-966f-4b6f-aec1-2df71ab4669a","sni":"cn.cremedelamer.com","skip-cert-verify":true,"tfo":false}
+  - {"skip-cert-verify":true,"sni":"au5.yang-1989.xyz","client-fingerprint":"chrome","network":"ws","ws-opts":{"path":"/iw8i","headers":{"Host":"au5.yang-1989.xyz"}},"type":"trojan","password":"9d033eb1-22c7-4ae9-9d59-783e40c8eec3","server":"www.visa.com.sg","port":8443,"name":"🇦🇺 AU-X-001"}
 
   - {"type":"hysteria2","name":"🇦🇺 AU-X-002","server":"192.9.165.40","port":51000,"password":"9913dc87-2226-4c61-bf13-c02cd332bae9","sni":"cn.cremedelamer.com","skip-cert-verify":true,"tfo":false}
   
